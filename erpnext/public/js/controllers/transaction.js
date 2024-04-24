@@ -12,8 +12,9 @@ erpnext.TransactionController = class TransactionController extends erpnext.taxe
 
 		frappe.flags.hide_serial_batch_dialog = true;
 		frappe.ui.form.on(this.frm.doctype + " Item", "rate", function(frm, cdt, cdn) {
+			// back-calculate values using assumptions if rate is changed
 			var item = frappe.get_doc(cdt, cdn);
-			var has_margin_field = frappe.meta.has_field(cdt, 'margin_type');
+			const has_margin_field = frappe.meta.has_field(cdt, 'margin_rate_or_amount');
 
 			frappe.model.round_floats_in(item, ["rate", "price_list_rate"]);
 
@@ -21,29 +22,31 @@ erpnext.TransactionController = class TransactionController extends erpnext.taxe
 				if(item.rate > item.price_list_rate && has_margin_field) {
 					// if rate is greater than price_list_rate, set margin
 					// or set discount
-					item.discount_percentage = 0;
+					item.discount_percentage = 0.0;
+					item.discount_amount = 0.0;
 					item.margin_type = 'Amount';
+					item.margin_percentage = 0.0;
 					item.margin_rate_or_amount = flt(item.rate - item.price_list_rate,
 						precision("margin_rate_or_amount", item));
-					item.rate_with_margin = item.rate;
 				} else {
-					item.discount_percentage = flt((1 - item.rate / item.price_list_rate) * 100.0,
-						precision("discount_percentage", item));
-					item.discount_amount = flt(item.price_list_rate) - flt(item.rate);
+					item.discount_percentage = 0.0;
+					item.discount_amount = flt(item.price_list_rate - item.rate,
+						precision("discount_amount", item));
 					item.margin_type = '';
-					item.margin_rate_or_amount = 0;
-					item.rate_with_margin = 0;
+					item.margin_percentage = 0.0;
+					item.margin_rate_or_amount = 0.0;
 				}
+				frm.cscript.apply_pricing_rule_on_item(item);
 			} else {
 				item.discount_percentage = 0.0;
+				item.discount_amount = 0.0;
 				item.margin_type = '';
-				item.margin_rate_or_amount = 0;
-				item.rate_with_margin = 0;
+				item.margin_percentage = 0.0;
+				item.margin_rate_or_amount = 0.0;
 			}
-			item.base_rate_with_margin = item.rate_with_margin * flt(frm.doc.conversion_rate);
 
-			cur_frm.cscript.set_gross_profit(item);
 			cur_frm.cscript.calculate_taxes_and_totals();
+			frm.cscript.set_gross_profit(item);
 			cur_frm.cscript.calculate_stock_uom_rate(frm, cdt, cdn);
 		});
 
@@ -671,24 +674,38 @@ erpnext.TransactionController = class TransactionController extends erpnext.taxe
 		this.calculate_taxes_and_totals();
 	}
 
+	margin_percentage(doc, cdt, cdn) {
+		// trigger update below
+		const item = frappe.get_doc(cdt, cdn);
+		frappe.model.round_floats_in(item, ["margin_percentage"]);
+		frappe.model.set_value(cdt, cdn, "margin_rate_or_amount", 0.0);
+	}
+
 	margin_rate_or_amount(doc, cdt, cdn) {
 		// calculated the revised total margin and rate on margin rate changes
-		let item = frappe.get_doc(cdt, cdn);
+		const item = frappe.get_doc(cdt, cdn);
+		if (item.margin_rate_or_amount)
+			item.margin_percentage = 0.0;
+		// calculate rate here:
 		this.apply_pricing_rule_on_item(item);
 		this.calculate_taxes_and_totals();
 		cur_frm.refresh_fields();
 	}
 
-	margin_type(doc, cdt, cdn) {
-		// calculate the revised total margin and rate on margin type changes
-		let item = frappe.get_doc(cdt, cdn);
-		if (!item.margin_type) {
-			frappe.model.set_value(cdt, cdn, "margin_rate_or_amount", 0);
-		} else {
-			this.apply_pricing_rule_on_item(item, doc, cdt, cdn);
-			this.calculate_taxes_and_totals();
-			cur_frm.refresh_fields();
-		}
+	discount_percentage(doc, cdt, cdn) {
+		// trigger update below
+		const item = frappe.get_doc(cdt, cdn);
+		frappe.model.round_floats_in(item, ["discount_percentage"]);
+		frappe.model.set_value(cdt, cdn, "discount_amount", 0.0);
+	}
+
+	discount_amount(doc, cdt, cdn) {
+		const item = frappe.get_doc(cdt, cdn);
+		if (item.discount_amount)
+			item.discount_percentage = 0.0;
+		this.apply_pricing_rule_on_item(item);
+		this.calculate_taxes_and_totals();
+		cur_frm.refresh_fields();
 	}
 
 	get_incoming_rate(item, posting_date, posting_time, voucher_type, company) {
@@ -1598,7 +1615,7 @@ erpnext.TransactionController = class TransactionController extends erpnext.taxe
 			callback: function(r) {
 				if (!r.exc && r.message) {
 					me._set_values_for_item_list(r.message);
-					if(item) me.set_gross_profit(item);
+					if (item) me.set_gross_profit(item);
 					if (me.frm.doc.apply_discount_on) me.frm.trigger("apply_discount_on")
 				}
 			}
@@ -2051,10 +2068,8 @@ erpnext.TransactionController = class TransactionController extends erpnext.taxe
 	}
 
 	set_gross_profit(item) {
-		if (["Sales Order", "Quotation"].includes(this.frm.doc.doctype) && item.valuation_rate) {
-			var rate = flt(item.rate) * flt(this.frm.doc.conversion_rate || 1);
-			item.gross_profit = flt(((rate - item.valuation_rate) * item.stock_qty), precision("amount", item));
-		}
+		item.gross_profit = flt(((item.base_rate - (item.valuation_rate || 0.0)) * item.stock_qty),
+			precision("amount", item));
 	}
 
 	setup_item_selector() {

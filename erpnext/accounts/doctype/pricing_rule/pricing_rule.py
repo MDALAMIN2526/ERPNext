@@ -542,6 +542,11 @@ def apply_price_discount_rule(pricing_rule, item_details, args):
 		item_details.margin_type = pricing_rule.margin_type
 		item_details.has_margin = True
 
+		if pricing_rule.margin_type == "Percentage":
+			pricing_rule.margin_rate_or_amount = (
+				args.price_list_rate * pricing_rule.margin_rate_or_amount / 100
+			)
+			item_details.margin_type = "Amount"
 		if pricing_rule.apply_multiple_pricing_rules and item_details.margin_rate_or_amount is not None:
 			item_details.margin_rate_or_amount += pricing_rule.margin_rate_or_amount
 		else:
