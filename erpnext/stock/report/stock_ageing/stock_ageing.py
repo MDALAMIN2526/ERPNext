@@ -444,7 +444,7 @@ class FIFOSlots:
 			if warehouses:
 				sle_query = sle_query.where(sle.warehouse.isin(warehouses))
 
-		sle_query = sle_query.orderby(sle.posting_date, sle.posting_time, sle.creation, sle.actual_qty)
+		sle_query = sle_query.orderby(sle.posting_datetime, sle.creation, sle.actual_qty)
 
 		return sle_query.run(as_dict=True, as_iterator=True)
 
