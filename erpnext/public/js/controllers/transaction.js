@@ -18,35 +18,22 @@ erpnext.TransactionController = class TransactionController extends erpnext.taxe
 
 			frappe.model.round_floats_in(item, ["rate", "price_list_rate"]);
 
+			frm.cscript.remove_pricing_rule(item);
 			if(item.price_list_rate && !item.blanket_order_rate) {
 				if(item.rate > item.price_list_rate && has_margin_field) {
 					// if rate is greater than price_list_rate, set margin
 					// or set discount
-					item.discount_percentage = 0.0;
-					item.discount_amount = 0.0;
 					item.margin_type = 'Amount';
-					item.margin_percentage = 0.0;
 					item.margin_rate_or_amount = flt(item.rate - item.price_list_rate,
 						precision("margin_rate_or_amount", item));
 				} else {
-					item.discount_percentage = 0.0;
 					item.discount_amount = flt(item.price_list_rate - item.rate,
 						precision("discount_amount", item));
-					item.margin_type = '';
-					item.margin_percentage = 0.0;
-					item.margin_rate_or_amount = 0.0;
 				}
 				frm.cscript.apply_pricing_rule_on_item(item);
-			} else {
-				item.discount_percentage = 0.0;
-				item.discount_amount = 0.0;
-				item.margin_type = '';
-				item.margin_percentage = 0.0;
-				item.margin_rate_or_amount = 0.0;
 			}
 
 			cur_frm.cscript.calculate_taxes_and_totals();
-			frm.cscript.set_gross_profit(item);
 			cur_frm.cscript.calculate_stock_uom_rate(frm, cdt, cdn);
 		});
 
@@ -678,7 +665,8 @@ erpnext.TransactionController = class TransactionController extends erpnext.taxe
 		// trigger update below
 		const item = frappe.get_doc(cdt, cdn);
 		frappe.model.round_floats_in(item, ["margin_percentage"]);
-		frappe.model.set_value(cdt, cdn, "margin_rate_or_amount", 0.0);
+		item.margin_rate_or_amount = 0.0;
+		this.frm.trigger("margin_rate_or_amount", cdt, cdn);
 	}
 
 	margin_rate_or_amount(doc, cdt, cdn) {
@@ -696,7 +684,8 @@ erpnext.TransactionController = class TransactionController extends erpnext.taxe
 		// trigger update below
 		const item = frappe.get_doc(cdt, cdn);
 		frappe.model.round_floats_in(item, ["discount_percentage"]);
-		frappe.model.set_value(cdt, cdn, "discount_amount", 0.0);
+		item.discount_amount = 0.0;
+		this.frm.trigger("discount_amount", cdt, cdn);
 	}
 
 	discount_amount(doc, cdt, cdn) {
@@ -1844,8 +1833,8 @@ erpnext.TransactionController = class TransactionController extends erpnext.taxe
 
 	remove_pricing_rule(item, removed_pricing_rule) {
 		let me = this;
-		const fields = ["discount_percentage",
-			"discount_amount", "margin_rate_or_amount", "rate_with_margin"];
+		const fields = ["discount_percentage", "discount_amount",
+			"margin_rate_or_amount", "margin_percentage", "rate_with_margin"];
 
 		if(item.remove_free_item) {
 			let items = [];
@@ -1859,6 +1848,7 @@ erpnext.TransactionController = class TransactionController extends erpnext.taxe
 
 			me.frm.doc.items = items;
 			refresh_field('items');
+
 		} else if(item.applied_on_items && item.apply_on) {
 			const applied_on_items = item.applied_on_items.split(',');
 			me.frm.doc.items.forEach(row => {
@@ -1877,6 +1867,24 @@ erpnext.TransactionController = class TransactionController extends erpnext.taxe
 
 			me.trigger_price_list_rate();
 		}
+
+		fields.forEach(f => {
+			item[f] = 0;
+		});
+
+		["pricing_rules", "margin_type"].forEach(field => {
+			if (item[field]) {
+				item[field] = '';
+			}
+		});
+
+		const new_list = [];
+		for (const row of me.frm.doc.pricing_rules) {
+			if (row.child_docname != item.name) {
+				new_list.push(row);
+			}
+		}
+		me.frm.doc.pricing_rules = new_list;
 	}
 
 	trigger_price_list_rate() {
