@@ -542,10 +542,18 @@ def apply_price_discount_rule(pricing_rule, item_details, args):
 		item_details.margin_type = pricing_rule.margin_type
 		item_details.has_margin = True
 
+		# bug here if multiple rules are a mixture of amount and percent
+		# item assumes one or the other. Same bug applies below on discounts
 		if pricing_rule.apply_multiple_pricing_rules and item_details.margin_rate_or_amount is not None:
-			item_details.margin_rate_or_amount += pricing_rule.margin_rate_or_amount
+			if pricing_rule.margin_type == "Percentage":
+				item_details.margin_percentage += pricing_rule.margin_rate_or_amount
+			else:
+				item_details.margin_rate_or_amount += pricing_rule.margin_rate_or_amount
 		else:
-			item_details.margin_rate_or_amount = pricing_rule.margin_rate_or_amount
+			if pricing_rule.margin_type == "Percentage":
+				item_details.margin_percentage = pricing_rule.margin_rate_or_amount
+			else:
+				item_details.margin_rate_or_amount = pricing_rule.margin_rate_or_amount
 
 	if pricing_rule.rate_or_discount == "Rate":
 		pricing_rule_rate = 0.0
@@ -570,6 +578,7 @@ def apply_price_discount_rule(pricing_rule, item_details, args):
 			continue
 
 		field = frappe.scrub(apply_on)
+		# bug: apply_multiple_pricing_rules is assumed true for discounts
 		if pricing_rule.apply_discount_on_rate and item_details.get("discount_percentage"):
 			# Apply discount on discounted rate
 			item_details[field] += (100 - item_details[field]) * (pricing_rule.get(field, 0) / 100)
