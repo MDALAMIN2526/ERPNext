@@ -71,12 +71,12 @@ msgstr ""
 #. Description of the Onboarding Step 'Accounts Settings'
 #: accounts/onboarding_step/accounts_settings/accounts_settings.json
 msgid "# Account Settings\n\n"
-"In CMPERP, Accounting features are configurable as per your business needs. Accounts Settings is the place to define some of your accounting preferences like:\n\n"
+"In CPMERP, Accounting features are configurable as per your business needs. Accounts Settings is the place to define some of your accounting preferences like:\n\n"
 " - Credit Limit and over billing settings\n"
 " - Taxation preferences\n"
 " - Deferred accounting preferences\n"
 msgstr "# Buchhaltungseinstellungen\n\n"
-"In CMPERP können Sie die Buchhaltungsfunktionen entsprechend Ihren geschäftlichen Anforderungen konfigurieren. In den Buchhaltungseinstellungen können Sie unter anderem Folgendes konfigurieren:\n\n"
+"In CPMERP können Sie die Buchhaltungsfunktionen entsprechend Ihren geschäftlichen Anforderungen konfigurieren. In den Buchhaltungseinstellungen können Sie unter anderem Folgendes konfigurieren:\n\n"
 " - Einstellungen für Kreditlimit und Überfakturierung\n"
 " - Einstellungen für die Besteuerung\n"
 " - Einstellungen für die Rechnungsabgrenzung\n"
@@ -84,7 +84,7 @@ msgstr "# Buchhaltungseinstellungen\n\n"
 #. Description of the Onboarding Step 'Configure Account Settings'
 #: accounts/onboarding_step/configure_account_settings/configure_account_settings.json
 msgid "# Account Settings\n\n"
-"This is a crucial piece of configuration. There are various account settings in CMPERP to restrict and configure actions in the Accounting module.\n\n"
+"This is a crucial piece of configuration. There are various account settings in CPMERP to restrict and configure actions in the Accounting module.\n\n"
 "The following settings are avaialble for you to configure\n\n"
 "1. Account Freezing \n"
 "2. Credit and Overbilling\n"
@@ -103,9 +103,9 @@ msgstr "# Kontoeinstellungen\n\n"
 #. Description of the Onboarding Step 'Add an Existing Asset'
 #: assets/onboarding_step/existing_asset/existing_asset.json
 msgid "# Add an Existing Asset\n\n"
-"If you are just starting with CMPERP, you will need to enter Assets you already possess. You can add them as existing fixed assets in CMPERP. Please note that you will have to make a Journal Entry separately updating the opening balance in the fixed asset account."
+"If you are just starting with CPMERP, you will need to enter Assets you already possess. You can add them as existing fixed assets in CPMERP. Please note that you will have to make a Journal Entry separately updating the opening balance in the fixed asset account."
 msgstr "# Vorhandene Vermögensgegenstände hinzufügen\n\n"
-"Wenn Sie gerade erst mit CMPERP beginnen, müssen Sie die Vermögensgegenstände, die Sie bereits besitzen, eingeben. Sie können sie als bestehende Vermögensgegenstände in CMPERP hinzufügen. Bitte beachten Sie, dass Sie einen separaten Journaleintrag vornehmen müssen, um den Eröffnungssaldo des Anlagenkontos zu aktualisieren."
+"Wenn Sie gerade erst mit CPMERP beginnen, müssen Sie die Vermögensgegenstände, die Sie bereits besitzen, eingeben. Sie können sie als bestehende Vermögensgegenstände in CPMERP hinzufügen. Bitte beachten Sie, dass Sie einen separaten Journaleintrag vornehmen müssen, um den Eröffnungssaldo des Anlagenkontos zu aktualisieren."
 
 #. Description of the Onboarding Step 'Create Your First Sales Invoice '
 #: setup/onboarding_step/create_your_first_sales_invoice/create_your_first_sales_invoice.json
@@ -171,27 +171,27 @@ msgstr "# CRM-Einstellungen\n\n"
 #. Description of the Onboarding Step 'Review Chart of Accounts'
 #: accounts/onboarding_step/chart_of_accounts/chart_of_accounts.json
 msgid "# Chart Of Accounts\n\n"
-"CMPERP sets up a simple chart of accounts for each Company you create, but you can modify it according to business and legal requirements."
+"CPMERP sets up a simple chart of accounts for each Company you create, but you can modify it according to business and legal requirements."
 msgstr "# Kontenplan\n\n"
-"CMPERP erstellt ein einfaches Kontendiagramm für jede von Ihnen erstellte Firma, aber Sie können es entsprechend den geschäftlichen und rechtlichen Anforderungen ändern."
+"CPMERP erstellt ein einfaches Kontendiagramm für jede von Ihnen erstellte Firma, aber Sie können es entsprechend den geschäftlichen und rechtlichen Anforderungen ändern."
 
 #. Description of the Onboarding Step 'Check Stock Ledger'
 #. Description of the Onboarding Step 'Check Stock Projected Qty'
 #: stock/onboarding_step/check_stock_ledger_report/check_stock_ledger_report.json
 #: stock/onboarding_step/view_stock_projected_qty/view_stock_projected_qty.json
 msgid "# Check Stock Reports\n"
-"Based on the various stock transactions, you can get a host of one-click Stock Reports in CMPERP like Stock Ledger, Stock Balance, Projected Quantity, and Ageing analysis."
+"Based on the various stock transactions, you can get a host of one-click Stock Reports in CPMERP like Stock Ledger, Stock Balance, Projected Quantity, and Ageing analysis."
 msgstr "# Bestandsberichte prüfen\n"
-"Basierend auf den verschiedenen Bestandstransaktionen können Sie in CMPERP mit einem Klick eine Vielzahl von Bestandsberichten abrufen, z. B. Bestandsbuch, Bestandsbilanz, prognostizierte Menge und Alterungsanalyse."
+"Basierend auf den verschiedenen Bestandstransaktionen können Sie in CPMERP mit einem Klick eine Vielzahl von Bestandsberichten abrufen, z. B. Bestandsbuch, Bestandsbilanz, prognostizierte Menge und Alterungsanalyse."
 
 #. Description of the Onboarding Step 'Cost Centers for Budgeting and Analysis'
 #: accounts/onboarding_step/cost_centers_for_report_and_budgeting/cost_centers_for_report_and_budgeting.json
 msgid "# Cost Centers for Budgeting and Analysis\n\n"
 "While your Books of Accounts are framed to fulfill statutory requirements, you can set up Cost Center and Accounting Dimensions to address your companies reporting and budgeting requirements.\n\n"
-"Click here to learn more about how  <b>[Cost Center](https://docs.cpmerp.com/docs/v13/user/manual/en/accounts/cost-center)</b> and <b> [Dimensions](https://docs.cpmerp.com/docs/v13/user/manual/en/accounts/accounting-dimensions)</b> allow you to get advanced financial analytics reports from CMPERP."
+"Click here to learn more about how  <b>[Cost Center](https://docs.cpmerp.com/docs/v13/user/manual/en/accounts/cost-center)</b> and <b> [Dimensions](https://docs.cpmerp.com/docs/v13/user/manual/en/accounts/accounting-dimensions)</b> allow you to get advanced financial analytics reports from CPMERP."
 msgstr "# Kostenstellen für Budgetierung und Analyse\n\n"
 "Während Ihre Geschäftsbücher so gestaltet sind, dass sie die gesetzlichen Anforderungen erfüllen, können Sie Kostenstellen und Buchhaltungsdimensionen einrichten, um die Berichts- und Budgetierungsanforderungen Ihres Unternehmens zu erfüllen.\n\n"
-"Klicken Sie hier, um mehr darüber zu erfahren, wie Sie mit  <b>[Kostenstellen](https://docs.cpmerp.com/docs/v13/user/manual/en/accounts/cost-center)</b> und <b> [Dimensionen](https://docs.cpmerp.com/docs/v13/user/manual/en/accounts/accounting-dimensions)</b> fortschrittliche Finanzanalyseberichte von CMPERP erhalten können."
+"Klicken Sie hier, um mehr darüber zu erfahren, wie Sie mit  <b>[Kostenstellen](https://docs.cpmerp.com/docs/v13/user/manual/en/accounts/cost-center)</b> und <b> [Dimensionen](https://docs.cpmerp.com/docs/v13/user/manual/en/accounts/accounting-dimensions)</b> fortschrittliche Finanzanalyseberichte von CPMERP erhalten können."
 
 #. Description of the Onboarding Step 'Finished Items'
 #: manufacturing/onboarding_step/create_product/create_product.json
@@ -241,9 +241,9 @@ msgstr "# Erstellen Sie einen Kunden\n\n"
 #. Description of the Onboarding Step 'Setup Your Letterhead'
 #: setup/onboarding_step/letterhead/letterhead.json
 msgid "# Create a Letter Head\n\n"
-"A Letter Head contains your organization's name, logo, address, etc which appears at the header and footer portion in documents. You can learn more about Setting up Letter Head in CMPERP here.\n"
+"A Letter Head contains your organization's name, logo, address, etc which appears at the header and footer portion in documents. You can learn more about Setting up Letter Head in CPMERP here.\n"
 msgstr "# Erstellen Sie einen Briefkopf\n\n"
-"Ein Briefkopf enthält den Namen, das Logo, die Adresse usw. Ihrer Organisation, die in der Kopf- und Fußzeile von Dokumenten angezeigt werden. Weitere Informationen zum Einrichten des Briefkopfes in CMPERP finden Sie hier.\n"
+"Ein Briefkopf enthält den Namen, das Logo, die Adresse usw. Ihrer Organisation, die in der Kopf- und Fußzeile von Dokumenten angezeigt werden. Weitere Informationen zum Einrichten des Briefkopfes in CPMERP finden Sie hier.\n"
 
 #. Description of the Onboarding Step 'Create your first Quotation'
 #: setup/onboarding_step/create_a_quotation/create_a_quotation.json
@@ -293,10 +293,10 @@ msgstr "# Erstellen Sie einen Arbeitsauftrag\n\n"
 #: setup/onboarding_step/create_an_item/create_an_item.json
 msgid "# Create an Item\n\n"
 "Item is a product or a service offered by your company, or something you buy as a part of your supplies or raw materials.\n\n"
-"Items are integral to everything you do in CMPERP - from billing, purchasing to managing inventory. Everything you buy or sell, whether it is a physical product or a service is an Item. Items can be stock, non-stock, variants, serialized, batched, assets, etc.\n"
+"Items are integral to everything you do in CPMERP - from billing, purchasing to managing inventory. Everything you buy or sell, whether it is a physical product or a service is an Item. Items can be stock, non-stock, variants, serialized, batched, assets, etc.\n"
 msgstr "# Artikel erstellen\n\n"
 "Ein Artikel ist ein Produkt oder eine Dienstleistung, die von Ihrem Unternehmen angeboten wird, oder etwas, das Sie als Teil Ihrer Vorräte oder Rohmaterialien kaufen.\n\n"
-"Artikel sind ein integraler Bestandteil aller Vorgänge in CMPERP - von der Rechnungsstellung über den Einkauf bis hin zur Bestandsverwaltung. Alles, was Sie kaufen oder verkaufen, egal ob es sich um ein physisches Produkt oder eine Dienstleistung handelt, ist ein Artikel. Artikel können auf Lager, nicht auf Lager, in Varianten, in Seriennummern, in Chargen, als Anlagegüter usw. sein.\n"
+"Artikel sind ein integraler Bestandteil aller Vorgänge in CPMERP - von der Rechnungsstellung über den Einkauf bis hin zur Bestandsverwaltung. Alles, was Sie kaufen oder verkaufen, egal ob es sich um ein physisches Produkt oder eine Dienstleistung handelt, ist ein Artikel. Artikel können auf Lager, nicht auf Lager, in Varianten, in Seriennummern, in Chargen, als Anlagegüter usw. sein.\n"
 
 #. Description of the Onboarding Step 'Create an Item'
 #: stock/onboarding_step/create_an_item/create_an_item.json
@@ -310,9 +310,9 @@ msgstr "# Erstellen Sie einen Artikel\n"
 #. Description of the Onboarding Step 'Create first Purchase Order'
 #: buying/onboarding_step/create_your_first_purchase_order/create_your_first_purchase_order.json
 msgid "# Create first Purchase Order\n\n"
-"Purchase Order is at the heart of your buying transactions. In CMPERP, Purchase Order can can be created against a Purchase Material Request (indent) and Supplier Quotation as well.  Purchase Orders is also linked to Purchase Receipt and Purchase Invoices, allowing you to keep a birds-eye view on your purchase deals.\n\n"
+"Purchase Order is at the heart of your buying transactions. In CPMERP, Purchase Order can can be created against a Purchase Material Request (indent) and Supplier Quotation as well.  Purchase Orders is also linked to Purchase Receipt and Purchase Invoices, allowing you to keep a birds-eye view on your purchase deals.\n\n"
 msgstr "# Ersten Lieferantenauftrag erstellen\n\n"
-"Der Lieferantenauftrag ist das Herzstück Ihrer Einkaufstransaktionen. In CMPERP kann ein Lieferantenauftrag auch aus einer Materialanforderung und einem Lieferantenangebot erstellt werden.  Lieferantenaufträge sind auch mit Eingangsbelegen und Eingangsrechnungen verknüpft, so dass Sie Ihre Einkaufsgeschäfte aus der Vogelperspektive verfolgen können.\n\n"
+"Der Lieferantenauftrag ist das Herzstück Ihrer Einkaufstransaktionen. In CPMERP kann ein Lieferantenauftrag auch aus einer Materialanforderung und einem Lieferantenangebot erstellt werden.  Lieferantenaufträge sind auch mit Eingangsbelegen und Eingangsrechnungen verknüpft, so dass Sie Ihre Einkaufsgeschäfte aus der Vogelperspektive verfolgen können.\n\n"
 
 #. Description of the Onboarding Step 'Create Your First Purchase Invoice '
 #: accounts/onboarding_step/create_your_first_purchase_invoice/create_your_first_purchase_invoice.json
@@ -326,10 +326,10 @@ msgstr "# Erstellen Sie Ihre erste Eingangsrechnung\n\n"
 #. Description of the Onboarding Step 'Financial Statements'
 #: accounts/onboarding_step/financial_statements/financial_statements.json
 msgid "# Financial Statements\n\n"
-"In CMPERP, you can get crucial financial reports like [Balance Sheet] and [Profit and Loss] statements with a click of a button. You can run in the report for a different period and plot analytics charts premised on statement data. For more reports, check sections like Financial Statements, General Ledger, and Profitability reports.\n\n"
+"In CPMERP, you can get crucial financial reports like [Balance Sheet] and [Profit and Loss] statements with a click of a button. You can run in the report for a different period and plot analytics charts premised on statement data. For more reports, check sections like Financial Statements, General Ledger, and Profitability reports.\n\n"
 "<b>[Check Accounting reports](https://docs.cpmerp.com/docs/v13/user/manual/en/accounts/accounting-reports)</b>"
 msgstr "# Finanzberichte\n\n"
-"In CMPERP können Sie mit einem Klick wichtige Finanzberichte wie [Bilanz] und [Gewinn- und Verlustrechnungen] abrufen. Sie können den Bericht für einen beliebigen Zeitraum ausführen und Diagramme basierend auf den Daten erstellen. Weitere Berichte finden Sie in den Abschnitten „Finanzberichte“, „Hauptbuch“ und „Rentabilitätsberichte“.\n\n"
+"In CPMERP können Sie mit einem Klick wichtige Finanzberichte wie [Bilanz] und [Gewinn- und Verlustrechnungen] abrufen. Sie können den Bericht für einen beliebigen Zeitraum ausführen und Diagramme basierend auf den Daten erstellen. Weitere Berichte finden Sie in den Abschnitten „Finanzberichte“, „Hauptbuch“ und „Rentabilitätsberichte“.\n\n"
 "<b>[Buchhaltungsberichte prüfen](https://docs.cpmerp.com/docs/v13/user/manual/en/accounts/accounting-reports)</b>"
 
 #. Description of the Onboarding Step 'Review Fixed Asset Accounts'
@@ -357,9 +357,9 @@ msgstr "# So funktioniert die Produktionsplanung\n\n"
 #. Description of the Onboarding Step 'Import Data from Spreadsheet'
 #: setup/onboarding_step/data_import/data_import.json
 msgid "# Import Data from Spreadsheet\n\n"
-"In CMPERP, you can easily migrate your historical data using spreadsheets. You can use it for migrating not just masters (like Customer, Supplier, Items), but also for transactions like (outstanding invoices, opening stock and accounting entries, etc)."
+"In CPMERP, you can easily migrate your historical data using spreadsheets. You can use it for migrating not just masters (like Customer, Supplier, Items), but also for transactions like (outstanding invoices, opening stock and accounting entries, etc)."
 msgstr "# Daten aus Tabellen importieren\n\n"
-"In CMPERP können Sie Ihre historischen Daten ganz einfach mithilfe von Tabellen migrieren. Sie können damit nicht nur Stammdaten (wie Kunden, Lieferanten, Artikel) migrieren, sondern auch Transaktionen (ausstehende Rechnungen, Anfangsbestand und Buchungen, etc.)."
+"In CPMERP können Sie Ihre historischen Daten ganz einfach mithilfe von Tabellen migrieren. Sie können damit nicht nur Stammdaten (wie Kunden, Lieferanten, Artikel) migrieren, sondern auch Transaktionen (ausstehende Rechnungen, Anfangsbestand und Buchungen, etc.)."
 
 #: manufacturing/report/work_order_stock_report/work_order_stock_report.py:148
 msgid "# In Stock"
@@ -375,16 +375,16 @@ msgstr "# Einführung in die Lagerbewegung\n"
 #. Description of the Onboarding Step 'Manage Stock Movements'
 #: stock/onboarding_step/create_a_stock_entry/create_a_stock_entry.json
 msgid "# Manage Stock Movements\n"
-"Stock entry allows you to register the movement of stock for various purposes like transfer, received, issues, repacked, etc. To address issues related to theft and pilferages,  you can always ensure that the movement of goods happens against a document reference Stock Entry in CMPERP.\n\n"
+"Stock entry allows you to register the movement of stock for various purposes like transfer, received, issues, repacked, etc. To address issues related to theft and pilferages,  you can always ensure that the movement of goods happens against a document reference Stock Entry in CPMERP.\n\n"
 "Let’s get a quick walk-through on the various scenarios covered in Stock Entry by watching [*this video*](https://www.youtube.com/watch?v=Njt107hlY3I)."
 msgstr ""
 
-#. Description of the Onboarding Step 'How to Navigate in CMPERP'
+#. Description of the Onboarding Step 'How to Navigate in CPMERP'
 #: setup/onboarding_step/navigation_help/navigation_help.json
-msgid "# Navigation in CMPERP\n\n"
-"Ease of navigating and browsing around the CMPERP is one of our core strengths. In the following video, you will learn how to reach a specific feature in CMPERP via module page or AwesomeBar."
-msgstr "# Navigation in CMPERP\n\n"
-"Einfaches Navigieren und Browsen in CMPERP ist eine unserer Hauptstärken. Im folgenden Video erfahren Sie, wie Sie eine bestimmte Funktion in CMPERP über die Modulseite oder die AwesomeBar erreichen."
+msgid "# Navigation in CPMERP\n\n"
+"Ease of navigating and browsing around the CPMERP is one of our core strengths. In the following video, you will learn how to reach a specific feature in CPMERP via module page or AwesomeBar."
+msgstr "# Navigation in CPMERP\n\n"
+"Einfaches Navigieren und Browsen in CPMERP ist eine unserer Hauptstärken. Im folgenden Video erfahren Sie, wie Sie eine bestimmte Funktion in CPMERP über die Modulseite oder die AwesomeBar erreichen."
 
 #. Description of the Onboarding Step 'Purchase an Asset'
 #: assets/onboarding_step/asset_purchase/asset_purchase.json
@@ -400,12 +400,12 @@ msgstr "# Ben. Artikel"
 #. Description of the Onboarding Step 'Manufacturing Settings'
 #: manufacturing/onboarding_step/explore_manufacturing_settings/explore_manufacturing_settings.json
 msgid "# Review Manufacturing Settings\n\n"
-"In CMPERP, the Manufacturing module’s features are configurable as per your business needs. Manufacturing Settings is the place where you can set your preferences for:\n\n"
+"In CPMERP, the Manufacturing module’s features are configurable as per your business needs. Manufacturing Settings is the place where you can set your preferences for:\n\n"
 "- Capacity planning for allocating jobs to workstations\n"
 "- Raw-material consumption based on BOM or actual\n"
 "- Default values and over-production allowance\n"
 msgstr "# Fertigungseinstellungen\n\n"
-"Im CMPERP sind die Funktionen des Fertigungsmoduls nach Ihren Geschäftsanforderungen konfigurierbar. Fertigungseinstellungen sind der Ort, an dem Sie Ihre Einstellungen festlegen können für:\n\n"
+"Im CPMERP sind die Funktionen des Fertigungsmoduls nach Ihren Geschäftsanforderungen konfigurierbar. Fertigungseinstellungen sind der Ort, an dem Sie Ihre Einstellungen festlegen können für:\n\n"
 "- Kapazitätsplanung für die Zuweisung von Jobs an Arbeitsplätze\n"
 "- Rohstoffverbrauch basierend auf Stücklisten oder effektiven Bedarf\n"
 "- Standardwerte und Erlaubnis zur Überproduktion\n"
@@ -413,7 +413,7 @@ msgstr "# Fertigungseinstellungen\n\n"
 #. Description of the Onboarding Step 'Review Stock Settings'
 #: stock/onboarding_step/stock_settings/stock_settings.json
 msgid "# Review Stock Settings\n\n"
-"In CMPERP, the Stock module’s features are configurable as per your business needs. Stock Settings is the place where you can set your preferences for:\n"
+"In CPMERP, the Stock module’s features are configurable as per your business needs. Stock Settings is the place where you can set your preferences for:\n"
 "- Default values for Item and Pricing\n"
 "- Default valuation method for inventory valuation\n"
 "- Set preference for serialization and batching of item\n"
@@ -443,16 +443,16 @@ msgstr "# Verkaufseinstellungen\n\n"
 #. Description of the Onboarding Step 'Set Up a Company'
 #: setup/onboarding_step/company_set_up/company_set_up.json
 msgid "# Set Up a Company\n\n"
-"A company is a legal entity for which you will set up your books of account and create accounting transactions. In CMPERP, you can create multiple companies, and establish relationships (group/subsidiary) among them.\n\n"
+"A company is a legal entity for which you will set up your books of account and create accounting transactions. In CPMERP, you can create multiple companies, and establish relationships (group/subsidiary) among them.\n\n"
 "Within the company master, you can capture various default accounts for that Company and set crucial settings related to the accounting methodology followed for a company.\n"
 msgstr "# Ein Unternehmen einrichten\n\n"
-"Ein Unternehmen ist eine juristische Person, für die Sie Ihre Geschäftsbücher einrichten und Buchhaltungstransaktionen erstellen werden. In CMPERP können Sie mehrere Unternehmen anlegen und Beziehungen (Konzern/Tochtergesellschaft) zwischen ihnen herstellen.\n\n"
+"Ein Unternehmen ist eine juristische Person, für die Sie Ihre Geschäftsbücher einrichten und Buchhaltungstransaktionen erstellen werden. In CPMERP können Sie mehrere Unternehmen anlegen und Beziehungen (Konzern/Tochtergesellschaft) zwischen ihnen herstellen.\n\n"
 "Im Unternehmensstamm können Sie verschiedene Standardkonten für das Unternehmen erfassen und wichtige Einstellungen zur Buchhaltungsmethodik für ein Unternehmen vornehmen.\n"
 
 #. Description of the Onboarding Step 'Setting up Taxes'
 #: accounts/onboarding_step/setup_taxes/setup_taxes.json
 msgid "# Setting up Taxes\n\n"
-"CMPERP lets you configure your taxes so that they are automatically applied in your buying and selling transactions. You can configure them globally or even on Items. CMPERP taxes are pre-configured for most regions."
+"CPMERP lets you configure your taxes so that they are automatically applied in your buying and selling transactions. You can configure them globally or even on Items. CPMERP taxes are pre-configured for most regions."
 msgstr ""
 
 #. Description of the Onboarding Step 'Routing'
@@ -465,7 +465,7 @@ msgstr ""
 #: stock/onboarding_step/create_a_warehouse/create_a_warehouse.json
 msgid "# Setup a Warehouse\n"
 "The warehouse can be your location/godown/store where you maintain the item's inventory, and receive/deliver them to various parties.\n\n"
-"In CMPERP, you can maintain a Warehouse in the tree structure, so that location and sub-location of an item can be tracked. Also, you can link a Warehouse to a specific Accounting ledger, where the real-time stock value of that warehouse’s item will be reflected."
+"In CPMERP, you can maintain a Warehouse in the tree structure, so that location and sub-location of an item can be tracked. Also, you can link a Warehouse to a specific Accounting ledger, where the real-time stock value of that warehouse’s item will be reflected."
 msgstr ""
 
 #. Description of the Onboarding Step 'Track Material Request'
@@ -477,21 +477,21 @@ msgstr ""
 #. Description of the Onboarding Step 'Update Stock Opening Balance'
 #: stock/onboarding_step/stock_opening_balance/stock_opening_balance.json
 msgid "# Update Stock Opening Balance\n"
-"It’s an entry to update the stock balance of an item, in a warehouse, on a date and time you are going live on CMPERP.\n\n"
+"It’s an entry to update the stock balance of an item, in a warehouse, on a date and time you are going live on CPMERP.\n\n"
 "Once opening stocks are updated, you can create transactions like manufacturing and stock deliveries, where this opening stock will be consumed."
 msgstr ""
 
 #. Description of the Onboarding Step 'Updating Opening Balances'
 #: accounts/onboarding_step/updating_opening_balances/updating_opening_balances.json
 msgid "# Updating Opening Balances\n\n"
-"Once you close the financial statement in previous accounting software, you can update the same as opening in your CMPERP's Balance Sheet accounts. This will allow you to get complete financial statements from CMPERP in the coming years, and discontinue the parallel accounting system right away."
+"Once you close the financial statement in previous accounting software, you can update the same as opening in your CPMERP's Balance Sheet accounts. This will allow you to get complete financial statements from CPMERP in the coming years, and discontinue the parallel accounting system right away."
 msgstr ""
 
 #. Description of the Onboarding Step 'View Warehouses'
 #: stock/onboarding_step/view_warehouses/view_warehouses.json
 msgid "# View Warehouse\n"
-"In CMPERP the term 'warehouse' can be thought of as a storage location.\n\n"
-"Warehouses are arranged in CMPERP in a tree like structure, where multiple sub-warehouses can be grouped under a single warehouse.\n\n"
+"In CPMERP the term 'warehouse' can be thought of as a storage location.\n\n"
+"Warehouses are arranged in CPMERP in a tree like structure, where multiple sub-warehouses can be grouped under a single warehouse.\n\n"
 "In this step we will view the [**Warehouse Tree**](https://docs.cpmerp.com/docs/user/manual/en/stock/warehouse#21-tree-view) to view the [**Warehouses**](https://docs.cpmerp.com/docs/user/manual/en/stock/warehouse) that are set by default."
 msgstr ""
 
@@ -499,9 +499,9 @@ msgstr ""
 #: accounts/onboarding_step/create_a_product/create_a_product.json
 msgid "## Products and Services\n\n"
 "Depending on the nature of your business, you might be selling products or services to your clients or even both. \n"
-"CMPERP is optimized for itemized management of your sales and purchase.\n\n"
+"CPMERP is optimized for itemized management of your sales and purchase.\n\n"
 "The **Item Master**  is where you can add all your sales items. If you are in services, you can create an Item for each service that you offer. If you run a manufacturing business, the same master is used for keeping a record of raw materials, sub-assemblies etc.\n\n"
-"Completing the Item Master is very essential for the successful implementation of CMPERP. We have a brief video introducing the item master for you, you can watch it in the next step."
+"Completing the Item Master is very essential for the successful implementation of CPMERP. We have a brief video introducing the item master for you, you can watch it in the next step."
 msgstr ""
 
 #. Description of the Onboarding Step 'Create a Customer'
@@ -515,7 +515,7 @@ msgstr ""
 #. Description of the Onboarding Step 'Create a Supplier'
 #: accounts/onboarding_step/create_a_supplier/create_a_supplier.json
 msgid "## Who is a Supplier?\n\n"
-"Suppliers are companies or individuals who provide you with products or services. CMPERP has comprehensive features for purchase cycles. \n\n"
+"Suppliers are companies or individuals who provide you with products or services. CPMERP has comprehensive features for purchase cycles. \n\n"
 "Let's quickly create a supplier with the minimal details required. You need the name of the supplier, assign the supplier to a group, and select the type of the supplier, viz. Company or Individual."
 msgstr ""
 
@@ -25785,14 +25785,14 @@ msgstr ""
 #. Label of a Data field in DocType 'Tally Migration'
 #: cpmerp_integrations/doctype/tally_migration/tally_migration.json
 msgctxt "Tally Migration"
-msgid "CMPERP Company"
-msgstr "CMPERP-Unternehmen"
+msgid "CPMERP Company"
+msgstr "CPMERP-Unternehmen"
 
 #. Label of a Data field in DocType 'Employee Group Table'
 #: setup/doctype/employee_group_table/employee_group_table.json
 msgctxt "Employee Group Table"
-msgid "CMPERP User ID"
-msgstr "CMPERP-Benutzer-ID"
+msgid "CPMERP User ID"
+msgstr "CPMERP-Benutzer-ID"
 
 #. Option for the 'Update frequency of Project' (Select) field in DocType
 #. 'Buying Settings'
@@ -31976,8 +31976,8 @@ msgstr ""
 
 #. Title of an Onboarding Step
 #: setup/onboarding_step/navigation_help/navigation_help.json
-msgid "How to Navigate in CMPERP"
-msgstr "So navigieren Sie in CMPERP"
+msgid "How to Navigate in CPMERP"
+msgstr "So navigieren Sie in CPMERP"
 
 #. Label of a Float field in DocType 'Timesheet Detail'
 #: projects/doctype/timesheet_detail/timesheet_detail.json
@@ -32378,12 +32378,12 @@ msgid "If this item has variants, then it cannot be selected in sales orders etc
 msgstr "Wenn dieser Artikel Varianten hat, dann kann er bei den Aufträgen, etc. nicht ausgewählt werden"
 
 #: buying/doctype/buying_settings/buying_settings.js:27
-msgid "If this option is configured 'Yes', CMPERP will prevent you from creating a Purchase Invoice or Receipt without creating a Purchase Order first. This configuration can be overridden for a particular supplier by enabling the 'Allow Purchase Invoice Creation Without Purchase Order' checkbox in the Supplier master."
-msgstr "Wenn diese Option auf 'Ja' gesetzt ist, validiert CMPERP, dass Sie eine Bestellung angelegt haben, bevor Sie eine Eingangsrechnung oder einen Eingangsbeleg erfassen können. Diese Konfiguration kann für einzelne Lieferanten überschrieben werden, indem Sie die Option 'Erstellung von Eingangsrechnungen ohne Bestellung zulassen' im Lieferantenstamm aktivieren."
+msgid "If this option is configured 'Yes', CPMERP will prevent you from creating a Purchase Invoice or Receipt without creating a Purchase Order first. This configuration can be overridden for a particular supplier by enabling the 'Allow Purchase Invoice Creation Without Purchase Order' checkbox in the Supplier master."
+msgstr "Wenn diese Option auf 'Ja' gesetzt ist, validiert CPMERP, dass Sie eine Bestellung angelegt haben, bevor Sie eine Eingangsrechnung oder einen Eingangsbeleg erfassen können. Diese Konfiguration kann für einzelne Lieferanten überschrieben werden, indem Sie die Option 'Erstellung von Eingangsrechnungen ohne Bestellung zulassen' im Lieferantenstamm aktivieren."
 
 #: buying/doctype/buying_settings/buying_settings.js:34
-msgid "If this option is configured 'Yes', CMPERP will prevent you from creating a Purchase Invoice without creating a Purchase Receipt first. This configuration can be overridden for a particular supplier by enabling the 'Allow Purchase Invoice Creation Without Purchase Receipt' checkbox in the Supplier master."
-msgstr "Wenn diese Option auf 'Ja' gesetzt ist, validiert CMPERP, dass Sie einen Eingangsbeleg angelegt haben, bevor Sie eine Eingangsrechnung erfassen können. Diese Konfiguration kann für einzelne Lieferanten überschrieben werden, indem Sie die Option 'Erstellung von Kaufrechnungen ohne Eingangsbeleg zulassen' im Lieferantenstamm aktivieren."
+msgid "If this option is configured 'Yes', CPMERP will prevent you from creating a Purchase Invoice without creating a Purchase Receipt first. This configuration can be overridden for a particular supplier by enabling the 'Allow Purchase Invoice Creation Without Purchase Receipt' checkbox in the Supplier master."
+msgstr "Wenn diese Option auf 'Ja' gesetzt ist, validiert CPMERP, dass Sie einen Eingangsbeleg angelegt haben, bevor Sie eine Eingangsrechnung erfassen können. Diese Konfiguration kann für einzelne Lieferanten überschrieben werden, indem Sie die Option 'Erstellung von Kaufrechnungen ohne Eingangsbeleg zulassen' im Lieferantenstamm aktivieren."
 
 #: manufacturing/doctype/manufacturing_settings/manufacturing_settings.js:10
 msgid "If ticked, multiple materials can be used for a single Work Order. This is useful if one or more time consuming products are being manufactured."
@@ -32405,7 +32405,7 @@ msgid "If yes, then this warehouse will be used to store rejected materials"
 msgstr ""
 
 #: stock/doctype/item/item.js:894
-msgid "If you are maintaining stock of this Item in your Inventory, CMPERP will make a stock ledger entry for each transaction of this item."
+msgid "If you are maintaining stock of this Item in your Inventory, CPMERP will make a stock ledger entry for each transaction of this item."
 msgstr ""
 
 #. Description of the 'Unreconciled Entries' (Section Break) field in DocType
@@ -39179,7 +39179,7 @@ msgstr "Projektmanagement lernen"
 msgid "Learn Sales Management"
 msgstr "Vertriebsmanagement lernen"
 
-#. Label of an action in the Onboarding Step 'How to Navigate in CMPERP'
+#. Label of an action in the Onboarding Step 'How to Navigate in CPMERP'
 #: setup/onboarding_step/navigation_help/navigation_help.json
 msgid "Learn about  Navigation options"
 msgstr ""
@@ -39189,7 +39189,7 @@ msgstr ""
 #: accounts/doctype/accounts_settings/accounts_settings.json
 #, python-format
 msgctxt "Accounts Settings"
-msgid "Learn about <a href=\"https://docs.cpmerp.com/docs/v13/user/manual/en/accounts/articles/common_party_accounting#:~:text=Common%20Party%20Accounting%20in%20CMPERP,Invoice%20against%20a%20primary%20Supplier.\">Common Party</a>"
+msgid "Learn about <a href=\"https://docs.cpmerp.com/docs/v13/user/manual/en/accounts/articles/common_party_accounting#:~:text=Common%20Party%20Accounting%20in%20CPMERP,Invoice%20against%20a%20primary%20Supplier.\">Common Party</a>"
 msgstr ""
 
 #. Label of an action in the Onboarding Step 'Updating Opening Balances'
@@ -39365,8 +39365,8 @@ msgstr "Lassen Sie uns die Lagerhaltung einrichten."
 
 #. Title of the Module Onboarding 'Home'
 #: setup/module_onboarding/home/home.json
-msgid "Let's begin your journey with CMPERP"
-msgstr "Beginnen wir Ihre Reise mit CMPERP"
+msgid "Let's begin your journey with CPMERP"
+msgstr "Beginnen wir Ihre Reise mit CPMERP"
 
 #. Label of an action in the Onboarding Step 'Purchase an Asset'
 #: assets/onboarding_step/asset_purchase/asset_purchase.json
@@ -74380,8 +74380,8 @@ msgid "This action will stop future billing. Are you sure you want to cancel thi
 msgstr "Diese Aktion wird die zukünftige Abrechnung stoppen. Sind Sie sicher, dass Sie dieses Abonnement kündigen möchten?"
 
 #: accounts/doctype/bank_account/bank_account.js:35
-msgid "This action will unlink this account from any external service integrating CMPERP with your bank accounts. It cannot be undone. Are you certain ?"
-msgstr "Durch diese Aktion wird die Verknüpfung dieses Kontos mit einem externen Dienst, der CMPERP mit Ihren Bankkonten integriert, aufgehoben. Es kann nicht ungeschehen gemacht werden. Bist du sicher ?"
+msgid "This action will unlink this account from any external service integrating CPMERP with your bank accounts. It cannot be undone. Are you certain ?"
+msgstr "Durch diese Aktion wird die Verknüpfung dieses Kontos mit einem externen Dienst, der CPMERP mit Ihren Bankkonten integriert, aufgehoben. Es kann nicht ungeschehen gemacht werden. Bist du sicher ?"
 
 #: buying/doctype/supplier_scorecard/supplier_scorecard_dashboard.py:7
 msgid "This covers all scorecards tied to this Setup"
@@ -80342,7 +80342,7 @@ msgid "Vouchers"
 msgstr "Belege"
 
 #: patches/v15_0/remove_exotel_integration.py:32
-msgid "WARNING: Exotel app has been separated from CMPERP, please install the app to continue using Exotel integration."
+msgid "WARNING: Exotel app has been separated from CPMERP, please install the app to continue using Exotel integration."
 msgstr ""
 
 #. Label of a Link field in DocType 'Material Request Item'
@@ -82616,8 +82616,8 @@ msgstr ""
 
 #. Success message of the Module Onboarding 'Home'
 #: setup/module_onboarding/home/home.json
-msgid "You're ready to start your journey with CMPERP"
-msgstr "Sie sind bereit, Ihre Reise mit CMPERP zu beginnen"
+msgid "You're ready to start your journey with CPMERP"
+msgstr "Sie sind bereit, Ihre Reise mit CPMERP zu beginnen"
 
 #. Option for the 'Provider' (Select) field in DocType 'Video'
 #: utilities/doctype/video/video.json
@@ -82630,12 +82630,12 @@ msgstr "Youtube"
 msgid "YouTube Interactions"
 msgstr "YouTube-Interaktionen"
 
-#. Description of the 'CMPERP Company' (Data) field in DocType 'Tally
+#. Description of the 'CPMERP Company' (Data) field in DocType 'Tally
 #. Migration'
 #: cpmerp_integrations/doctype/tally_migration/tally_migration.json
 msgctxt "Tally Migration"
-msgid "Your Company set in CMPERP"
-msgstr "Ihr Unternehmen in CMPERP eingestellt"
+msgid "Your Company set in CPMERP"
+msgstr "Ihr Unternehmen in CPMERP eingestellt"
 
 #: www/book_appointment/index.html:49
 msgid "Your Name (required)"
@@ -82696,8 +82696,8 @@ msgid "Zip File"
 msgstr "Zip-Datei"
 
 #: stock/reorder_item.py:367
-msgid "[Important] [CMPERP] Auto Reorder Errors"
-msgstr "[Wichtig] [CMPERP] Fehler bei der automatischen Neuordnung"
+msgid "[Important] [CPMERP] Auto Reorder Errors"
+msgstr "[Wichtig] [CPMERP] Fehler bei der automatischen Neuordnung"
 
 #: controllers/status_updater.py:247
 msgid "`Allow Negative rates for Items`"

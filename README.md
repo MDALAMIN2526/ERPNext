@@ -2,7 +2,7 @@
     <a href="https://cpmerp.com">
         <img src="https://raw.githubusercontent.com/frappe/cpmerp/develop/cpmerp/public/images/cpmerp-logo.png" height="128">
     </a>
-    <h2>CMPERP</h2>
+    <h2>CPMERP</h2>
     <p align="center">
         <p>ERP made simple</p>
     </p>
@@ -16,7 +16,7 @@
 
 </div>
 
-CMPERP as a monolith includes the following areas for managing businesses:
+CPMERP as a monolith includes the following areas for managing businesses:
 
 1. [Accounting](https://cpmerp.com/open-source-accounting)
 1. [Warehouse Management](https://cpmerp.com/distribution/warehouse-management-system)
@@ -30,10 +30,10 @@ CMPERP as a monolith includes the following areas for managing businesses:
 1. [Quality Management](https://cpmerp.com/docs/user/manual/en/quality-management)
 1. [Manufacturing](https://cpmerp.com/open-source-manufacturing-erp-software)
 1. [Website Management](https://cpmerp.com/open-source-website-builder-software)
-1. [Customize CMPERP](https://cpmerp.com/docs/user/manual/en/customize-cpmerp)
+1. [Customize CPMERP](https://cpmerp.com/docs/user/manual/en/customize-cpmerp)
 1. [And More](https://cpmerp.com/docs/user/manual/en/)
 
-CMPERP is built on the [Frappe Framework](https://github.com/frappe/frappe), a full-stack web app framework built with Python & JavaScript.
+CPMERP is built on the [Frappe Framework](https://github.com/frappe/frappe), a full-stack web app framework built with Python & JavaScript.
 
 ## Installation
 
@@ -50,20 +50,20 @@ CMPERP is built on the [Frappe Framework](https://github.com/frappe/frappe), a f
 
 ### Containerized Installation
 
-Use docker to deploy CMPERP in production or for development of [Frappe](https://github.com/frappe/frappe) apps. See https://github.com/frappe/frappe_docker for more details.
+Use docker to deploy CPMERP in production or for development of [Frappe](https://github.com/frappe/frappe) apps. See https://github.com/frappe/frappe_docker for more details.
 
 ### Manual Install
 
 The Easy Way: our install script for bench will install all dependencies (e.g. MariaDB). See https://github.com/frappe/bench for more details.
 
-New passwords will be created for the CMPERP "Administrator" user, the MariaDB root user, and the frappe user (the script displays the passwords and saves them to ~/frappe_passwords.txt).
+New passwords will be created for the CPMERP "Administrator" user, the MariaDB root user, and the frappe user (the script displays the passwords and saves them to ~/frappe_passwords.txt).
 
 
 ## Learning and community
 
-1. [Frappe School](https://frappe.school) - Learn Frappe Framework and CMPERP from the various courses by the maintainers or from the community.
-2. [Official documentation](https://docs.cpmerp.com/) - Extensive documentation for CMPERP.
-3. [Discussion Forum](https://discuss.cpmerp.com/) - Engage with community of CMPERP users and service providers.
+1. [Frappe School](https://frappe.school) - Learn Frappe Framework and CPMERP from the various courses by the maintainers or from the community.
+2. [Official documentation](https://docs.cpmerp.com/) - Extensive documentation for CPMERP.
+3. [Discussion Forum](https://discuss.cpmerp.com/) - Engage with community of CPMERP users and service providers.
 4. [Telegram Group](https://cpmerp_public.t.me) - Get instant help from huge community of users.
 
 
@@ -77,9 +77,9 @@ New passwords will be created for the CMPERP "Administrator" user, the MariaDB r
 
 GNU/General Public License (see [license.txt](license.txt))
 
-The CMPERP code is licensed as GNU General Public License (v3) and the Documentation is licensed as Creative Commons (CC-BY-SA-3.0) and the copyright is owned by Frappe Technologies Pvt Ltd (Frappe) and Contributors.
+The CPMERP code is licensed as GNU General Public License (v3) and the Documentation is licensed as Creative Commons (CC-BY-SA-3.0) and the copyright is owned by Frappe Technologies Pvt Ltd (Frappe) and Contributors.
 
-By contributing to CMPERP, you agree that your contributions will be licensed under its GNU General Public License (v3).
+By contributing to CPMERP, you agree that your contributions will be licensed under its GNU General Public License (v3).
 
 ## Logo and Trademark Policy
 

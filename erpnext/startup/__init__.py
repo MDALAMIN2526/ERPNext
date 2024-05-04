@@ -1,4 +1,4 @@
-# CMPERP - web based ERP (http://cpmerp.com)
+# CPMERP - web based ERP (http://cpmerp.com)
 # Copyright (C) 2012 Frappe Technologies Pvt Ltd
 #
 # This program is free software: you can redistribute it and/or modify
@@ -16,5 +16,5 @@
 
 # default settings that can be made for a user.
 
-product_name = "CMPERP"
+product_name = "CPMERP"
 user_defaults = {"Company": "company", "Territory": "territory"}

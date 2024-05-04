@@ -1,14 +1,14 @@
 name: Bug Report
-description: Report a bug encountered while using CMPERP
+description: Report a bug encountered while using CPMERP
 labels: ["bug"]
 
 body:
   - type: markdown
     attributes:
       value: |
-        Welcome to CMPERP issue tracker! Before creating an issue, please heed the following:
+        Welcome to CPMERP issue tracker! Before creating an issue, please heed the following:
 
-        1. This tracker should only be used to report bugs and request features / enhancements to CMPERP
+        1. This tracker should only be used to report bugs and request features / enhancements to CPMERP
             - For questions and general support, checkout the [user manual](https://docs.cpmerp.com/) or use [forum](https://discuss.cpmerp.com)
             - For documentation issues, propose edit on [documentation site](https://docs.cpmerp.com/) directly.
         2. When making a bug report, make sure you provide all required information. The easier it is for
@@ -28,7 +28,7 @@ body:
     id: module
     attributes:
       label: Module
-      description: Select affected module of CMPERP.
+      description: Select affected module of CPMERP.
       multiple: true
       options:
         - accounts
@@ -57,10 +57,10 @@ body:
     id: exact-version
     attributes:
       label: Version
-      description: Share exact version number of Frappe and CMPERP you are using.
+      description: Share exact version number of Frappe and CPMERP you are using.
       placeholder: |
         Frappe version -
-        CMPERP Verion -
+        CPMERP Verion -
     validations:
       required: true
 

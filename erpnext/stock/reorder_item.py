@@ -364,7 +364,7 @@ def get_comapny_wise_users(company):
 
 
 def notify_errors(exceptions_list):
-	subject = _("[Important] [CMPERP] Auto Reorder Errors")
+	subject = _("[Important] [CPMERP] Auto Reorder Errors")
 	content = (
 		_("Dear System Manager,")
 		+ "<br>"

@@ -192,7 +192,7 @@ cpmerp.patches.v13_0.delete_old_bank_reconciliation_doctypes
 cpmerp.patches.v13_0.update_vehicle_no_reqd_condition
 cpmerp.patches.v13_0.rename_membership_settings_to_non_profit_settings
 cpmerp.patches.v13_0.setup_uae_vat_fields
-execute:frappe.db.set_value('System Settings', None, 'app_name', 'CMPERP')
+execute:frappe.db.set_value('System Settings', None, 'app_name', 'CPMERP')
 cpmerp.patches.v12_0.purchase_receipt_status
 cpmerp.patches.v13_0.fix_non_unique_represents_company
 cpmerp.patches.v12_0.add_document_type_field_for_italy_einvoicing
@@ -262,7 +262,7 @@ cpmerp.patches.v14_0.clear_reconciliation_values_from_singles
 execute:frappe.rename_doc("Report", "TDS Payable Monthly", "Tax Withholding Details", force=True)
 
 [post_model_sync]
-execute:frappe.delete_doc_if_exists('Workspace', 'CMPERP Integrations Settings')
+execute:frappe.delete_doc_if_exists('Workspace', 'CPMERP Integrations Settings')
 cpmerp.patches.v14_0.update_posting_datetime_and_dropped_indexes #22-02-2024
 cpmerp.patches.v14_0.rename_ongoing_status_in_sla_documents
 cpmerp.patches.v14_0.delete_shopify_doctypes

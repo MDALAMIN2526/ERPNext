@@ -8,7 +8,7 @@ pip install frappe-bench
 bench -v init frappe-bench --skip-assets --skip-redis-config-generation --python "$(which python)"
 cd ./frappe-bench || exit
 
-echo "Get CMPERP..."
+echo "Get CPMERP..."
 bench get-app --skip-assets cpmerp "${GITHUB_WORKSPACE}"
 
 echo "Generating POT file..."

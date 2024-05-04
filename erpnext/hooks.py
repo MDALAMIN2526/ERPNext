@@ -1,5 +1,5 @@
 app_name = "cpmerp"
-app_title = "CMPERP"
+app_title = "CPMERP"
 app_publisher = "Frappe Technologies Pvt. Ltd."
 app_description = """ERP made simple"""
 app_icon = "fa fa-th"
@@ -26,7 +26,7 @@ doctype_js = {
 	"Contact": "public/js/contact.js",
 }
 
-override_doctype_class = {"Address": "cpmerp.accounts.custom.address.CMPERPAddress"}
+override_doctype_class = {"Address": "cpmerp.accounts.custom.address.CPMERPAddress"}
 
 override_whitelisted_methods = {"frappe.www.contact.send_message": "cpmerp.templates.utils.send_message"}
 
@@ -457,7 +457,7 @@ default_mail_footer = """
 	<span>
 		Sent via
 		<a class="text-muted" href="https://cpmerp.com?source=via_email_footer" target="_blank">
-			CMPERP
+			CPMERP
 		</a>
 	</span>
 """
@@ -578,7 +578,7 @@ user_privacy_documents = [
 	},
 ]
 
-# CMPERP doctypes for Global Search
+# CPMERP doctypes for Global Search
 global_search_doctypes = {
 	"Default": [
 		{"doctype": "Customer", "index": 0},

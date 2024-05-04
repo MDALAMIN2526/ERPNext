@@ -12,7 +12,7 @@ Assets
 Portal
 Maintenance
 Regional
-CMPERP Integrations
+CPMERP Integrations
 Quality Management
 Communication
 Telephony

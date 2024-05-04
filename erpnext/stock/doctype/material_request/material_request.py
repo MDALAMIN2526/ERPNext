@@ -1,7 +1,7 @@
 # Copyright (c) 2015, Frappe Technologies Pvt. Ltd. and Contributors
 # License: GNU General Public License v3. See license.txt
 
-# CMPERP - web based ERP (http://cpmerp.com)
+# CPMERP - web based ERP (http://cpmerp.com)
 # For license information, please see license.txt
 
 

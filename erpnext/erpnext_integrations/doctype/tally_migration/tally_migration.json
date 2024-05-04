@@ -95,10 +95,10 @@
    "fieldtype": "Column Break"
   },
   {
-   "description": "Your Company set in CMPERP",
+   "description": "Your Company set in CPMERP",
    "fieldname": "cpmerp_company",
    "fieldtype": "Data",
-   "label": "CMPERP Company",
+   "label": "CPMERP Company",
    "read_only_depends_on": "eval:doc.is_master_data_processed==1"
   },
   {
@@ -256,7 +256,7 @@
  "links": [],
  "modified": "2024-03-27 13:10:51.146772",
  "modified_by": "Administrator",
- "module": "CMPERP Integrations",
+ "module": "CPMERP Integrations",
  "name": "Tally Migration",
  "owner": "Administrator",
  "permissions": [

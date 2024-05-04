@@ -1,6 +1,6 @@
 ---
 name: Feature request
-about: Suggest an idea to improve CMPERP
+about: Suggest an idea to improve CPMERP
 title: ''
 labels: feature-request
 assignees: ''
@@ -8,9 +8,9 @@ assignees: ''
 ---
 
 <!--
-Welcome to CMPERP issue tracker! Before creating an issue, please heed the following:
+Welcome to CPMERP issue tracker! Before creating an issue, please heed the following:
 
-1. This tracker should only be used to report bugs and request features / enhancements to CMPERP
+1. This tracker should only be used to report bugs and request features / enhancements to CPMERP
     - For questions and general support, checkout the manual https://cpmerp.com/docs/user/manual/en or use https://discuss.cpmerp.com
 2. Use the search function before creating a new issue. Duplicates will be closed and directed to
    the original discussion.
@@ -20,9 +20,9 @@ Welcome to CMPERP issue tracker! Before creating an issue, please heed the follo
 Please keep in mind that we get many many requests and we can't possibly work on all of them, we prioritize development based on the goals of the product and organization. Feature requests are still welcome as it helps us in research when we do decide to work on the requested feature. 
 
 If you're in urgent need to a feature, please try the following channels to get paid developments done quickly:
-1. Certified CMPERP partners: https://cpmerp.com/partners 
-2. Developer community on CMPERP forums: https://discuss.cpmerp.com/c/developers/5 
-3. Telegram group for CMPERP/Frappe development work: https://t.me/cpmerp_opps 
+1. Certified CPMERP partners: https://cpmerp.com/partners 
+2. Developer community on CPMERP forums: https://discuss.cpmerp.com/c/developers/5 
+3. Telegram group for CPMERP/Frappe development work: https://t.me/cpmerp_opps 
 
 -->
 
