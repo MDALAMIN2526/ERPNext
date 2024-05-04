@@ -5,7 +5,7 @@
 import frappe
 from frappe.tests.utils import FrappeTestCase
 
-from erpnext.buying.doctype.supplier_scorecard_variable.supplier_scorecard_variable import (
+from cpmerp.buying.doctype.supplier_scorecard_variable.supplier_scorecard_variable import (
 	VariablePathNotFound,
 )
 

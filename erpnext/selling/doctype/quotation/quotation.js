@@ -3,10 +3,10 @@
 
 cur_frm.cscript.tax_table = "Sales Taxes and Charges";
 
-erpnext.accounts.taxes.setup_tax_validations("Sales Taxes and Charges Template");
-erpnext.accounts.taxes.setup_tax_filters("Sales Taxes and Charges");
-erpnext.pre_sales.set_as_lost("Quotation");
-erpnext.sales_common.setup_selling_controller();
+cpmerp.accounts.taxes.setup_tax_validations("Sales Taxes and Charges Template");
+cpmerp.accounts.taxes.setup_tax_filters("Sales Taxes and Charges");
+cpmerp.pre_sales.set_as_lost("Quotation");
+cpmerp.sales_common.setup_selling_controller();
 
 frappe.ui.form.on("Quotation", {
 	setup: function (frm) {
@@ -78,13 +78,13 @@ frappe.ui.form.on("Quotation", {
 	},
 });
 
-erpnext.selling.QuotationController = class QuotationController extends erpnext.selling.SellingController {
+cpmerp.selling.QuotationController = class QuotationController extends cpmerp.selling.SellingController {
 	onload(doc, dt, dn) {
 		super.onload(doc, dt, dn);
 	}
 	party_name() {
 		var me = this;
-		erpnext.utils.get_party_details(this.frm, null, null, function () {
+		cpmerp.utils.get_party_details(this.frm, null, null, function () {
 			me.apply_price_list();
 		});
 
@@ -138,8 +138,8 @@ erpnext.selling.QuotationController = class QuotationController extends erpnext.
 			this.frm.add_custom_button(
 				__("Opportunity"),
 				function () {
-					erpnext.utils.map_current_doc({
-						method: "erpnext.crm.doctype.opportunity.opportunity.make_quotation",
+					cpmerp.utils.map_current_doc({
+						method: "cpmerp.crm.doctype.opportunity.opportunity.make_quotation",
 						source_doctype: "Opportunity",
 						target: me.frm,
 						setters: [
@@ -180,7 +180,7 @@ erpnext.selling.QuotationController = class QuotationController extends erpnext.
 			this.show_alternative_items_dialog();
 		} else {
 			frappe.model.open_mapped_doc({
-				method: "erpnext.selling.doctype.quotation.quotation.make_sales_order",
+				method: "cpmerp.selling.doctype.quotation.quotation.make_sales_order",
 				frm: me.frm,
 			});
 		}
@@ -193,7 +193,7 @@ erpnext.selling.QuotationController = class QuotationController extends erpnext.
 		} else if (this.frm.doc.quotation_to == "Lead") {
 			this.frm.set_df_property("party_name", "label", "Lead");
 			this.frm.fields_dict.party_name.get_query = function () {
-				return { query: "erpnext.controllers.queries.lead_query" };
+				return { query: "cpmerp.controllers.queries.lead_query" };
 			};
 		} else if (this.frm.doc.quotation_to == "Prospect") {
 			this.frm.set_df_property("party_name", "label", "Prospect");
@@ -246,7 +246,7 @@ erpnext.selling.QuotationController = class QuotationController extends erpnext.
 		}
 
 		frappe.call({
-			method: "erpnext.crm.doctype.lead.lead.get_lead_details",
+			method: "cpmerp.crm.doctype.lead.lead.get_lead_details",
 			args: {
 				lead: this.frm.doc.party_name,
 				posting_date: this.frm.doc.transaction_date,
@@ -345,7 +345,7 @@ erpnext.selling.QuotationController = class QuotationController extends erpnext.
 			],
 			primary_action: function () {
 				frappe.model.open_mapped_doc({
-					method: "erpnext.selling.doctype.quotation.quotation.make_sales_order",
+					method: "cpmerp.selling.doctype.quotation.quotation.make_sales_order",
 					frm: me.frm,
 					args: {
 						selected_items: dialog.fields_dict.alternative_items.grid.get_selected_children(),
@@ -366,7 +366,7 @@ erpnext.selling.QuotationController = class QuotationController extends erpnext.
 	}
 };
 
-cur_frm.script_manager.make(erpnext.selling.QuotationController);
+cur_frm.script_manager.make(cpmerp.selling.QuotationController);
 
 frappe.ui.form.on(
 	"Quotation Item",

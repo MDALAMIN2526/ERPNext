@@ -1,8 +1,8 @@
 // Copyright (c) 2015, Frappe Technologies Pvt. Ltd. and Contributors
 // For license information, please see license.txt
 
-frappe.provide("erpnext.accounts");
-erpnext.accounts.PaymentReconciliationController = class PaymentReconciliationController extends (
+frappe.provide("cpmerp.accounts");
+cpmerp.accounts.PaymentReconciliationController = class PaymentReconciliationController extends (
 	frappe.ui.form.Controller
 ) {
 	onload() {
@@ -103,7 +103,7 @@ erpnext.accounts.PaymentReconciliationController = class PaymentReconciliationCo
 					if (r.message) {
 						this.frm
 							.call({
-								method: "erpnext.accounts.doctype.process_payment_reconciliation.process_payment_reconciliation.is_any_doc_running",
+								method: "cpmerp.accounts.doctype.process_payment_reconciliation.process_payment_reconciliation.is_any_doc_running",
 								args: {
 									for_filter: {
 										company: this.frm.doc.company,
@@ -134,7 +134,7 @@ erpnext.accounts.PaymentReconciliationController = class PaymentReconciliationCo
 	}
 	set_query_for_dimension_filters() {
 		frappe.call({
-			method: "erpnext.accounts.doctype.payment_reconciliation.payment_reconciliation.get_queries_for_dimension_filters",
+			method: "cpmerp.accounts.doctype.payment_reconciliation.payment_reconciliation.get_queries_for_dimension_filters",
 			args: {
 				company: this.frm.doc.company,
 			},
@@ -167,7 +167,7 @@ erpnext.accounts.PaymentReconciliationController = class PaymentReconciliationCo
 
 		if (!this.frm.doc.receivable_payable_account && this.frm.doc.party_type && this.frm.doc.party) {
 			frappe.call({
-				method: "erpnext.accounts.party.get_party_account",
+				method: "cpmerp.accounts.party.get_party_account",
 				args: {
 					company: this.frm.doc.company,
 					party_type: this.frm.doc.party_type,
@@ -403,4 +403,4 @@ frappe.ui.form.on("Payment Reconciliation Allocation", {
 	},
 });
 
-extend_cscript(cur_frm.cscript, new erpnext.accounts.PaymentReconciliationController({ frm: cur_frm }));
+extend_cscript(cur_frm.cscript, new cpmerp.accounts.PaymentReconciliationController({ frm: cur_frm }));

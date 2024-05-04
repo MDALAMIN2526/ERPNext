@@ -1,6 +1,6 @@
 import frappe
 
-from erpnext.setup.doctype.incoterm.incoterm import create_incoterms
+from cpmerp.setup.doctype.incoterm.incoterm import create_incoterms
 
 
 def execute():

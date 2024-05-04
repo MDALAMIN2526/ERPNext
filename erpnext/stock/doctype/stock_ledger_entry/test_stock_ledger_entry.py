@@ -11,23 +11,23 @@ from frappe.custom.doctype.property_setter.property_setter import make_property_
 from frappe.tests.utils import FrappeTestCase, change_settings
 from frappe.utils import add_days, add_to_date, flt, today
 
-from erpnext.accounts.doctype.gl_entry.gl_entry import rename_gle_sle_docs
-from erpnext.stock.doctype.delivery_note.test_delivery_note import create_delivery_note
-from erpnext.stock.doctype.item.test_item import make_item
-from erpnext.stock.doctype.landed_cost_voucher.test_landed_cost_voucher import (
+from cpmerp.accounts.doctype.gl_entry.gl_entry import rename_gle_sle_docs
+from cpmerp.stock.doctype.delivery_note.test_delivery_note import create_delivery_note
+from cpmerp.stock.doctype.item.test_item import make_item
+from cpmerp.stock.doctype.landed_cost_voucher.test_landed_cost_voucher import (
 	create_landed_cost_voucher,
 )
-from erpnext.stock.doctype.purchase_receipt.test_purchase_receipt import make_purchase_receipt
-from erpnext.stock.doctype.serial_and_batch_bundle.test_serial_and_batch_bundle import (
+from cpmerp.stock.doctype.purchase_receipt.test_purchase_receipt import make_purchase_receipt
+from cpmerp.stock.doctype.serial_and_batch_bundle.test_serial_and_batch_bundle import (
 	make_serial_batch_bundle,
 )
-from erpnext.stock.doctype.stock_entry.stock_entry_utils import make_stock_entry
-from erpnext.stock.doctype.stock_ledger_entry.stock_ledger_entry import BackDatedStockTransaction
-from erpnext.stock.doctype.stock_reconciliation.test_stock_reconciliation import (
+from cpmerp.stock.doctype.stock_entry.stock_entry_utils import make_stock_entry
+from cpmerp.stock.doctype.stock_ledger_entry.stock_ledger_entry import BackDatedStockTransaction
+from cpmerp.stock.doctype.stock_reconciliation.test_stock_reconciliation import (
 	create_stock_reconciliation,
 )
-from erpnext.stock.stock_ledger import get_previous_sle
-from erpnext.stock.tests.test_utils import StockTestMixin
+from cpmerp.stock.stock_ledger import get_previous_sle
+from cpmerp.stock.tests.test_utils import StockTestMixin
 
 
 class TestStockLedgerEntry(FrappeTestCase, StockTestMixin):
@@ -1253,8 +1253,8 @@ class TestStockLedgerEntry(FrappeTestCase, StockTestMixin):
 	@change_settings("System Settings", {"float_precision": 4})
 	def test_negative_qty_with_precision(self):
 		"Test if system precision is respected while validating negative qty."
-		from erpnext.stock.doctype.item.test_item import create_item
-		from erpnext.stock.utils import get_stock_balance
+		from cpmerp.stock.doctype.item.test_item import create_item
+		from cpmerp.stock.utils import get_stock_balance
 
 		item_code = "ItemPrecisionTest"
 		warehouse = "_Test Warehouse - _TC"
@@ -1304,7 +1304,7 @@ class TestStockLedgerEntry(FrappeTestCase, StockTestMixin):
 		Check if future negative qty is asserted as per precision 3.
 		-0.0003 should be considered as 0.000
 		"""
-		from erpnext.stock.doctype.item.test_item import create_item
+		from cpmerp.stock.doctype.item.test_item import create_item
 
 		item_code = "ItemPrecisionTest"
 		warehouse = "_Test Warehouse - _TC"
@@ -1419,8 +1419,8 @@ def create_items(items=None, uoms=None):
 def setup_item_valuation_test(
 	valuation_method="FIFO", suffix=None, use_batchwise_valuation=1, batches_list=None
 ):
-	from erpnext.stock.doctype.item.test_item import make_item
-	from erpnext.stock.doctype.warehouse.test_warehouse import create_warehouse
+	from cpmerp.stock.doctype.item.test_item import make_item
+	from cpmerp.stock.doctype.warehouse.test_warehouse import create_warehouse
 
 	if batches_list is None:
 		batches_list = ["X", "Y"]
@@ -1451,7 +1451,7 @@ def setup_item_valuation_test(
 
 
 def create_purchase_receipt_entries_for_batchwise_item_valuation_test(pr_entry_list):
-	from erpnext.stock.doctype.purchase_receipt.test_purchase_receipt import make_purchase_receipt
+	from cpmerp.stock.doctype.purchase_receipt.test_purchase_receipt import make_purchase_receipt
 
 	prs = []
 
@@ -1463,8 +1463,8 @@ def create_purchase_receipt_entries_for_batchwise_item_valuation_test(pr_entry_l
 
 
 def create_delivery_note_entries_for_batchwise_item_valuation_test(dn_entry_list):
-	from erpnext.selling.doctype.sales_order.sales_order import make_delivery_note
-	from erpnext.selling.doctype.sales_order.test_sales_order import make_sales_order
+	from cpmerp.selling.doctype.sales_order.sales_order import make_delivery_note
+	from cpmerp.selling.doctype.sales_order.test_sales_order import make_sales_order
 
 	dns = []
 	for item, warehouse, batch_no, qty, rate in dn_entry_list:

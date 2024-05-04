@@ -8,9 +8,9 @@ from frappe.model.meta import get_field_precision
 from frappe.utils import cstr, flt
 from frappe.utils.xlsxutils import handle_html
 
-from erpnext.accounts.report.sales_register.sales_register import get_mode_of_payments
-from erpnext.accounts.report.utils import get_query_columns, get_values_for_columns
-from erpnext.selling.report.item_wise_sales_history.item_wise_sales_history import (
+from cpmerp.accounts.report.sales_register.sales_register import get_mode_of_payments
+from cpmerp.accounts.report.utils import get_query_columns, get_values_for_columns
+from cpmerp.selling.report.item_wise_sales_history.item_wise_sales_history import (
 	get_customer_details,
 )
 

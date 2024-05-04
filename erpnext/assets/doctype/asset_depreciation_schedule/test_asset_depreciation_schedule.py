@@ -4,8 +4,8 @@
 import frappe
 from frappe.tests.utils import FrappeTestCase
 
-from erpnext.assets.doctype.asset.test_asset import create_asset, create_asset_data
-from erpnext.assets.doctype.asset_depreciation_schedule.asset_depreciation_schedule import (
+from cpmerp.assets.doctype.asset.test_asset import create_asset, create_asset_data
+from cpmerp.assets.doctype.asset_depreciation_schedule.asset_depreciation_schedule import (
 	get_asset_depr_schedule_doc,
 )
 

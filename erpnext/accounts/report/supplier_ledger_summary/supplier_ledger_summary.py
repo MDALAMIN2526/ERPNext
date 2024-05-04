@@ -2,7 +2,7 @@
 # For license information, please see license.txt
 
 
-from erpnext.accounts.report.customer_ledger_summary.customer_ledger_summary import (
+from cpmerp.accounts.report.customer_ledger_summary.customer_ledger_summary import (
 	PartyLedgerSummaryReport,
 )
 

@@ -2,10 +2,10 @@ import unittest
 
 import frappe
 
-import erpnext
+import cpmerp
 
 
-@erpnext.allow_regional
+@cpmerp.allow_regional
 def test_method():
 	return "original"
 

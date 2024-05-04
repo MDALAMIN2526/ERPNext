@@ -2,7 +2,7 @@ import unittest
 
 import frappe
 
-from erpnext.crm.report.sales_pipeline_analytics.sales_pipeline_analytics import execute
+from cpmerp.crm.report.sales_pipeline_analytics.sales_pipeline_analytics import execute
 
 
 class TestSalesPipelineAnalytics(unittest.TestCase):

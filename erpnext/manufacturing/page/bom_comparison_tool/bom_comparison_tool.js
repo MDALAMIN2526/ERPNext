@@ -5,10 +5,10 @@ frappe.pages["bom-comparison-tool"].on_page_load = function (wrapper) {
 		single_column: true,
 	});
 
-	new erpnext.BOMComparisonTool(page);
+	new cpmerp.BOMComparisonTool(page);
 };
 
-erpnext.BOMComparisonTool = class BOMComparisonTool {
+cpmerp.BOMComparisonTool = class BOMComparisonTool {
 	constructor(page) {
 		this.page = page;
 		this.make_form();
@@ -76,7 +76,7 @@ erpnext.BOMComparisonTool = class BOMComparisonTool {
 		`);
 
 		frappe
-			.call("erpnext.manufacturing.doctype.bom.bom.get_bom_diff", {
+			.call("cpmerp.manufacturing.doctype.bom.bom.get_bom_diff", {
 				bom1: name1,
 				bom2: name2,
 			})

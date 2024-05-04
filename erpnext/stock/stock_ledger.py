@@ -21,17 +21,17 @@ from frappe.utils import (
 	parse_json,
 )
 
-import erpnext
-from erpnext.stock.doctype.bin.bin import update_qty as update_bin_qty
-from erpnext.stock.doctype.inventory_dimension.inventory_dimension import get_inventory_dimensions
-from erpnext.stock.doctype.serial_and_batch_bundle.serial_and_batch_bundle import (
+import cpmerp
+from cpmerp.stock.doctype.bin.bin import update_qty as update_bin_qty
+from cpmerp.stock.doctype.inventory_dimension.inventory_dimension import get_inventory_dimensions
+from cpmerp.stock.doctype.serial_and_batch_bundle.serial_and_batch_bundle import (
 	get_available_batches,
 )
-from erpnext.stock.doctype.stock_reservation_entry.stock_reservation_entry import (
+from cpmerp.stock.doctype.stock_reservation_entry.stock_reservation_entry import (
 	get_sre_reserved_batch_nos_details,
 	get_sre_reserved_serial_nos_details,
 )
-from erpnext.stock.utils import (
+from cpmerp.stock.utils import (
 	get_combine_datetime,
 	get_incoming_outgoing_rate_for_cancel,
 	get_incoming_rate,
@@ -39,7 +39,7 @@ from erpnext.stock.utils import (
 	get_stock_balance,
 	get_valuation_method,
 )
-from erpnext.stock.valuation import FIFOValuation, LIFOValuation, round_off_if_near_zero
+from cpmerp.stock.valuation import FIFOValuation, LIFOValuation, round_off_if_near_zero
 
 
 class NegativeStockError(frappe.ValidationError):
@@ -61,7 +61,7 @@ def make_sl_entries(sl_entries, allow_negative_stock=False, via_landed_cost_vouc
 	        such cases certain validations need to be ignored (like negative
 	                        stock)
 	"""
-	from erpnext.controllers.stock_controller import future_sle_exists
+	from cpmerp.controllers.stock_controller import future_sle_exists
 
 	if sl_entries:
 		cancel = sl_entries[0].get("is_cancelled")
@@ -154,7 +154,7 @@ def get_args_for_future_sle(row):
 
 
 def validate_serial_no(sle):
-	from erpnext.stock.doctype.serial_no.serial_no import get_serial_nos
+	from cpmerp.stock.doctype.serial_no.serial_no import get_serial_nos
 
 	for sn in get_serial_nos(sle.serial_no):
 		args = copy.deepcopy(sle)
@@ -584,7 +584,7 @@ class update_entries_after:
 		)
 
 	def build(self):
-		from erpnext.controllers.stock_controller import future_sle_exists
+		from cpmerp.controllers.stock_controller import future_sle_exists
 
 		if self.args.get("sle_id"):
 			self.process_sle_against_current_timestamp()
@@ -855,7 +855,7 @@ class update_entries_after:
 			self.update_serial_no_status(sle)
 
 	def update_serial_no_status(self, sle):
-		from erpnext.stock.serial_batch_bundle import get_serial_nos
+		from cpmerp.stock.serial_batch_bundle import get_serial_nos
 
 		serial_nos = get_serial_nos(sle.serial_and_batch_bundle)
 		if not serial_nos:
@@ -938,7 +938,7 @@ class update_entries_after:
 			"Subcontracting Receipt",
 		):
 			if frappe.get_cached_value(sle.voucher_type, sle.voucher_no, "is_return"):
-				from erpnext.controllers.sales_and_purchase_return import (
+				from cpmerp.controllers.sales_and_purchase_return import (
 					get_rate_for_return,  # don't move this import to top
 				)
 
@@ -1316,7 +1316,7 @@ class update_entries_after:
 			sle.voucher_type,
 			sle.voucher_no,
 			self.allow_zero_rate,
-			currency=erpnext.get_company_currency(sle.company),
+			currency=cpmerp.get_company_currency(sle.company),
 			company=sle.company,
 		)
 
@@ -1579,7 +1579,7 @@ def get_valuation_rate(
 	batch_no=None,
 	serial_and_batch_bundle=None,
 ):
-	from erpnext.stock.serial_batch_bundle import BatchNoValuation
+	from cpmerp.stock.serial_batch_bundle import BatchNoValuation
 
 	if not company:
 		company = frappe.get_cached_value("Warehouse", warehouse, "company")
@@ -1651,7 +1651,7 @@ def get_valuation_rate(
 		not allow_zero_rate
 		and not valuation_rate
 		and raise_error_if_no_rate
-		and cint(erpnext.is_perpetual_inventory_enabled(company))
+		and cint(cpmerp.is_perpetual_inventory_enabled(company))
 	):
 		form_link = get_link_to_form("Item", item_code)
 

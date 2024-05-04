@@ -24,10 +24,10 @@ from frappe.utils import (
 	time_diff_in_seconds,
 )
 
-from erpnext.manufacturing.doctype.manufacturing_settings.manufacturing_settings import (
+from cpmerp.manufacturing.doctype.manufacturing_settings.manufacturing_settings import (
 	get_mins_between_operations,
 )
-from erpnext.manufacturing.doctype.workstation_type.workstation_type import get_workstations
+from cpmerp.manufacturing.doctype.workstation_type.workstation_type import get_workstations
 
 
 class OverlapError(frappe.ValidationError):
@@ -59,15 +59,15 @@ class JobCard(Document):
 	if TYPE_CHECKING:
 		from frappe.types import DF
 
-		from erpnext.manufacturing.doctype.job_card_item.job_card_item import JobCardItem
-		from erpnext.manufacturing.doctype.job_card_operation.job_card_operation import JobCardOperation
-		from erpnext.manufacturing.doctype.job_card_scheduled_time.job_card_scheduled_time import (
+		from cpmerp.manufacturing.doctype.job_card_item.job_card_item import JobCardItem
+		from cpmerp.manufacturing.doctype.job_card_operation.job_card_operation import JobCardOperation
+		from cpmerp.manufacturing.doctype.job_card_scheduled_time.job_card_scheduled_time import (
 			JobCardScheduledTime,
 		)
-		from erpnext.manufacturing.doctype.job_card_scrap_item.job_card_scrap_item import (
+		from cpmerp.manufacturing.doctype.job_card_scrap_item.job_card_scrap_item import (
 			JobCardScrapItem,
 		)
-		from erpnext.manufacturing.doctype.job_card_time_log.job_card_time_log import JobCardTimeLog
+		from cpmerp.manufacturing.doctype.job_card_time_log.job_card_time_log import JobCardTimeLog
 
 		actual_end_date: DF.Datetime | None
 		actual_start_date: DF.Datetime | None

@@ -2,10 +2,10 @@ import frappe
 from frappe.tests.utils import FrappeTestCase
 from frappe.utils import add_days
 
-from erpnext.selling.doctype.sales_order.sales_order import make_delivery_note, make_sales_invoice
-from erpnext.selling.doctype.sales_order.test_sales_order import make_sales_order
-from erpnext.selling.report.sales_order_analysis.sales_order_analysis import execute
-from erpnext.stock.doctype.item.test_item import create_item
+from cpmerp.selling.doctype.sales_order.sales_order import make_delivery_note, make_sales_invoice
+from cpmerp.selling.doctype.sales_order.test_sales_order import make_sales_order
+from cpmerp.selling.report.sales_order_analysis.sales_order_analysis import execute
+from cpmerp.stock.doctype.item.test_item import create_item
 
 test_dependencies = ["Sales Order", "Item", "Sales Invoice", "Delivery Note"]
 

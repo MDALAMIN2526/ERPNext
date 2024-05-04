@@ -6,9 +6,9 @@ import unittest
 import frappe
 from frappe.utils import add_months, getdate
 
-from erpnext.accounts.doctype.payment_entry.test_payment_entry import get_payment_entry
-from erpnext.accounts.doctype.purchase_invoice.test_purchase_invoice import make_purchase_invoice
-from erpnext.tests.utils import if_lending_app_installed, if_lending_app_not_installed
+from cpmerp.accounts.doctype.payment_entry.test_payment_entry import get_payment_entry
+from cpmerp.accounts.doctype.purchase_invoice.test_purchase_invoice import make_purchase_invoice
+from cpmerp.tests.utils import if_lending_app_installed, if_lending_app_not_installed
 
 
 class TestBankClearance(unittest.TestCase):

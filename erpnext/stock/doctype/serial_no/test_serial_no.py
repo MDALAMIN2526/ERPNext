@@ -1,7 +1,7 @@
 # Copyright (c) 2015, Frappe Technologies Pvt. Ltd. and Contributors
 # License: GNU General Public License v3. See license.txt
 
-# ERPNext - web based ERP (http://erpnext.com)
+# CMPERP - web based ERP (http://cpmerp.com)
 # For license information, please see license.txt
 
 
@@ -9,17 +9,17 @@ import frappe
 from frappe import _dict
 from frappe.tests.utils import FrappeTestCase
 
-from erpnext.stock.doctype.delivery_note.test_delivery_note import create_delivery_note
-from erpnext.stock.doctype.item.test_item import make_item
-from erpnext.stock.doctype.purchase_receipt.test_purchase_receipt import make_purchase_receipt
-from erpnext.stock.doctype.serial_and_batch_bundle.test_serial_and_batch_bundle import (
+from cpmerp.stock.doctype.delivery_note.test_delivery_note import create_delivery_note
+from cpmerp.stock.doctype.item.test_item import make_item
+from cpmerp.stock.doctype.purchase_receipt.test_purchase_receipt import make_purchase_receipt
+from cpmerp.stock.doctype.serial_and_batch_bundle.test_serial_and_batch_bundle import (
 	get_batch_from_bundle,
 	get_serial_nos_from_bundle,
 )
-from erpnext.stock.doctype.serial_no.serial_no import *
-from erpnext.stock.doctype.stock_entry.stock_entry_utils import make_stock_entry
-from erpnext.stock.doctype.stock_entry.test_stock_entry import make_serialized_item
-from erpnext.stock.doctype.warehouse.test_warehouse import create_warehouse
+from cpmerp.stock.doctype.serial_no.serial_no import *
+from cpmerp.stock.doctype.stock_entry.stock_entry_utils import make_stock_entry
+from cpmerp.stock.doctype.stock_entry.test_stock_entry import make_serialized_item
+from cpmerp.stock.doctype.warehouse.test_warehouse import create_warehouse
 
 test_dependencies = ["Item"]
 test_records = frappe.get_test_records("Serial No")
@@ -327,7 +327,7 @@ class TestSerialNo(FrappeTestCase):
 
 
 def get_auto_serial_nos(kwargs):
-	from erpnext.stock.doctype.serial_and_batch_bundle.serial_and_batch_bundle import (
+	from cpmerp.stock.doctype.serial_and_batch_bundle.serial_and_batch_bundle import (
 		get_available_serial_nos,
 	)
 

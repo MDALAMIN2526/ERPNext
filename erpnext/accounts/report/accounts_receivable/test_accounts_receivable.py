@@ -3,11 +3,11 @@ from frappe import qb
 from frappe.tests.utils import FrappeTestCase, change_settings
 from frappe.utils import add_days, flt, getdate, today
 
-from erpnext.accounts.doctype.payment_entry.payment_entry import get_payment_entry
-from erpnext.accounts.doctype.sales_invoice.test_sales_invoice import create_sales_invoice
-from erpnext.accounts.report.accounts_receivable.accounts_receivable import execute
-from erpnext.accounts.test.accounts_mixin import AccountsTestMixin
-from erpnext.selling.doctype.sales_order.test_sales_order import make_sales_order
+from cpmerp.accounts.doctype.payment_entry.payment_entry import get_payment_entry
+from cpmerp.accounts.doctype.sales_invoice.test_sales_invoice import create_sales_invoice
+from cpmerp.accounts.report.accounts_receivable.accounts_receivable import execute
+from cpmerp.accounts.test.accounts_mixin import AccountsTestMixin
+from cpmerp.selling.doctype.sales_order.test_sales_order import make_sales_order
 
 
 class TestAccountsReceivable(AccountsTestMixin, FrappeTestCase):

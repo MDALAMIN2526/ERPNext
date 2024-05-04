@@ -1,10 +1,10 @@
 // Copyright (c) 2015, Frappe Technologies Pvt. Ltd. and Contributors
 // License: GNU General Public License v3. See license.txt
-frappe.provide("erpnext");
-frappe.provide("erpnext.utils");
-frappe.provide("erpnext.stock.utils");
+frappe.provide("cpmerp");
+frappe.provide("cpmerp.utils");
+frappe.provide("cpmerp.stock.utils");
 
-$.extend(erpnext, {
+$.extend(cpmerp, {
 	get_currency: function (company) {
 		if (!company && cur_frm) company = cur_frm.doc.company;
 		if (company)
@@ -31,8 +31,8 @@ $.extend(erpnext, {
 			if (companies.length === 1) {
 				if (!frm.doc.company) frm.set_value("company", companies[0]);
 				frm.toggle_display("company", false);
-			} else if (erpnext.last_selected_company) {
-				if (!frm.doc.company) frm.set_value("company", erpnext.last_selected_company);
+			} else if (cpmerp.last_selected_company) {
+				if (!frm.doc.company) frm.set_value("company", cpmerp.last_selected_company);
 			}
 		}
 	},
@@ -75,13 +75,13 @@ $.extend(erpnext, {
 	},
 });
 
-$.extend(erpnext.utils, {
+$.extend(cpmerp.utils, {
 	set_party_dashboard_indicators: function (frm) {
 		if (frm.doc.__onload && frm.doc.__onload.dashboard_info) {
 			var company_wise_info = frm.doc.__onload.dashboard_info;
 			if (company_wise_info.length > 1) {
 				company_wise_info.forEach(function (info) {
-					erpnext.utils.add_indicator_for_multicompany(frm, info);
+					cpmerp.utils.add_indicator_for_multicompany(frm, info);
 				});
 			} else if (company_wise_info.length === 1) {
 				frm.dashboard.add_indicator(
@@ -196,7 +196,7 @@ $.extend(erpnext.utils, {
 	get_terms: function (tc_name, doc, callback) {
 		if (tc_name) {
 			return frappe.call({
-				method: "erpnext.setup.doctype.terms_and_conditions.terms_and_conditions.get_terms_and_conditions",
+				method: "cpmerp.setup.doctype.terms_and_conditions.terms_and_conditions.get_terms_and_conditions",
 				args: {
 					template_name: tc_name,
 					doc: doc,
@@ -210,7 +210,7 @@ $.extend(erpnext.utils, {
 
 	make_bank_account: function (doctype, docname) {
 		frappe.call({
-			method: "erpnext.accounts.doctype.bank_account.bank_account.make_bank_account",
+			method: "cpmerp.accounts.doctype.bank_account.bank_account.make_bank_account",
 			args: {
 				doctype: doctype,
 				docname: docname,
@@ -227,7 +227,7 @@ $.extend(erpnext.utils, {
 		let filters = frappe.query_reports[report_name].filters;
 
 		frappe.call({
-			method: "erpnext.accounts.doctype.accounting_dimension.accounting_dimension.get_dimensions",
+			method: "cpmerp.accounts.doctype.accounting_dimension.accounting_dimension.get_dimensions",
 			callback: function (r) {
 				let accounting_dimensions = r.message[0];
 				accounting_dimensions.forEach((dimension) => {
@@ -252,7 +252,7 @@ $.extend(erpnext.utils, {
 		let filters = frappe.query_reports[report_name].filters;
 
 		frappe.call({
-			method: "erpnext.stock.doctype.inventory_dimension.inventory_dimension.get_inventory_dimensions",
+			method: "cpmerp.stock.doctype.inventory_dimension.inventory_dimension.get_inventory_dimensions",
 			callback: function (r) {
 				if (r.message && r.message.length) {
 					r.message.forEach((dimension) => {
@@ -295,7 +295,7 @@ $.extend(erpnext.utils, {
 
 	make_pricing_rule: function (doctype, docname) {
 		frappe.call({
-			method: "erpnext.accounts.doctype.pricing_rule.pricing_rule.make_pricing_rule",
+			method: "cpmerp.accounts.doctype.pricing_rule.pricing_rule.make_pricing_rule",
 			args: {
 				doctype: doctype,
 				docname: docname,
@@ -399,7 +399,7 @@ $.extend(erpnext.utils, {
 			item_row.has_batch_no = r.message.has_batch_no;
 			item_row.has_serial_no = r.message.has_serial_no;
 
-			new erpnext.SerialBatchPackageSelector(frm, item_row, (r) => {
+			new cpmerp.SerialBatchPackageSelector(frm, item_row, (r) => {
 				if (r) {
 					let update_values = {
 						serial_and_batch_bundle: r.name,
@@ -430,7 +430,7 @@ $.extend(erpnext.utils, {
 
 		let fiscal_year = "";
 		frappe.call({
-			method: "erpnext.accounts.utils.get_fiscal_year",
+			method: "cpmerp.accounts.utils.get_fiscal_year",
 			args: {
 				date: date,
 				boolean: boolean,
@@ -447,7 +447,7 @@ $.extend(erpnext.utils, {
 	},
 });
 
-erpnext.utils.select_alternate_items = function (opts) {
+cpmerp.utils.select_alternate_items = function (opts) {
 	const frm = opts.frm;
 	const warehouse_field = opts.warehouse_field || "warehouse";
 	const item_field = opts.item_field || "item_code";
@@ -492,7 +492,7 @@ erpnext.utils.select_alternate_items = function (opts) {
 							const warehouse = this.grid_row.on_grid_fields_dict.warehouse.get_value();
 							if (item_code && warehouse) {
 								frappe.call({
-									method: "erpnext.stock.utils.get_latest_stock_qty",
+									method: "cpmerp.stock.utils.get_latest_stock_qty",
 									args: {
 										item_code: item_code,
 										warehouse: warehouse,
@@ -507,7 +507,7 @@ erpnext.utils.select_alternate_items = function (opts) {
 						},
 						get_query: (e) => {
 							return {
-								query: "erpnext.stock.doctype.item_alternative.item_alternative.get_alternative_items",
+								query: "cpmerp.stock.doctype.item_alternative.item_alternative.get_alternative_items",
 								filters: {
 									item_code: e.item_code,
 								},
@@ -526,7 +526,7 @@ erpnext.utils.select_alternate_items = function (opts) {
 							const item_code = this.grid_row.on_grid_fields_dict.item_code.get_value();
 							if (item_code && warehouse) {
 								frappe.call({
-									method: "erpnext.stock.utils.get_latest_stock_qty",
+									method: "cpmerp.stock.utils.get_latest_stock_qty",
 									args: {
 										item_code: item_code,
 										warehouse: warehouse,
@@ -595,7 +595,7 @@ erpnext.utils.select_alternate_items = function (opts) {
 	dialog.show();
 };
 
-erpnext.utils.update_child_items = function (opts) {
+cpmerp.utils.update_child_items = function (opts) {
 	const frm = opts.frm;
 	const cannot_add_row = typeof opts.cannot_add_row === "undefined" ? true : opts.cannot_add_row;
 	const child_docname = typeof opts.cannot_add_row === "undefined" ? "items" : opts.child_docname;
@@ -650,7 +650,7 @@ erpnext.utils.update_child_items = function (opts) {
 					}
 				}
 				return {
-					query: "erpnext.controllers.queries.item_query",
+					query: "cpmerp.controllers.queries.item_query",
 					filters: filters,
 				};
 			},
@@ -664,7 +664,7 @@ erpnext.utils.update_child_items = function (opts) {
 			reqd: 1,
 			onchange: function () {
 				frappe.call({
-					method: "erpnext.stock.get_item_details.get_conversion_factor",
+					method: "cpmerp.stock.get_item_details.get_conversion_factor",
 					args: { item_code: this.doc.item_code, uom: this.value },
 					callback: (r) => {
 						if (!r.exc) {
@@ -793,7 +793,7 @@ erpnext.utils.update_child_items = function (opts) {
 		update_items: function () {
 			const trans_items = this.get_values()["trans_items"].filter((item) => !!item.item_code);
 			frappe.call({
-				method: "erpnext.controllers.accounts_controller.update_child_qty_rate",
+				method: "cpmerp.controllers.accounts_controller.update_child_qty_rate",
 				freeze: true,
 				args: {
 					parent_doctype: frm.doc.doctype,
@@ -814,7 +814,7 @@ erpnext.utils.update_child_items = function (opts) {
 	dialog.show();
 };
 
-erpnext.utils.map_current_doc = function (opts) {
+cpmerp.utils.map_current_doc = function (opts) {
 	function _map() {
 		if ($.isArray(cur_frm.doc.items) && cur_frm.doc.items.length > 0) {
 			// remove first item row if empty
@@ -1021,7 +1021,7 @@ $(document).on("app_ready", function () {
 				if (!frm.doc.service_level_agreement) return;
 
 				frappe.call({
-					method: "erpnext.support.doctype.service_level_agreement.service_level_agreement.get_service_level_agreement_filters",
+					method: "cpmerp.support.doctype.service_level_agreement.service_level_agreement.get_service_level_agreement_filters",
 					args: {
 						doctype: frm.doc.doctype,
 						name: frm.doc.service_level_agreement,
@@ -1179,9 +1179,9 @@ function attach_selector_button(inner_text, append_loction, context, grid_row) {
 	});
 }
 
-$.extend(erpnext.stock.utils, {
+$.extend(cpmerp.stock.utils, {
 	set_item_details_using_barcode(frm, child_row, callback) {
-		const barcode_scanner = new erpnext.utils.BarcodeScanner({ frm: frm });
+		const barcode_scanner = new cpmerp.utils.BarcodeScanner({ frm: frm });
 		barcode_scanner.scan_api_call(child_row.barcode, callback);
 	},
 });

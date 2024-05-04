@@ -5,7 +5,7 @@ import frappe
 from frappe.tests.utils import FrappeTestCase
 from frappe.utils import flt, today
 
-from erpnext.accounts.report.general_ledger.general_ledger import execute
+from cpmerp.accounts.report.general_ledger.general_ledger import execute
 
 
 class TestGeneralLedger(FrappeTestCase):

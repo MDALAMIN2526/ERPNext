@@ -7,11 +7,11 @@ from frappe import _
 from frappe.query_builder.functions import Sum
 from frappe.utils import add_days, flt
 
-from erpnext.accounts.doctype.accounting_dimension.accounting_dimension import (
+from cpmerp.accounts.doctype.accounting_dimension.accounting_dimension import (
 	get_accounting_dimensions,
 )
-from erpnext.accounts.utils import get_account_currency, get_fiscal_year, validate_fiscal_year
-from erpnext.controllers.accounts_controller import AccountsController
+from cpmerp.accounts.utils import get_account_currency, get_fiscal_year, validate_fiscal_year
+from cpmerp.controllers.accounts_controller import AccountsController
 
 
 class PeriodClosingVoucher(AccountsController):
@@ -364,7 +364,7 @@ class PeriodClosingVoucher(AccountsController):
 
 
 def process_gl_entries(gl_entries, voucher_name):
-	from erpnext.accounts.general_ledger import make_gl_entries
+	from cpmerp.accounts.general_ledger import make_gl_entries
 
 	try:
 		if gl_entries:
@@ -377,7 +377,7 @@ def process_gl_entries(gl_entries, voucher_name):
 
 
 def process_closing_entries(gl_entries, closing_entries, voucher_name, company, closing_date):
-	from erpnext.accounts.doctype.account_closing_balance.account_closing_balance import (
+	from cpmerp.accounts.doctype.account_closing_balance.account_closing_balance import (
 		make_closing_entries,
 	)
 
@@ -390,7 +390,7 @@ def process_closing_entries(gl_entries, closing_entries, voucher_name, company, 
 
 
 def make_reverse_gl_entries(voucher_type, voucher_no):
-	from erpnext.accounts.general_ledger import make_reverse_gl_entries
+	from cpmerp.accounts.general_ledger import make_reverse_gl_entries
 
 	try:
 		make_reverse_gl_entries(voucher_type=voucher_type, voucher_no=voucher_no)

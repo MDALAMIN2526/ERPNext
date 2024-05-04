@@ -7,7 +7,7 @@ from frappe import _
 from frappe.model.document import Document
 from frappe.utils import getdate, nowdate
 
-from erpnext.assets.doctype.asset_maintenance.asset_maintenance import calculate_next_due_date
+from cpmerp.assets.doctype.asset_maintenance.asset_maintenance import calculate_next_due_date
 
 
 class AssetMaintenanceLog(Document):

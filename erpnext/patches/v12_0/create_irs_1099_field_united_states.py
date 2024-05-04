@@ -1,6 +1,6 @@
 import frappe
 
-from erpnext.regional.united_states.setup import make_custom_fields
+from cpmerp.regional.united_states.setup import make_custom_fields
 
 
 def execute():

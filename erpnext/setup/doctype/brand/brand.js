@@ -50,7 +50,7 @@ frappe.ui.form.on("Brand", {
 		) {
 			const row = locals[cdt][cdn];
 			return {
-				query: "erpnext.controllers.queries.get_expense_account",
+				query: "cpmerp.controllers.queries.get_expense_account",
 				filters: { company: row.company },
 			};
 		};
@@ -91,7 +91,7 @@ frappe.ui.form.on("Brand", {
 		) {
 			const row = locals[cdt][cdn];
 			return {
-				query: "erpnext.controllers.queries.get_income_account",
+				query: "cpmerp.controllers.queries.get_income_account",
 				filters: { company: row.company },
 			};
 		};

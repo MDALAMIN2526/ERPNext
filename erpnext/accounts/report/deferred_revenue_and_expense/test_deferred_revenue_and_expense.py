@@ -3,14 +3,14 @@ from frappe import qb
 from frappe.tests.utils import FrappeTestCase, change_settings
 from frappe.utils import nowdate
 
-from erpnext.accounts.doctype.account.test_account import create_account
-from erpnext.accounts.doctype.purchase_invoice.test_purchase_invoice import make_purchase_invoice
-from erpnext.accounts.doctype.sales_invoice.test_sales_invoice import create_sales_invoice
-from erpnext.accounts.report.deferred_revenue_and_expense.deferred_revenue_and_expense import (
+from cpmerp.accounts.doctype.account.test_account import create_account
+from cpmerp.accounts.doctype.purchase_invoice.test_purchase_invoice import make_purchase_invoice
+from cpmerp.accounts.doctype.sales_invoice.test_sales_invoice import create_sales_invoice
+from cpmerp.accounts.report.deferred_revenue_and_expense.deferred_revenue_and_expense import (
 	Deferred_Revenue_and_Expense_Report,
 )
-from erpnext.accounts.test.accounts_mixin import AccountsTestMixin
-from erpnext.accounts.utils import get_fiscal_year
+from cpmerp.accounts.test.accounts_mixin import AccountsTestMixin
+from cpmerp.accounts.utils import get_fiscal_year
 
 
 class TestDeferredRevenueAndExpense(FrappeTestCase, AccountsTestMixin):

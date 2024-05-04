@@ -7,16 +7,16 @@ from frappe import _, bold, msgprint
 from frappe.query_builder.functions import CombineDatetime, Sum
 from frappe.utils import add_to_date, cint, cstr, flt
 
-import erpnext
-from erpnext.accounts.utils import get_company_default
-from erpnext.controllers.stock_controller import StockController
-from erpnext.stock.doctype.batch.batch import get_available_batches, get_batch_qty
-from erpnext.stock.doctype.inventory_dimension.inventory_dimension import get_inventory_dimensions
-from erpnext.stock.doctype.serial_and_batch_bundle.serial_and_batch_bundle import (
+import cpmerp
+from cpmerp.accounts.utils import get_company_default
+from cpmerp.controllers.stock_controller import StockController
+from cpmerp.stock.doctype.batch.batch import get_available_batches, get_batch_qty
+from cpmerp.stock.doctype.inventory_dimension.inventory_dimension import get_inventory_dimensions
+from cpmerp.stock.doctype.serial_and_batch_bundle.serial_and_batch_bundle import (
 	get_available_serial_nos,
 )
-from erpnext.stock.doctype.serial_no.serial_no import get_serial_nos
-from erpnext.stock.utils import get_stock_balance
+from cpmerp.stock.doctype.serial_no.serial_no import get_serial_nos
+from cpmerp.stock.utils import get_stock_balance
 
 
 class OpeningEntryAccountError(frappe.ValidationError):
@@ -36,7 +36,7 @@ class StockReconciliation(StockController):
 	if TYPE_CHECKING:
 		from frappe.types import DF
 
-		from erpnext.stock.doctype.stock_reconciliation_item.stock_reconciliation_item import (
+		from cpmerp.stock.doctype.stock_reconciliation_item.stock_reconciliation_item import (
 			StockReconciliationItem,
 		)
 
@@ -119,7 +119,7 @@ class StockReconciliation(StockController):
 		self.delete_auto_created_batches()
 
 	def make_bundle_for_current_qty(self):
-		from erpnext.stock.serial_batch_bundle import SerialBatchCreation
+		from cpmerp.stock.serial_batch_bundle import SerialBatchCreation
 
 		for row in self.items:
 			if not row.use_serial_batch_fields:
@@ -470,7 +470,7 @@ class StockReconciliation(StockController):
 			raise frappe.ValidationError(self.validation_messages)
 
 	def validate_item(self, item_code, row):
-		from erpnext.stock.doctype.item.item import (
+		from cpmerp.stock.doctype.item.item import (
 			validate_cancelled_item,
 			validate_end_of_life,
 			validate_is_stock_item,
@@ -494,7 +494,7 @@ class StockReconciliation(StockController):
 	def validate_reserved_stock(self) -> None:
 		"""Raises an exception if there is any reserved stock for the items in the Stock Reconciliation."""
 
-		from erpnext.stock.doctype.stock_reservation_entry.stock_reservation_entry import (
+		from cpmerp.stock.doctype.stock_reservation_entry.stock_reservation_entry import (
 			get_sre_reserved_qty_for_items_and_warehouses as get_sre_reserved_qty_details,
 		)
 
@@ -534,7 +534,7 @@ class StockReconciliation(StockController):
 	def update_stock_ledger(self):
 		"""find difference between current and expected entries
 		and create stock ledger entries based on the difference"""
-		from erpnext.stock.stock_ledger import get_previous_sle
+		from cpmerp.stock.stock_ledger import get_previous_sle
 
 		sl_entries = []
 		for row in self.items:
@@ -591,7 +591,7 @@ class StockReconciliation(StockController):
 			self.make_sl_entries(sl_entries, allow_negative_stock=allow_negative_stock)
 
 	def make_adjustment_entry(self, row, sl_entries):
-		from erpnext.stock.stock_ledger import get_stock_value_difference
+		from cpmerp.stock.stock_ledger import get_stock_value_difference
 
 		difference_amount = get_stock_value_difference(
 			row.item_code, row.warehouse, self.posting_date, self.posting_time
@@ -754,7 +754,7 @@ class StockReconciliation(StockController):
 		return super().get_gl_entries(warehouse_account, self.expense_account, self.cost_center)
 
 	def validate_expense_account(self):
-		if not cint(erpnext.is_perpetual_inventory_enabled(self.company)):
+		if not cint(cpmerp.is_perpetual_inventory_enabled(self.company)):
 			return
 
 		if not self.expense_account:
@@ -824,7 +824,7 @@ class StockReconciliation(StockController):
 			self._cancel()
 
 	def recalculate_current_qty(self, voucher_detail_no):
-		from erpnext.stock.stock_ledger import get_valuation_rate
+		from cpmerp.stock.stock_ledger import get_valuation_rate
 
 		for row in self.items:
 			if voucher_detail_no != row.name:
@@ -1128,7 +1128,7 @@ def get_item_data(row, qty, valuation_rate, serial_no=None):
 
 
 def get_itemwise_batch(warehouse, posting_date, company, item_code=None):
-	from erpnext.stock.report.batch_wise_balance_history.batch_wise_balance_history import execute
+	from cpmerp.stock.report.batch_wise_balance_history.batch_wise_balance_history import execute
 
 	itemwise_batch_data = {}
 

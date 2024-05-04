@@ -6,8 +6,8 @@ import frappe
 from frappe import _
 from frappe.utils import flt
 
-import erpnext
-from erpnext.accounts.report.item_wise_sales_register.item_wise_sales_register import (
+import cpmerp
+from cpmerp.accounts.report.item_wise_sales_register.item_wise_sales_register import (
 	add_sub_total_row,
 	add_total_row,
 	get_grand_total,
@@ -15,7 +15,7 @@ from erpnext.accounts.report.item_wise_sales_register.item_wise_sales_register i
 	get_group_by_conditions,
 	get_tax_accounts,
 )
-from erpnext.accounts.report.utils import get_query_columns, get_values_for_columns
+from cpmerp.accounts.report.utils import get_query_columns, get_values_for_columns
 
 
 def execute(filters=None):
@@ -27,7 +27,7 @@ def _execute(filters=None, additional_table_columns=None):
 		filters = {}
 	columns = get_columns(additional_table_columns, filters)
 
-	company_currency = erpnext.get_company_currency(filters.company)
+	company_currency = cpmerp.get_company_currency(filters.company)
 
 	item_list = get_items(filters, get_query_columns(additional_table_columns))
 	aii_account_map = get_aii_accounts()

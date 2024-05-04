@@ -38,7 +38,7 @@ frappe.query_reports["Item-wise Sales History"] = {
 			options: "Item",
 			get_query: () => {
 				return {
-					query: "erpnext.controllers.queries.item_query",
+					query: "cpmerp.controllers.queries.item_query",
 				};
 			},
 		},

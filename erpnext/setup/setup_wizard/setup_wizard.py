@@ -5,8 +5,8 @@
 import frappe
 from frappe import _
 
-from erpnext.setup.demo import setup_demo_data
-from erpnext.setup.setup_wizard.operations import install_fixtures as fixtures
+from cpmerp.setup.demo import setup_demo_data
+from cpmerp.setup.setup_wizard.operations import install_fixtures as fixtures
 
 
 def get_setup_stages(args=None):

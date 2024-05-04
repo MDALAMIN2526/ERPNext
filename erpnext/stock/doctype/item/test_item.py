@@ -10,13 +10,13 @@ from frappe.test_runner import make_test_objects
 from frappe.tests.utils import FrappeTestCase, change_settings
 from frappe.utils import add_days, today
 
-from erpnext.controllers.item_variant import (
+from cpmerp.controllers.item_variant import (
 	InvalidItemAttributeValueError,
 	ItemVariantExistsError,
 	create_variant,
 	get_variant,
 )
-from erpnext.stock.doctype.item.item import (
+from cpmerp.stock.doctype.item.item import (
 	DataValidationError,
 	InvalidBarcode,
 	StockExistsForTemplate,
@@ -25,8 +25,8 @@ from erpnext.stock.doctype.item.item import (
 	get_uom_conv_factor,
 	validate_is_stock_item,
 )
-from erpnext.stock.doctype.stock_entry.stock_entry_utils import make_stock_entry
-from erpnext.stock.get_item_details import get_item_details
+from cpmerp.stock.doctype.stock_entry.stock_entry_utils import make_stock_entry
+from cpmerp.stock.get_item_details import get_item_details
 
 test_ignore = ["BOM"]
 test_dependencies = ["Warehouse", "Item Group", "Item Tax Template", "Brand", "Item Attribute"]
@@ -482,7 +482,7 @@ class TestItem(FrappeTestCase):
 		)
 
 	def test_item_merging_with_product_bundle(self):
-		from erpnext.selling.doctype.product_bundle.test_product_bundle import make_product_bundle
+		from cpmerp.selling.doctype.product_bundle.test_product_bundle import make_product_bundle
 
 		create_item("Test Item Bundle Item 1", is_stock_item=False)
 		create_item("Test Item Bundle Item 2", is_stock_item=False)
@@ -663,7 +663,7 @@ class TestItem(FrappeTestCase):
 		self.assertRaises(frappe.ValidationError, item.save)
 
 	def test_check_stock_uom_with_bin_no_sle(self):
-		from erpnext.stock.stock_balance import update_bin_qty
+		from cpmerp.stock.stock_balance import update_bin_qty
 
 		item = create_item("_Item with bin qty")
 		item.stock_uom = "Gram"
@@ -712,7 +712,7 @@ class TestItem(FrappeTestCase):
 		"""When global settings are disabled check that item that allows
 		negative stock can still consume material in all known stock
 		transactions that consume inventory."""
-		from erpnext.stock.stock_ledger import is_negative_stock_allowed
+		from cpmerp.stock.stock_ledger import is_negative_stock_allowed
 
 		item = make_item("_TestNegativeItemSetting", {"allow_negative_stock": 1, "valuation_rate": 100})
 		self.assertTrue(is_negative_stock_allowed(item_code=item.name))
@@ -722,7 +722,7 @@ class TestItem(FrappeTestCase):
 	@change_settings("Stock Settings", {"allow_negative_stock": 0})
 	def test_backdated_negative_stock(self):
 		"""same as test above but backdated entries"""
-		from erpnext.stock.doctype.stock_entry.stock_entry_utils import make_stock_entry
+		from cpmerp.stock.doctype.stock_entry.stock_entry_utils import make_stock_entry
 
 		item = make_item("_TestNegativeItemSetting", {"allow_negative_stock": 1, "valuation_rate": 100})
 
@@ -749,10 +749,10 @@ class TestItem(FrappeTestCase):
 	def consume_item_code_with_differet_stock_transactions(
 		self, item_code, warehouse="_Test Warehouse - _TC"
 	):
-		from erpnext.accounts.doctype.sales_invoice.test_sales_invoice import create_sales_invoice
-		from erpnext.stock.doctype.delivery_note.test_delivery_note import create_delivery_note
-		from erpnext.stock.doctype.purchase_receipt.test_purchase_receipt import make_purchase_receipt
-		from erpnext.stock.doctype.stock_entry.stock_entry_utils import make_stock_entry
+		from cpmerp.accounts.doctype.sales_invoice.test_sales_invoice import create_sales_invoice
+		from cpmerp.stock.doctype.delivery_note.test_delivery_note import create_delivery_note
+		from cpmerp.stock.doctype.purchase_receipt.test_purchase_receipt import make_purchase_receipt
+		from cpmerp.stock.doctype.stock_entry.stock_entry_utils import make_stock_entry
 
 		typical_args = {"item_code": item_code, "warehouse": warehouse}
 
@@ -764,7 +764,7 @@ class TestItem(FrappeTestCase):
 		make_purchase_receipt(is_return=True, qty=-1, **typical_args)
 
 	def test_item_dashboard(self):
-		from erpnext.stock.dashboard.item_dashboard import get_data
+		from cpmerp.stock.dashboard.item_dashboard import get_data
 
 		self.assertTrue(get_data(item_code="_Test Item"))
 		self.assertTrue(get_data(warehouse="_Test Warehouse - _TC"))
@@ -779,10 +779,10 @@ class TestItem(FrappeTestCase):
 
 	def test_item_type_field_change(self):
 		"""Check if critical fields like `is_stock_item`, `has_batch_no` are not changed if transactions exist."""
-		from erpnext.accounts.doctype.purchase_invoice.test_purchase_invoice import make_purchase_invoice
-		from erpnext.stock.doctype.delivery_note.test_delivery_note import create_delivery_note
-		from erpnext.stock.doctype.purchase_receipt.test_purchase_receipt import make_purchase_receipt
-		from erpnext.stock.doctype.stock_entry.stock_entry_utils import make_stock_entry
+		from cpmerp.accounts.doctype.purchase_invoice.test_purchase_invoice import make_purchase_invoice
+		from cpmerp.stock.doctype.delivery_note.test_delivery_note import create_delivery_note
+		from cpmerp.stock.doctype.purchase_receipt.test_purchase_receipt import make_purchase_receipt
+		from cpmerp.stock.doctype.stock_entry.stock_entry_utils import make_stock_entry
 
 		transaction_creators = [
 			lambda i: make_purchase_receipt(item_code=i),
@@ -843,7 +843,7 @@ class TestItem(FrappeTestCase):
 		self.assertEqual(item.is_stock_item, 1)
 
 	def test_serach_fields_for_item(self):
-		from erpnext.controllers.queries import item_query
+		from cpmerp.controllers.queries import item_query
 
 		make_property_setter("Item", None, "search_fields", "item_name", "Data", for_doctype="Doctype")
 

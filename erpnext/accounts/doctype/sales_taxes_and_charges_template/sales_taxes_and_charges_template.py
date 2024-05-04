@@ -7,7 +7,7 @@ from frappe import _
 from frappe.model.document import Document
 from frappe.utils import flt
 
-from erpnext.controllers.accounts_controller import (
+from cpmerp.controllers.accounts_controller import (
 	validate_account_head,
 	validate_cost_center,
 	validate_inclusive_tax,
@@ -24,7 +24,7 @@ class SalesTaxesandChargesTemplate(Document):
 	if TYPE_CHECKING:
 		from frappe.types import DF
 
-		from erpnext.accounts.doctype.sales_taxes_and_charges.sales_taxes_and_charges import (
+		from cpmerp.accounts.doctype.sales_taxes_and_charges.sales_taxes_and_charges import (
 			SalesTaxesandCharges,
 		)
 

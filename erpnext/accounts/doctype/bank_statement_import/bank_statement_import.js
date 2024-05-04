@@ -328,7 +328,7 @@ frappe.ui.form.on("Bank Statement Import", {
 
 	export_errored_rows(frm) {
 		open_url_post(
-			"/api/method/erpnext.accounts.doctype.bank_statement_import.bank_statement_import.download_errored_template",
+			"/api/method/cpmerp.accounts.doctype.bank_statement_import.bank_statement_import.download_errored_template",
 			{
 				data_import_name: frm.doc.name,
 			},

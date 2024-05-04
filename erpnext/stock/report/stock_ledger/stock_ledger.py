@@ -10,11 +10,11 @@ from frappe import _
 from frappe.query_builder.functions import CombineDatetime
 from frappe.utils import cint, flt
 
-from erpnext.stock.doctype.inventory_dimension.inventory_dimension import get_inventory_dimensions
-from erpnext.stock.doctype.serial_no.serial_no import get_serial_nos
-from erpnext.stock.doctype.stock_reconciliation.stock_reconciliation import get_stock_balance_for
-from erpnext.stock.doctype.warehouse.warehouse import apply_warehouse_filter
-from erpnext.stock.utils import (
+from cpmerp.stock.doctype.inventory_dimension.inventory_dimension import get_inventory_dimensions
+from cpmerp.stock.doctype.serial_no.serial_no import get_serial_nos
+from cpmerp.stock.doctype.stock_reconciliation.stock_reconciliation import get_stock_balance_for
+from cpmerp.stock.doctype.warehouse.warehouse import apply_warehouse_filter
+from cpmerp.stock.utils import (
 	is_reposting_item_valuation_in_progress,
 	update_included_uom_in_report,
 )
@@ -508,7 +508,7 @@ def get_opening_balance(filters, columns, sl_entries):
 	if not (filters.item_code and filters.warehouse and filters.from_date):
 		return
 
-	from erpnext.stock.stock_ledger import get_previous_sle
+	from cpmerp.stock.stock_ledger import get_previous_sle
 
 	last_entry = get_previous_sle(
 		{

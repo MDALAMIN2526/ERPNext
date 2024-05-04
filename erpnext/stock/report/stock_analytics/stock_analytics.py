@@ -9,9 +9,9 @@ from frappe.utils import get_first_day as get_first_day_of_month
 from frappe.utils import get_first_day_of_week, get_quarter_start, getdate
 from frappe.utils.nestedset import get_descendants_of
 
-from erpnext.accounts.utils import get_fiscal_year
-from erpnext.stock.doctype.warehouse.warehouse import apply_warehouse_filter
-from erpnext.stock.utils import is_reposting_item_valuation_in_progress
+from cpmerp.accounts.utils import get_fiscal_year
+from cpmerp.stock.doctype.warehouse.warehouse import apply_warehouse_filter
+from cpmerp.stock.utils import is_reposting_item_valuation_in_progress
 
 
 def execute(filters=None):

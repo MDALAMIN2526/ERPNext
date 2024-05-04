@@ -1,6 +1,6 @@
 import frappe
 
-from erpnext.accounts.general_ledger import make_reverse_gl_entries
+from cpmerp.accounts.general_ledger import make_reverse_gl_entries
 
 
 def execute():

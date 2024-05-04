@@ -1,6 +1,6 @@
 from frappe.tests.utils import FrappeTestCase
 
-from erpnext.utilities.activation import get_level
+from cpmerp.utilities.activation import get_level
 
 
 class TestActivation(FrappeTestCase):

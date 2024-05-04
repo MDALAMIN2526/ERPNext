@@ -5,19 +5,19 @@ import unittest
 
 import frappe
 
-from erpnext.accounts.doctype.accounting_dimension.test_accounting_dimension import (
+from cpmerp.accounts.doctype.accounting_dimension.test_accounting_dimension import (
 	create_dimension,
 	disable_dimension,
 )
-from erpnext.accounts.doctype.pos_closing_entry.pos_closing_entry import (
+from cpmerp.accounts.doctype.pos_closing_entry.pos_closing_entry import (
 	make_closing_entry_from_opening,
 )
-from erpnext.accounts.doctype.pos_invoice.pos_invoice import make_sales_return
-from erpnext.accounts.doctype.pos_invoice.test_pos_invoice import create_pos_invoice
-from erpnext.accounts.doctype.pos_opening_entry.test_pos_opening_entry import create_opening_entry
-from erpnext.accounts.doctype.pos_profile.test_pos_profile import make_pos_profile
-from erpnext.selling.page.point_of_sale.point_of_sale import get_items
-from erpnext.stock.doctype.stock_entry.test_stock_entry import make_stock_entry
+from cpmerp.accounts.doctype.pos_invoice.pos_invoice import make_sales_return
+from cpmerp.accounts.doctype.pos_invoice.test_pos_invoice import create_pos_invoice
+from cpmerp.accounts.doctype.pos_opening_entry.test_pos_opening_entry import create_opening_entry
+from cpmerp.accounts.doctype.pos_profile.test_pos_profile import make_pos_profile
+from cpmerp.selling.page.point_of_sale.point_of_sale import get_items
+from cpmerp.stock.doctype.stock_entry.test_stock_entry import make_stock_entry
 
 
 class TestPOSClosingEntry(unittest.TestCase):

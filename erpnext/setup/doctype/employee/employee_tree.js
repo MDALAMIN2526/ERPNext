@@ -1,12 +1,12 @@
 frappe.treeview_settings["Employee"] = {
-	get_tree_nodes: "erpnext.setup.doctype.employee.employee.get_children",
+	get_tree_nodes: "cpmerp.setup.doctype.employee.employee.get_children",
 	filters: [
 		{
 			fieldname: "company",
 			fieldtype: "Select",
-			options: ["All Companies"].concat(erpnext.utils.get_tree_options("company")),
+			options: ["All Companies"].concat(cpmerp.utils.get_tree_options("company")),
 			label: __("Company"),
-			default: erpnext.utils.get_tree_default("company"),
+			default: cpmerp.utils.get_tree_default("company"),
 		},
 	],
 	breadcrumb: "Hr",

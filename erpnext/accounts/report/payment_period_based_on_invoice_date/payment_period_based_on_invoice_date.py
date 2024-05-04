@@ -6,7 +6,7 @@ import frappe
 from frappe import _
 from frappe.utils import flt, getdate
 
-from erpnext.accounts.report.accounts_receivable.accounts_receivable import ReceivablePayableReport
+from cpmerp.accounts.report.accounts_receivable.accounts_receivable import ReceivablePayableReport
 
 
 def execute(filters=None):

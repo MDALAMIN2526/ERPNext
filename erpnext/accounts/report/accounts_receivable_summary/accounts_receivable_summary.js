@@ -157,7 +157,7 @@ frappe.query_reports["Accounts Receivable Summary"] = {
 	},
 };
 
-erpnext.utils.add_dimensions("Accounts Receivable Summary", 9);
+cpmerp.utils.add_dimensions("Accounts Receivable Summary", 9);
 
 function get_party_type_options() {
 	let options = [];

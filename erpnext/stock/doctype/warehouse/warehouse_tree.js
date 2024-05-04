@@ -1,15 +1,15 @@
 frappe.treeview_settings["Warehouse"] = {
-	get_tree_nodes: "erpnext.stock.doctype.warehouse.warehouse.get_children",
-	add_tree_node: "erpnext.stock.doctype.warehouse.warehouse.add_node",
+	get_tree_nodes: "cpmerp.stock.doctype.warehouse.warehouse.get_children",
+	add_tree_node: "cpmerp.stock.doctype.warehouse.warehouse.add_node",
 	get_tree_root: false,
 	root_label: "Warehouses",
 	filters: [
 		{
 			fieldname: "company",
 			fieldtype: "Select",
-			options: erpnext.utils.get_tree_options("company"),
+			options: cpmerp.utils.get_tree_options("company"),
 			label: __("Company"),
-			default: erpnext.utils.get_tree_default("company"),
+			default: cpmerp.utils.get_tree_default("company"),
 		},
 	],
 	fields: [

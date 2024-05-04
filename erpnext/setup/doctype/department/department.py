@@ -5,7 +5,7 @@
 import frappe
 from frappe.utils.nestedset import NestedSet, get_root_of
 
-from erpnext.utilities.transaction_base import delete_events
+from cpmerp.utilities.transaction_base import delete_events
 
 
 class Department(NestedSet):

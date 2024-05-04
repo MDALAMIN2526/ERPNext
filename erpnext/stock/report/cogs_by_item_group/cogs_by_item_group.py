@@ -8,7 +8,7 @@ import frappe
 from frappe import _
 from frappe.utils import date_diff
 
-from erpnext.accounts.report.general_ledger.general_ledger import get_gl_entries
+from cpmerp.accounts.report.general_ledger.general_ledger import get_gl_entries
 
 Filters = frappe._dict
 Row = frappe._dict

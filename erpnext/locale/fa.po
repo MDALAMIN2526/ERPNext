@@ -1,10 +1,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: frappe\n"
-"Report-Msgid-Bugs-To: info@erpnext.com\n"
+"Report-Msgid-Bugs-To: info@cpmerp.com\n"
 "POT-Creation-Date: 2024-04-07 09:35+0000\n"
 "PO-Revision-Date: 2024-04-10 08:40\n"
-"Last-Translator: info@erpnext.com\n"
+"Last-Translator: info@cpmerp.com\n"
 "Language-Team: Persian\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -14,7 +14,7 @@ msgstr ""
 "X-Crowdin-Project: frappe\n"
 "X-Crowdin-Project-ID: 639578\n"
 "X-Crowdin-Language: fa\n"
-"X-Crowdin-File: /[frappe.erpnext] develop/erpnext/locale/main.pot\n"
+"X-Crowdin-File: /[frappe.cpmerp] develop/cpmerp/locale/main.pot\n"
 "X-Crowdin-File-ID: 46\n"
 "Language: fa_IR\n"
 
@@ -64,19 +64,19 @@ msgstr "\"مورد ارائه شده توسط مشتری\" نمی تواند د�
 msgid "\"Is Fixed Asset\" cannot be unchecked, as Asset record exists against the item"
 msgstr "علامت \"دارایی ثابت است\" را نمی توان بردارید، زیرا سابقه دارایی در برابر آیتم وجود دارد"
 
-#: erpnext_integrations/doctype/tally_migration/tally_migration.js:132
+#: cpmerp_integrations/doctype/tally_migration/tally_migration.js:132
 msgid "#"
 msgstr ""
 
 #. Description of the Onboarding Step 'Accounts Settings'
 #: accounts/onboarding_step/accounts_settings/accounts_settings.json
 msgid "# Account Settings\n\n"
-"In ERPNext, Accounting features are configurable as per your business needs. Accounts Settings is the place to define some of your accounting preferences like:\n\n"
+"In CMPERP, Accounting features are configurable as per your business needs. Accounts Settings is the place to define some of your accounting preferences like:\n\n"
 " - Credit Limit and over billing settings\n"
 " - Taxation preferences\n"
 " - Deferred accounting preferences\n"
 msgstr "# تنظیمات حساب\n\n"
-"در ERPNext، ویژگی های حسابداری بر اساس نیازهای کسب و کار شما قابل تنظیم هستند. تنظیمات حساب‌ها مکانی برای تعریف برخی از اولویت‌های حسابداری شما است مانند:\n\n"
+"در CMPERP، ویژگی های حسابداری بر اساس نیازهای کسب و کار شما قابل تنظیم هستند. تنظیمات حساب‌ها مکانی برای تعریف برخی از اولویت‌های حسابداری شما است مانند:\n\n"
 " - محدودیت اعتبار و تنظیمات بیش از صورتحساب\n"
 " - اولویت‌های مالیاتی\n"
 " - اولویت‌های حسابداری معوق\n"
@@ -84,7 +84,7 @@ msgstr "# تنظیمات حساب\n\n"
 #. Description of the Onboarding Step 'Configure Account Settings'
 #: accounts/onboarding_step/configure_account_settings/configure_account_settings.json
 msgid "# Account Settings\n\n"
-"This is a crucial piece of configuration. There are various account settings in ERPNext to restrict and configure actions in the Accounting module.\n\n"
+"This is a crucial piece of configuration. There are various account settings in CMPERP to restrict and configure actions in the Accounting module.\n\n"
 "The following settings are avaialble for you to configure\n\n"
 "1. Account Freezing \n"
 "2. Credit and Overbilling\n"
@@ -92,7 +92,7 @@ msgid "# Account Settings\n\n"
 "4. Balance Sheet configurations\n\n"
 "There's much more, you can check it all out in this step"
 msgstr "# تنظیمات حساب\n\n"
-"این یک بخش مهم از پیکربندی است. تنظیمات حساب مختلف در ERPNext برای محدود کردن و پیکربندی اقدامات در ماژول حسابداری وجود دارد.\n\n"
+"این یک بخش مهم از پیکربندی است. تنظیمات حساب مختلف در CMPERP برای محدود کردن و پیکربندی اقدامات در ماژول حسابداری وجود دارد.\n\n"
 "تنظیمات زیر برای پیکربندی در دسترس شما هستند\n\n"
 "1. مسدود کردن حساب\n"
 "2. اعتبار و اضافه صورتحساب\n"
@@ -103,9 +103,9 @@ msgstr "# تنظیمات حساب\n\n"
 #. Description of the Onboarding Step 'Add an Existing Asset'
 #: assets/onboarding_step/existing_asset/existing_asset.json
 msgid "# Add an Existing Asset\n\n"
-"If you are just starting with ERPNext, you will need to enter Assets you already possess. You can add them as existing fixed assets in ERPNext. Please note that you will have to make a Journal Entry separately updating the opening balance in the fixed asset account."
+"If you are just starting with CMPERP, you will need to enter Assets you already possess. You can add them as existing fixed assets in CMPERP. Please note that you will have to make a Journal Entry separately updating the opening balance in the fixed asset account."
 msgstr "# اضافه کردن یک دارایی موجود\n\n"
-"اگر به تازگی با ERPNext شروع کرده اید، باید دارایی هایی را که از قبل دارید وارد کنید. می توانید آنها را به عنوان دارایی های ثابت موجود در ERPNext اضافه کنید. لطفاً توجه داشته باشید که باید برای به‌روزرسانی موجودی افتتاحیه در حساب دارایی ثابت، یک ورودی روزنامه به طور جداگانه انجام دهید."
+"اگر به تازگی با CMPERP شروع کرده اید، باید دارایی هایی را که از قبل دارید وارد کنید. می توانید آنها را به عنوان دارایی های ثابت موجود در CMPERP اضافه کنید. لطفاً توجه داشته باشید که باید برای به‌روزرسانی موجودی افتتاحیه در حساب دارایی ثابت، یک ورودی روزنامه به طور جداگانه انجام دهید."
 
 #. Description of the Onboarding Step 'Create Your First Sales Invoice '
 #: setup/onboarding_step/create_your_first_sales_invoice/create_your_first_sales_invoice.json
@@ -119,7 +119,7 @@ msgstr "# همه چیز در مورد فاکتور فروش\n\n"
 msgid "# All about sales invoice\n\n"
 "A Sales Invoice is a bill that you send to your Customers against which the Customer makes the payment. Sales Invoice is an accounting transaction. On submission of Sales Invoice, the system updates the receivable and books income against a Customer Account.\n\n"
 "Here's the flow of how a sales invoice is generally created\n\n\n"
-"![Sales Flow](https://docs.erpnext.com/docs/assets/img/accounts/so-flow.png)"
+"![Sales Flow](https://docs.cpmerp.com/docs/assets/img/accounts/so-flow.png)"
 msgstr ""
 
 #. Description of the Onboarding Step 'Define Asset Category'
@@ -164,7 +164,7 @@ msgstr ""
 #. Description of the Onboarding Step 'Review Chart of Accounts'
 #: accounts/onboarding_step/chart_of_accounts/chart_of_accounts.json
 msgid "# Chart Of Accounts\n\n"
-"ERPNext sets up a simple chart of accounts for each Company you create, but you can modify it according to business and legal requirements."
+"CMPERP sets up a simple chart of accounts for each Company you create, but you can modify it according to business and legal requirements."
 msgstr ""
 
 #. Description of the Onboarding Step 'Check Stock Ledger'
@@ -172,14 +172,14 @@ msgstr ""
 #: stock/onboarding_step/check_stock_ledger_report/check_stock_ledger_report.json
 #: stock/onboarding_step/view_stock_projected_qty/view_stock_projected_qty.json
 msgid "# Check Stock Reports\n"
-"Based on the various stock transactions, you can get a host of one-click Stock Reports in ERPNext like Stock Ledger, Stock Balance, Projected Quantity, and Ageing analysis."
+"Based on the various stock transactions, you can get a host of one-click Stock Reports in CMPERP like Stock Ledger, Stock Balance, Projected Quantity, and Ageing analysis."
 msgstr ""
 
 #. Description of the Onboarding Step 'Cost Centers for Budgeting and Analysis'
 #: accounts/onboarding_step/cost_centers_for_report_and_budgeting/cost_centers_for_report_and_budgeting.json
 msgid "# Cost Centers for Budgeting and Analysis\n\n"
 "While your Books of Accounts are framed to fulfill statutory requirements, you can set up Cost Center and Accounting Dimensions to address your companies reporting and budgeting requirements.\n\n"
-"Click here to learn more about how  <b>[Cost Center](https://docs.erpnext.com/docs/v13/user/manual/en/accounts/cost-center)</b> and <b> [Dimensions](https://docs.erpnext.com/docs/v13/user/manual/en/accounts/accounting-dimensions)</b> allow you to get advanced financial analytics reports from ERPNext."
+"Click here to learn more about how  <b>[Cost Center](https://docs.cpmerp.com/docs/v13/user/manual/en/accounts/cost-center)</b> and <b> [Dimensions](https://docs.cpmerp.com/docs/v13/user/manual/en/accounts/accounting-dimensions)</b> allow you to get advanced financial analytics reports from CMPERP."
 msgstr ""
 
 #. Description of the Onboarding Step 'Finished Items'
@@ -220,7 +220,7 @@ msgstr ""
 #. Description of the Onboarding Step 'Setup Your Letterhead'
 #: setup/onboarding_step/letterhead/letterhead.json
 msgid "# Create a Letter Head\n\n"
-"A Letter Head contains your organization's name, logo, address, etc which appears at the header and footer portion in documents. You can learn more about Setting up Letter Head in ERPNext here.\n"
+"A Letter Head contains your organization's name, logo, address, etc which appears at the header and footer portion in documents. You can learn more about Setting up Letter Head in CMPERP here.\n"
 msgstr ""
 
 #. Description of the Onboarding Step 'Create your first Quotation'
@@ -259,20 +259,20 @@ msgstr ""
 #: setup/onboarding_step/create_an_item/create_an_item.json
 msgid "# Create an Item\n\n"
 "Item is a product or a service offered by your company, or something you buy as a part of your supplies or raw materials.\n\n"
-"Items are integral to everything you do in ERPNext - from billing, purchasing to managing inventory. Everything you buy or sell, whether it is a physical product or a service is an Item. Items can be stock, non-stock, variants, serialized, batched, assets, etc.\n"
+"Items are integral to everything you do in CMPERP - from billing, purchasing to managing inventory. Everything you buy or sell, whether it is a physical product or a service is an Item. Items can be stock, non-stock, variants, serialized, batched, assets, etc.\n"
 msgstr ""
 
 #. Description of the Onboarding Step 'Create an Item'
 #: stock/onboarding_step/create_an_item/create_an_item.json
 msgid "# Create an Item\n"
 "The Stock module deals with the movement of items.\n\n"
-"In this step we will create an  [**Item**](https://docs.erpnext.com/docs/user/manual/en/stock/item)."
+"In this step we will create an  [**Item**](https://docs.cpmerp.com/docs/user/manual/en/stock/item)."
 msgstr ""
 
 #. Description of the Onboarding Step 'Create first Purchase Order'
 #: buying/onboarding_step/create_your_first_purchase_order/create_your_first_purchase_order.json
 msgid "# Create first Purchase Order\n\n"
-"Purchase Order is at the heart of your buying transactions. In ERPNext, Purchase Order can can be created against a Purchase Material Request (indent) and Supplier Quotation as well.  Purchase Orders is also linked to Purchase Receipt and Purchase Invoices, allowing you to keep a birds-eye view on your purchase deals.\n\n"
+"Purchase Order is at the heart of your buying transactions. In CMPERP, Purchase Order can can be created against a Purchase Material Request (indent) and Supplier Quotation as well.  Purchase Orders is also linked to Purchase Receipt and Purchase Invoices, allowing you to keep a birds-eye view on your purchase deals.\n\n"
 msgstr ""
 
 #. Description of the Onboarding Step 'Create Your First Purchase Invoice '
@@ -285,8 +285,8 @@ msgstr ""
 #. Description of the Onboarding Step 'Financial Statements'
 #: accounts/onboarding_step/financial_statements/financial_statements.json
 msgid "# Financial Statements\n\n"
-"In ERPNext, you can get crucial financial reports like [Balance Sheet] and [Profit and Loss] statements with a click of a button. You can run in the report for a different period and plot analytics charts premised on statement data. For more reports, check sections like Financial Statements, General Ledger, and Profitability reports.\n\n"
-"<b>[Check Accounting reports](https://docs.erpnext.com/docs/v13/user/manual/en/accounts/accounting-reports)</b>"
+"In CMPERP, you can get crucial financial reports like [Balance Sheet] and [Profit and Loss] statements with a click of a button. You can run in the report for a different period and plot analytics charts premised on statement data. For more reports, check sections like Financial Statements, General Ledger, and Profitability reports.\n\n"
+"<b>[Check Accounting reports](https://docs.cpmerp.com/docs/v13/user/manual/en/accounts/accounting-reports)</b>"
 msgstr ""
 
 #. Description of the Onboarding Step 'Review Fixed Asset Accounts'
@@ -309,7 +309,7 @@ msgstr "# برنامه ریزی تولید چگونه کار می کند\n\n"
 #. Description of the Onboarding Step 'Import Data from Spreadsheet'
 #: setup/onboarding_step/data_import/data_import.json
 msgid "# Import Data from Spreadsheet\n\n"
-"In ERPNext, you can easily migrate your historical data using spreadsheets. You can use it for migrating not just masters (like Customer, Supplier, Items), but also for transactions like (outstanding invoices, opening stock and accounting entries, etc)."
+"In CMPERP, you can easily migrate your historical data using spreadsheets. You can use it for migrating not just masters (like Customer, Supplier, Items), but also for transactions like (outstanding invoices, opening stock and accounting entries, etc)."
 msgstr ""
 
 #: manufacturing/report/work_order_stock_report/work_order_stock_report.py:148
@@ -319,20 +319,20 @@ msgstr "# در موجودی"
 #. Description of the Onboarding Step 'Introduction to Stock Entry'
 #: stock/onboarding_step/introduction_to_stock_entry/introduction_to_stock_entry.json
 msgid "# Introduction to Stock Entry\n"
-"This video will give a quick introduction to [**Stock Entry**](https://docs.erpnext.com/docs/user/manual/en/stock/stock-entry)."
+"This video will give a quick introduction to [**Stock Entry**](https://docs.cpmerp.com/docs/user/manual/en/stock/stock-entry)."
 msgstr ""
 
 #. Description of the Onboarding Step 'Manage Stock Movements'
 #: stock/onboarding_step/create_a_stock_entry/create_a_stock_entry.json
 msgid "# Manage Stock Movements\n"
-"Stock entry allows you to register the movement of stock for various purposes like transfer, received, issues, repacked, etc. To address issues related to theft and pilferages,  you can always ensure that the movement of goods happens against a document reference Stock Entry in ERPNext.\n\n"
+"Stock entry allows you to register the movement of stock for various purposes like transfer, received, issues, repacked, etc. To address issues related to theft and pilferages,  you can always ensure that the movement of goods happens against a document reference Stock Entry in CMPERP.\n\n"
 "Let’s get a quick walk-through on the various scenarios covered in Stock Entry by watching [*this video*](https://www.youtube.com/watch?v=Njt107hlY3I)."
 msgstr ""
 
-#. Description of the Onboarding Step 'How to Navigate in ERPNext'
+#. Description of the Onboarding Step 'How to Navigate in CMPERP'
 #: setup/onboarding_step/navigation_help/navigation_help.json
-msgid "# Navigation in ERPNext\n\n"
-"Ease of navigating and browsing around the ERPNext is one of our core strengths. In the following video, you will learn how to reach a specific feature in ERPNext via module page or AwesomeBar."
+msgid "# Navigation in CMPERP\n\n"
+"Ease of navigating and browsing around the CMPERP is one of our core strengths. In the following video, you will learn how to reach a specific feature in CMPERP via module page or AwesomeBar."
 msgstr ""
 
 #. Description of the Onboarding Step 'Purchase an Asset'
@@ -348,7 +348,7 @@ msgstr "# آیتم‌های درخواست شده"
 #. Description of the Onboarding Step 'Manufacturing Settings'
 #: manufacturing/onboarding_step/explore_manufacturing_settings/explore_manufacturing_settings.json
 msgid "# Review Manufacturing Settings\n\n"
-"In ERPNext, the Manufacturing module’s features are configurable as per your business needs. Manufacturing Settings is the place where you can set your preferences for:\n\n"
+"In CMPERP, the Manufacturing module’s features are configurable as per your business needs. Manufacturing Settings is the place where you can set your preferences for:\n\n"
 "- Capacity planning for allocating jobs to workstations\n"
 "- Raw-material consumption based on BOM or actual\n"
 "- Default values and over-production allowance\n"
@@ -357,7 +357,7 @@ msgstr ""
 #. Description of the Onboarding Step 'Review Stock Settings'
 #: stock/onboarding_step/stock_settings/stock_settings.json
 msgid "# Review Stock Settings\n\n"
-"In ERPNext, the Stock module’s features are configurable as per your business needs. Stock Settings is the place where you can set your preferences for:\n"
+"In CMPERP, the Stock module’s features are configurable as per your business needs. Stock Settings is the place where you can set your preferences for:\n"
 "- Default values for Item and Pricing\n"
 "- Default valuation method for inventory valuation\n"
 "- Set preference for serialization and batching of item\n"
@@ -382,14 +382,14 @@ msgstr ""
 #. Description of the Onboarding Step 'Set Up a Company'
 #: setup/onboarding_step/company_set_up/company_set_up.json
 msgid "# Set Up a Company\n\n"
-"A company is a legal entity for which you will set up your books of account and create accounting transactions. In ERPNext, you can create multiple companies, and establish relationships (group/subsidiary) among them.\n\n"
+"A company is a legal entity for which you will set up your books of account and create accounting transactions. In CMPERP, you can create multiple companies, and establish relationships (group/subsidiary) among them.\n\n"
 "Within the company master, you can capture various default accounts for that Company and set crucial settings related to the accounting methodology followed for a company.\n"
 msgstr ""
 
 #. Description of the Onboarding Step 'Setting up Taxes'
 #: accounts/onboarding_step/setup_taxes/setup_taxes.json
 msgid "# Setting up Taxes\n\n"
-"ERPNext lets you configure your taxes so that they are automatically applied in your buying and selling transactions. You can configure them globally or even on Items. ERPNext taxes are pre-configured for most regions."
+"CMPERP lets you configure your taxes so that they are automatically applied in your buying and selling transactions. You can configure them globally or even on Items. CMPERP taxes are pre-configured for most regions."
 msgstr ""
 
 #. Description of the Onboarding Step 'Routing'
@@ -402,7 +402,7 @@ msgstr ""
 #: stock/onboarding_step/create_a_warehouse/create_a_warehouse.json
 msgid "# Setup a Warehouse\n"
 "The warehouse can be your location/godown/store where you maintain the item's inventory, and receive/deliver them to various parties.\n\n"
-"In ERPNext, you can maintain a Warehouse in the tree structure, so that location and sub-location of an item can be tracked. Also, you can link a Warehouse to a specific Accounting ledger, where the real-time stock value of that warehouse’s item will be reflected."
+"In CMPERP, you can maintain a Warehouse in the tree structure, so that location and sub-location of an item can be tracked. Also, you can link a Warehouse to a specific Accounting ledger, where the real-time stock value of that warehouse’s item will be reflected."
 msgstr ""
 
 #. Description of the Onboarding Step 'Track Material Request'
@@ -414,31 +414,31 @@ msgstr ""
 #. Description of the Onboarding Step 'Update Stock Opening Balance'
 #: stock/onboarding_step/stock_opening_balance/stock_opening_balance.json
 msgid "# Update Stock Opening Balance\n"
-"It’s an entry to update the stock balance of an item, in a warehouse, on a date and time you are going live on ERPNext.\n\n"
+"It’s an entry to update the stock balance of an item, in a warehouse, on a date and time you are going live on CMPERP.\n\n"
 "Once opening stocks are updated, you can create transactions like manufacturing and stock deliveries, where this opening stock will be consumed."
 msgstr ""
 
 #. Description of the Onboarding Step 'Updating Opening Balances'
 #: accounts/onboarding_step/updating_opening_balances/updating_opening_balances.json
 msgid "# Updating Opening Balances\n\n"
-"Once you close the financial statement in previous accounting software, you can update the same as opening in your ERPNext's Balance Sheet accounts. This will allow you to get complete financial statements from ERPNext in the coming years, and discontinue the parallel accounting system right away."
+"Once you close the financial statement in previous accounting software, you can update the same as opening in your CMPERP's Balance Sheet accounts. This will allow you to get complete financial statements from CMPERP in the coming years, and discontinue the parallel accounting system right away."
 msgstr ""
 
 #. Description of the Onboarding Step 'View Warehouses'
 #: stock/onboarding_step/view_warehouses/view_warehouses.json
 msgid "# View Warehouse\n"
-"In ERPNext the term 'warehouse' can be thought of as a storage location.\n\n"
-"Warehouses are arranged in ERPNext in a tree like structure, where multiple sub-warehouses can be grouped under a single warehouse.\n\n"
-"In this step we will view the [**Warehouse Tree**](https://docs.erpnext.com/docs/user/manual/en/stock/warehouse#21-tree-view) to view the [**Warehouses**](https://docs.erpnext.com/docs/user/manual/en/stock/warehouse) that are set by default."
+"In CMPERP the term 'warehouse' can be thought of as a storage location.\n\n"
+"Warehouses are arranged in CMPERP in a tree like structure, where multiple sub-warehouses can be grouped under a single warehouse.\n\n"
+"In this step we will view the [**Warehouse Tree**](https://docs.cpmerp.com/docs/user/manual/en/stock/warehouse#21-tree-view) to view the [**Warehouses**](https://docs.cpmerp.com/docs/user/manual/en/stock/warehouse) that are set by default."
 msgstr ""
 
 #. Description of the Onboarding Step 'Create a Sales Item'
 #: accounts/onboarding_step/create_a_product/create_a_product.json
 msgid "## Products and Services\n\n"
 "Depending on the nature of your business, you might be selling products or services to your clients or even both. \n"
-"ERPNext is optimized for itemized management of your sales and purchase.\n\n"
+"CMPERP is optimized for itemized management of your sales and purchase.\n\n"
 "The **Item Master**  is where you can add all your sales items. If you are in services, you can create an Item for each service that you offer. If you run a manufacturing business, the same master is used for keeping a record of raw materials, sub-assemblies etc.\n\n"
-"Completing the Item Master is very essential for the successful implementation of ERPNext. We have a brief video introducing the item master for you, you can watch it in the next step."
+"Completing the Item Master is very essential for the successful implementation of CMPERP. We have a brief video introducing the item master for you, you can watch it in the next step."
 msgstr ""
 
 #. Description of the Onboarding Step 'Create a Customer'
@@ -452,7 +452,7 @@ msgstr ""
 #. Description of the Onboarding Step 'Create a Supplier'
 #: accounts/onboarding_step/create_a_supplier/create_a_supplier.json
 msgid "## Who is a Supplier?\n\n"
-"Suppliers are companies or individuals who provide you with products or services. ERPNext has comprehensive features for purchase cycles. \n\n"
+"Suppliers are companies or individuals who provide you with products or services. CMPERP has comprehensive features for purchase cycles. \n\n"
 "Let's quickly create a supplier with the minimal details required. You need the name of the supplier, assign the supplier to a group, and select the type of the supplier, viz. Company or Individual."
 msgstr ""
 
@@ -1358,7 +1358,7 @@ msgid "API Endpoint"
 msgstr "نقطه پایانی API"
 
 #. Label of a Data field in DocType 'QuickBooks Migrator'
-#: erpnext_integrations/doctype/quickbooks_migrator/quickbooks_migrator.json
+#: cpmerp_integrations/doctype/quickbooks_migrator/quickbooks_migrator.json
 msgctxt "QuickBooks Migrator"
 msgid "API Endpoint"
 msgstr "نقطه پایانی API"
@@ -1543,7 +1543,7 @@ msgid "Access Key is required for Service Provider: {0}"
 msgstr "کلید دسترسی برای ارائه‌دهنده خدمات لازم است: {0}"
 
 #. Label of a Small Text field in DocType 'QuickBooks Migrator'
-#: erpnext_integrations/doctype/quickbooks_migrator/quickbooks_migrator.json
+#: cpmerp_integrations/doctype/quickbooks_migrator/quickbooks_migrator.json
 msgctxt "QuickBooks Migrator"
 msgid "Access Token"
 msgstr "نشانه دسترسی"
@@ -2776,7 +2776,7 @@ msgid "Accounts"
 msgstr "حساب ها"
 
 #. Label of a Section Break field in DocType 'Tally Migration'
-#: erpnext_integrations/doctype/tally_migration/tally_migration.json
+#: cpmerp_integrations/doctype/tally_migration/tally_migration.json
 msgctxt "Tally Migration"
 msgid "Accounts"
 msgstr "حساب ها"
@@ -4736,7 +4736,7 @@ msgid "Address used to determine Tax Category in transactions"
 msgstr "نشانی مورد استفاده برای تعیین دسته مالیات در معاملات"
 
 #. Label of a Attach field in DocType 'Tally Migration'
-#: erpnext_integrations/doctype/tally_migration/tally_migration.json
+#: cpmerp_integrations/doctype/tally_migration/tally_migration.json
 msgctxt "Tally Migration"
 msgid "Addresses"
 msgstr "آدرس ها"
@@ -7114,7 +7114,7 @@ msgstr ""
 msgid "An error has been appeared while reposting item valuation via {0}"
 msgstr "هنگام ارسال مجدد ارزیابی مورد از طریق {0} خطایی ظاهر شد"
 
-#: erpnext_integrations/doctype/tally_migration/tally_migration.js:26
+#: cpmerp_integrations/doctype/tally_migration/tally_migration.js:26
 msgctxt "<a href='/app/error-log' class='variant-click'>Error Log</a>"
 msgid "An error has occurred during {0}. Check {1} for more details"
 msgstr "خطایی در طول {0} رخ داده است. برای جزئیات بیشتر {1} را بررسی کنید"
@@ -7322,7 +7322,7 @@ msgid "Applicable on booking actual expenses"
 msgstr "قابل اجرا در رزرو هزینه های واقعی"
 
 #. Label of a Section Break field in DocType 'QuickBooks Migrator'
-#: erpnext_integrations/doctype/quickbooks_migrator/quickbooks_migrator.json
+#: cpmerp_integrations/doctype/quickbooks_migrator/quickbooks_migrator.json
 msgctxt "QuickBooks Migrator"
 msgid "Application Settings"
 msgstr "تنظیمات برنامه"
@@ -8700,8 +8700,8 @@ msgstr "ویژگی های"
 msgid "Auditor"
 msgstr "ممیز، مامور رسیدگی"
 
-#: erpnext_integrations/doctype/plaid_settings/plaid_connector.py:68
-#: erpnext_integrations/doctype/plaid_settings/plaid_connector.py:85
+#: cpmerp_integrations/doctype/plaid_settings/plaid_connector.py:68
+#: cpmerp_integrations/doctype/plaid_settings/plaid_connector.py:85
 msgid "Authentication Failed"
 msgstr "احراز هویت ناموفق بود"
 
@@ -8717,7 +8717,7 @@ msgid "Authorization Control"
 msgstr "کنترل مجوز"
 
 #. Label of a Data field in DocType 'QuickBooks Migrator'
-#: erpnext_integrations/doctype/quickbooks_migrator/quickbooks_migrator.json
+#: cpmerp_integrations/doctype/quickbooks_migrator/quickbooks_migrator.json
 msgctxt "QuickBooks Migrator"
 msgid "Authorization Endpoint"
 msgstr "نقطه پایان مجوز"
@@ -8728,13 +8728,13 @@ msgid "Authorization Rule"
 msgstr "قانون مجوز"
 
 #. Label of a Section Break field in DocType 'QuickBooks Migrator'
-#: erpnext_integrations/doctype/quickbooks_migrator/quickbooks_migrator.json
+#: cpmerp_integrations/doctype/quickbooks_migrator/quickbooks_migrator.json
 msgctxt "QuickBooks Migrator"
 msgid "Authorization Settings"
 msgstr "تنظیمات مجوز"
 
 #. Label of a Data field in DocType 'QuickBooks Migrator'
-#: erpnext_integrations/doctype/quickbooks_migrator/quickbooks_migrator.json
+#: cpmerp_integrations/doctype/quickbooks_migrator/quickbooks_migrator.json
 msgctxt "QuickBooks Migrator"
 msgid "Authorization URL"
 msgstr "URL مجوز"
@@ -10196,15 +10196,15 @@ msgstr "تراکنش بانکی {0} به روز شد"
 msgid "Bank account cannot be named as {0}"
 msgstr "حساب بانکی نمی تواند به عنوان {0} نامگذاری شود"
 
-#: erpnext_integrations/doctype/plaid_settings/plaid_settings.py:146
+#: cpmerp_integrations/doctype/plaid_settings/plaid_settings.py:146
 msgid "Bank account {0} already exists and could not be created again"
 msgstr "حساب بانکی {0} از قبل وجود دارد و نمی توان دوباره ایجاد کرد"
 
-#: erpnext_integrations/doctype/plaid_settings/plaid_settings.js:153
+#: cpmerp_integrations/doctype/plaid_settings/plaid_settings.js:153
 msgid "Bank accounts added"
 msgstr "حساب های بانکی اضافه شد"
 
-#: erpnext_integrations/doctype/plaid_settings/plaid_settings.py:311
+#: cpmerp_integrations/doctype/plaid_settings/plaid_settings.py:311
 msgid "Bank transaction creation error"
 msgstr "خطای ایجاد تراکنش بانکی"
 
@@ -11948,8 +11948,8 @@ msgid "Buying must be checked, if Applicable For is selected as {0}"
 msgstr "اگر Applicable For به عنوان {0} انتخاب شده باشد، خرید باید بررسی شود"
 
 #: buying/doctype/buying_settings/buying_settings.js:13
-msgid "By default, the Supplier Name is set as per the Supplier Name entered. If you want Suppliers to be named by a <a href='https://docs.erpnext.com/docs/user/manual/en/setting-up/settings/naming-series' target='_blank'>Naming Series</a> choose the 'Naming Series' option."
-msgstr "به‌طور پیش‌فرض، نام تأمین‌کننده مطابق با نام تأمین‌کننده وارد شده تنظیم می‌شود. اگر می‌خواهید تأمین‌کنندگان با <a href='https://docs.erpnext.com/docs/user/manual/en/setting-up/settings/name-series' target='_blank'>سری نام‌گذاری نام‌گذاری شوند. </a> گزینه \"Naming Series\" را انتخاب کنید."
+msgid "By default, the Supplier Name is set as per the Supplier Name entered. If you want Suppliers to be named by a <a href='https://docs.cpmerp.com/docs/user/manual/en/setting-up/settings/naming-series' target='_blank'>Naming Series</a> choose the 'Naming Series' option."
+msgstr "به‌طور پیش‌فرض، نام تأمین‌کننده مطابق با نام تأمین‌کننده وارد شده تنظیم می‌شود. اگر می‌خواهید تأمین‌کنندگان با <a href='https://docs.cpmerp.com/docs/user/manual/en/setting-up/settings/name-series' target='_blank'>سری نام‌گذاری نام‌گذاری شوند. </a> گزینه \"Naming Series\" را انتخاب کنید."
 
 #. Label of a Check field in DocType 'Customer Credit Limit'
 #: selling/doctype/customer_credit_limit/customer_credit_limit.json
@@ -12888,7 +12888,7 @@ msgstr "نمی توان شماره ردیف را بزرگتر یا مساوی ب
 msgid "Cannot retrieve link token for update. Check Error Log for more information"
 msgstr "نمی توان رمز پیوند را برای به روز رسانی بازیابی کرد. برای اطلاعات بیشتر Log خطا را بررسی کنید"
 
-#: erpnext_integrations/doctype/plaid_settings/plaid_settings.js:63
+#: cpmerp_integrations/doctype/plaid_settings/plaid_settings.js:63
 msgid "Cannot retrieve link token. Check Error Log for more information"
 msgstr "رمز پیوند بازیابی نمی شود. برای اطلاعات بیشتر Log خطا را بررسی کنید"
 
@@ -13433,7 +13433,7 @@ msgid "Chart of Accounts"
 msgstr "نمودار حساب"
 
 #. Label of a Attach field in DocType 'Tally Migration'
-#: erpnext_integrations/doctype/tally_migration/tally_migration.json
+#: cpmerp_integrations/doctype/tally_migration/tally_migration.json
 msgctxt "Tally Migration"
 msgid "Chart of Accounts"
 msgstr "نمودار حساب"
@@ -13795,13 +13795,13 @@ msgid "Client"
 msgstr "مشتری"
 
 #. Label of a Data field in DocType 'QuickBooks Migrator'
-#: erpnext_integrations/doctype/quickbooks_migrator/quickbooks_migrator.json
+#: cpmerp_integrations/doctype/quickbooks_migrator/quickbooks_migrator.json
 msgctxt "QuickBooks Migrator"
 msgid "Client ID"
 msgstr "شناسه مشتری"
 
 #. Label of a Data field in DocType 'QuickBooks Migrator'
-#: erpnext_integrations/doctype/quickbooks_migrator/quickbooks_migrator.json
+#: cpmerp_integrations/doctype/quickbooks_migrator/quickbooks_migrator.json
 msgctxt "QuickBooks Migrator"
 msgid "Client Secret"
 msgstr "راز مشتری"
@@ -14060,7 +14060,7 @@ msgid "Code"
 msgstr "کد"
 
 #. Label of a Data field in DocType 'QuickBooks Migrator'
-#: erpnext_integrations/doctype/quickbooks_migrator/quickbooks_migrator.json
+#: cpmerp_integrations/doctype/quickbooks_migrator/quickbooks_migrator.json
 msgctxt "QuickBooks Migrator"
 msgid "Code"
 msgstr "کد"
@@ -14373,7 +14373,7 @@ msgstr "شرکت ها"
 #: crm/report/lost_opportunity/lost_opportunity.js:8
 #: crm/report/opportunity_summary_by_sales_stage/opportunity_summary_by_sales_stage.js:57
 #: crm/report/sales_pipeline_analytics/sales_pipeline_analytics.js:51
-#: erpnext_integrations/doctype/plaid_settings/plaid_settings.js:128
+#: cpmerp_integrations/doctype/plaid_settings/plaid_settings.js:128
 #: manufacturing/doctype/bom_creator/bom_creator.js:51
 #: manufacturing/notification/material_request_receipt_notification/material_request_receipt_notification.html:2
 #: manufacturing/report/cost_of_poor_quality_report/cost_of_poor_quality_report.js:7
@@ -14990,7 +14990,7 @@ msgid "Company"
 msgstr "شرکت"
 
 #. Label of a Link field in DocType 'QuickBooks Migrator'
-#: erpnext_integrations/doctype/quickbooks_migrator/quickbooks_migrator.json
+#: cpmerp_integrations/doctype/quickbooks_migrator/quickbooks_migrator.json
 msgctxt "QuickBooks Migrator"
 msgid "Company"
 msgstr "شرکت"
@@ -15384,7 +15384,7 @@ msgid "Company Name"
 msgstr "نام شرکت"
 
 #. Description of the 'Tally Company' (Data) field in DocType 'Tally Migration'
-#: erpnext_integrations/doctype/tally_migration/tally_migration.json
+#: cpmerp_integrations/doctype/tally_migration/tally_migration.json
 msgctxt "Tally Migration"
 msgid "Company Name as per Imported Tally Data"
 msgstr "نام شرکت طبق داده های آماری وارداتی"
@@ -15398,7 +15398,7 @@ msgid "Company Not Linked"
 msgstr "شرکت مرتبط نیست"
 
 #. Label of a Section Break field in DocType 'QuickBooks Migrator'
-#: erpnext_integrations/doctype/quickbooks_migrator/quickbooks_migrator.json
+#: cpmerp_integrations/doctype/quickbooks_migrator/quickbooks_migrator.json
 msgctxt "QuickBooks Migrator"
 msgid "Company Settings"
 msgstr "تنظیمات شرکت"
@@ -15483,7 +15483,7 @@ msgctxt "Purchase Invoice"
 msgid "Company which internal supplier represents"
 msgstr "شرکتی که تامین کننده داخلی آن را نمایندگی می کند"
 
-#: erpnext_integrations/doctype/tally_migration/tally_migration.js:85
+#: cpmerp_integrations/doctype/tally_migration/tally_migration.js:85
 msgid "Company {0} already exists. Continuing will overwrite the Company and Chart of Accounts"
 msgstr "شرکت {0} در حال حاضر وجود دارد. ادامه، شرکت و نمودار حساب‌ها را بازنویسی می‌کند"
 
@@ -15548,7 +15548,7 @@ msgctxt "Quotation"
 msgid "Competitors"
 msgstr "رقبا"
 
-#: erpnext_integrations/doctype/quickbooks_migrator/quickbooks_migrator.js:67
+#: cpmerp_integrations/doctype/quickbooks_migrator/quickbooks_migrator.js:67
 #: manufacturing/doctype/workstation/workstation_job_card.html:68
 #: public/js/projects/timer.js:32
 msgid "Complete"
@@ -15561,7 +15561,7 @@ msgid "Complete"
 msgstr "کامل"
 
 #. Option for the 'Status' (Select) field in DocType 'QuickBooks Migrator'
-#: erpnext_integrations/doctype/quickbooks_migrator/quickbooks_migrator.json
+#: cpmerp_integrations/doctype/quickbooks_migrator/quickbooks_migrator.json
 msgctxt "QuickBooks Migrator"
 msgid "Complete"
 msgstr "کامل"
@@ -15994,27 +15994,27 @@ msgctxt "Employee"
 msgid "Confirmation Date"
 msgstr "تاریخ تایید"
 
-#: erpnext_integrations/doctype/quickbooks_migrator/quickbooks_migrator.js:43
-#: erpnext_integrations/doctype/quickbooks_migrator/quickbooks_migrator.js:51
+#: cpmerp_integrations/doctype/quickbooks_migrator/quickbooks_migrator.js:43
+#: cpmerp_integrations/doctype/quickbooks_migrator/quickbooks_migrator.js:51
 msgid "Connect to Quickbooks"
 msgstr "به Quickbooks متصل شوید"
 
-#: erpnext_integrations/doctype/quickbooks_migrator/quickbooks_migrator.js:65
+#: cpmerp_integrations/doctype/quickbooks_migrator/quickbooks_migrator.js:65
 msgid "Connected to QuickBooks"
 msgstr "به QuickBooks متصل است"
 
 #. Option for the 'Status' (Select) field in DocType 'QuickBooks Migrator'
-#: erpnext_integrations/doctype/quickbooks_migrator/quickbooks_migrator.json
+#: cpmerp_integrations/doctype/quickbooks_migrator/quickbooks_migrator.json
 msgctxt "QuickBooks Migrator"
 msgid "Connected to QuickBooks"
 msgstr "به QuickBooks متصل است"
 
-#: erpnext_integrations/doctype/quickbooks_migrator/quickbooks_migrator.js:64
+#: cpmerp_integrations/doctype/quickbooks_migrator/quickbooks_migrator.js:64
 msgid "Connecting to QuickBooks"
 msgstr "اتصال به QuickBooks"
 
 #. Option for the 'Status' (Select) field in DocType 'QuickBooks Migrator'
-#: erpnext_integrations/doctype/quickbooks_migrator/quickbooks_migrator.json
+#: cpmerp_integrations/doctype/quickbooks_migrator/quickbooks_migrator.json
 msgctxt "QuickBooks Migrator"
 msgid "Connecting to QuickBooks"
 msgstr "اتصال به QuickBooks"
@@ -16846,7 +16846,7 @@ msgctxt "Issue"
 msgid "Content Type"
 msgstr "نوع محتوا"
 
-#: erpnext_integrations/doctype/plaid_settings/plaid_settings.js:157
+#: cpmerp_integrations/doctype/plaid_settings/plaid_settings.js:157
 #: public/js/controllers/transaction.js:2117
 #: selling/doctype/quotation/quotation.js:356
 msgid "Continue"
@@ -17817,7 +17817,7 @@ msgstr "به‌روزرسانی خودکار شیفت‌ها ممکن نیست. 
 msgid "Could not create Credit Note automatically, please uncheck 'Issue Credit Note' and submit again"
 msgstr "یادداشت اعتباری به‌طور خودکار ایجاد نشد، لطفاً علامت «صدور یادداشت اعتبار» را بردارید و دوباره ارسال کنید"
 
-#: erpnext_integrations/doctype/plaid_settings/plaid_settings.py:353
+#: cpmerp_integrations/doctype/plaid_settings/plaid_settings.py:353
 msgid "Could not detect the Company for updating Bank Accounts"
 msgstr "شرکت برای به‌روزرسانی حساب‌های بانکی شناسایی نشد"
 
@@ -18041,7 +18041,7 @@ msgstr ""
 #: crm/doctype/opportunity/opportunity.js:103
 #: crm/doctype/opportunity/opportunity.js:112
 #: crm/doctype/prospect/prospect.js:15 crm/doctype/prospect/prospect.js:27
-#: erpnext_integrations/doctype/tally_migration/tally_migration.js:127
+#: cpmerp_integrations/doctype/tally_migration/tally_migration.js:127
 #: maintenance/doctype/maintenance_schedule/maintenance_schedule.js:159
 #: manufacturing/doctype/blanket_order/blanket_order.js:34
 #: manufacturing/doctype/blanket_order/blanket_order.js:48
@@ -18146,7 +18146,7 @@ msgstr "ایجاد سفر تحویل"
 msgid "Create Depreciation Entry"
 msgstr "ایجاد ورودی استهلاک"
 
-#: erpnext_integrations/doctype/tally_migration/tally_migration.js:316
+#: cpmerp_integrations/doctype/tally_migration/tally_migration.js:316
 msgid "Create Document"
 msgstr ""
 
@@ -18527,7 +18527,7 @@ msgstr "ایجاد {0} کارت امتیازی برای {1} بین:"
 msgid "Creating Accounts..."
 msgstr "ایجاد اکانت ..."
 
-#: erpnext_integrations/doctype/tally_migration/tally_migration.py:404
+#: cpmerp_integrations/doctype/tally_migration/tally_migration.py:404
 msgid "Creating Company and Importing Chart of Accounts"
 msgstr "ایجاد شرکت و واردات نمودار حساب"
 
@@ -18872,7 +18872,7 @@ msgstr "طلبکاران"
 
 #. Description of the 'Tally Creditors Account' (Data) field in DocType 'Tally
 #. Migration'
-#: erpnext_integrations/doctype/tally_migration/tally_migration.json
+#: cpmerp_integrations/doctype/tally_migration/tally_migration.json
 msgctxt "Tally Migration"
 msgid "Creditors Account set in Tally"
 msgstr "حساب بستانکاران در Tally تنظیم شده است"
@@ -20769,7 +20769,7 @@ msgid "Data Import and Settings"
 msgstr ""
 
 #. Description of the 'Master Data' (Attach) field in DocType 'Tally Migration'
-#: erpnext_integrations/doctype/tally_migration/tally_migration.json
+#: cpmerp_integrations/doctype/tally_migration/tally_migration.json
 msgctxt "Tally Migration"
 msgid "Data exported from Tally that consists of the Chart of Accounts, Customers, Suppliers, Addresses, Items and UOMs"
 msgstr "داده های صادر شده از Tally که شامل نمودار حساب ها، مشتریان، تامین کنندگان، آدرس ها، اقلام و UOM است."
@@ -21065,14 +21065,14 @@ msgid "Day"
 msgstr "روز"
 
 #. Label of a Attach field in DocType 'Tally Migration'
-#: erpnext_integrations/doctype/tally_migration/tally_migration.json
+#: cpmerp_integrations/doctype/tally_migration/tally_migration.json
 msgctxt "Tally Migration"
 msgid "Day Book Data"
 msgstr "داده های کتاب روز"
 
 #. Description of the 'Day Book Data' (Attach) field in DocType 'Tally
 #. Migration'
-#: erpnext_integrations/doctype/tally_migration/tally_migration.json
+#: cpmerp_integrations/doctype/tally_migration/tally_migration.json
 msgctxt "Tally Migration"
 msgid "Day Book Data exported from Tally that consists of all historic transactions"
 msgstr "داده‌های کتاب روز صادر شده از Tally که شامل همه تراکنش‌های تاریخی است"
@@ -21337,7 +21337,7 @@ msgstr "بدهکاران"
 
 #. Description of the 'Tally Debtors Account' (Data) field in DocType 'Tally
 #. Migration'
-#: erpnext_integrations/doctype/tally_migration/tally_migration.json
+#: cpmerp_integrations/doctype/tally_migration/tally_migration.json
 msgctxt "Tally Migration"
 msgid "Debtors Account set in Tally"
 msgstr "حساب بدهکاران در Tally تنظیم شده است"
@@ -21586,13 +21586,13 @@ msgid "Default Cost Center"
 msgstr "مرکز هزینه پیش‌فرض"
 
 #. Label of a Link field in DocType 'QuickBooks Migrator'
-#: erpnext_integrations/doctype/quickbooks_migrator/quickbooks_migrator.json
+#: cpmerp_integrations/doctype/quickbooks_migrator/quickbooks_migrator.json
 msgctxt "QuickBooks Migrator"
 msgid "Default Cost Center"
 msgstr "مرکز هزینه پیش‌فرض"
 
 #. Label of a Link field in DocType 'Tally Migration'
-#: erpnext_integrations/doctype/tally_migration/tally_migration.json
+#: cpmerp_integrations/doctype/tally_migration/tally_migration.json
 msgctxt "Tally Migration"
 msgid "Default Cost Center"
 msgstr "مرکز هزینه پیش‌فرض"
@@ -21868,7 +21868,7 @@ msgid "Default Receivable Account"
 msgstr "حساب دریافتنی پیش فرض"
 
 #. Label of a Link field in DocType 'Tally Migration'
-#: erpnext_integrations/doctype/tally_migration/tally_migration.json
+#: cpmerp_integrations/doctype/tally_migration/tally_migration.json
 msgctxt "Tally Migration"
 msgid "Default Round Off Account"
 msgstr "پیش فرض دور کردن حساب"
@@ -21908,7 +21908,7 @@ msgid "Default Service Level Agreement for {0} already exists."
 msgstr "توافقنامه سطح سرویس پیش فرض برای {0} از قبل وجود دارد."
 
 #. Label of a Link field in DocType 'QuickBooks Migrator'
-#: erpnext_integrations/doctype/quickbooks_migrator/quickbooks_migrator.json
+#: cpmerp_integrations/doctype/quickbooks_migrator/quickbooks_migrator.json
 msgctxt "QuickBooks Migrator"
 msgid "Default Shipping Account"
 msgstr "حساب حمل و نقل پیش فرض"
@@ -21956,7 +21956,7 @@ msgid "Default Territory"
 msgstr "منطقه پیش فرض"
 
 #. Label of a Link field in DocType 'Tally Migration'
-#: erpnext_integrations/doctype/tally_migration/tally_migration.json
+#: cpmerp_integrations/doctype/tally_migration/tally_migration.json
 msgctxt "Tally Migration"
 msgid "Default UOM"
 msgstr "UOM پیش فرض"
@@ -21998,7 +21998,7 @@ msgid "Default Warehouse"
 msgstr "انبار پیش فرض"
 
 #. Label of a Link field in DocType 'QuickBooks Migrator'
-#: erpnext_integrations/doctype/quickbooks_migrator/quickbooks_migrator.json
+#: cpmerp_integrations/doctype/quickbooks_migrator/quickbooks_migrator.json
 msgctxt "QuickBooks Migrator"
 msgid "Default Warehouse"
 msgstr "انبار پیش فرض"
@@ -22022,7 +22022,7 @@ msgid "Default Warehouse"
 msgstr "انبار پیش فرض"
 
 #. Label of a Link field in DocType 'Tally Migration'
-#: erpnext_integrations/doctype/tally_migration/tally_migration.json
+#: cpmerp_integrations/doctype/tally_migration/tally_migration.json
 msgctxt "Tally Migration"
 msgid "Default Warehouse"
 msgstr "انبار پیش فرض"
@@ -24792,7 +24792,7 @@ msgctxt "Transaction Deletion Record Details"
 msgid "DocField"
 msgstr ""
 
-#: erpnext_integrations/doctype/tally_migration/tally_migration.js:132
+#: cpmerp_integrations/doctype/tally_migration/tally_migration.js:132
 msgid "DocType"
 msgstr "DocType"
 
@@ -24949,9 +24949,9 @@ msgctxt "Bank Statement Import"
 msgid "Don't Send Emails"
 msgstr "ایمیل ارسال نکنید"
 
-#: erpnext_integrations/doctype/tally_migration/tally_migration.py:328
-#: erpnext_integrations/doctype/tally_migration/tally_migration.py:413
-#: erpnext_integrations/doctype/tally_migration/tally_migration.py:589
+#: cpmerp_integrations/doctype/tally_migration/tally_migration.py:328
+#: cpmerp_integrations/doctype/tally_migration/tally_migration.py:413
+#: cpmerp_integrations/doctype/tally_migration/tally_migration.py:589
 #: public/js/utils/crm_activities.js:212
 msgid "Done"
 msgstr "انجام شده"
@@ -25688,16 +25688,16 @@ msgid "EMU of current"
 msgstr ""
 
 #. Label of a Data field in DocType 'Tally Migration'
-#: erpnext_integrations/doctype/tally_migration/tally_migration.json
+#: cpmerp_integrations/doctype/tally_migration/tally_migration.json
 msgctxt "Tally Migration"
-msgid "ERPNext Company"
-msgstr "شرکت ERPNext"
+msgid "CMPERP Company"
+msgstr "شرکت CMPERP"
 
 #. Label of a Data field in DocType 'Employee Group Table'
 #: setup/doctype/employee_group_table/employee_group_table.json
 msgctxt "Employee Group Table"
-msgid "ERPNext User ID"
-msgstr "شناسه کاربری ERPNext"
+msgid "CMPERP User ID"
+msgstr "شناسه کاربری CMPERP"
 
 #. Option for the 'Update frequency of Project' (Select) field in DocType
 #. 'Buying Settings'
@@ -26451,7 +26451,7 @@ msgid "Enable Discount Accounting for Selling"
 msgstr "فعال کردن حسابداری تخفیف برای فروش"
 
 #. Label of a Check field in DocType 'Plaid Settings'
-#: erpnext_integrations/doctype/plaid_settings/plaid_settings.json
+#: cpmerp_integrations/doctype/plaid_settings/plaid_settings.json
 msgctxt "Plaid Settings"
 msgid "Enable European Access"
 msgstr "دسترسی اروپایی را فعال کنید"
@@ -26510,7 +26510,7 @@ msgid "Enabled"
 msgstr "فعال"
 
 #. Label of a Check field in DocType 'Plaid Settings'
-#: erpnext_integrations/doctype/plaid_settings/plaid_settings.json
+#: cpmerp_integrations/doctype/plaid_settings/plaid_settings.json
 msgctxt "Plaid Settings"
 msgid "Enabled"
 msgstr "فعال"
@@ -26972,7 +26972,7 @@ msgctxt "Transaction Deletion Record"
 msgid "Error Log"
 msgstr "گزارش خطا"
 
-#: erpnext_integrations/doctype/tally_migration/tally_migration.js:127
+#: cpmerp_integrations/doctype/tally_migration/tally_migration.js:127
 msgid "Error Message"
 msgstr "پیغام خطا"
 
@@ -26994,7 +26994,7 @@ msgstr "خطا در حین به روز رسانی اطلاعات تماس گیر
 msgid "Error evaluating the criteria formula"
 msgstr "خطا در ارزیابی فرمول معیار"
 
-#: erpnext_integrations/doctype/tally_migration/tally_migration.py:157
+#: cpmerp_integrations/doctype/tally_migration/tally_migration.py:157
 msgid "Error occurred while parsing Chart of Accounts: Please make sure that no two accounts have the same name"
 msgstr ""
 
@@ -27913,7 +27913,7 @@ msgid "Fahrenheit"
 msgstr ""
 
 #: accounts/doctype/payment_request/payment_request_list.js:16
-#: erpnext_integrations/doctype/quickbooks_migrator/quickbooks_migrator.js:68
+#: cpmerp_integrations/doctype/quickbooks_migrator/quickbooks_migrator.js:68
 #: manufacturing/doctype/bom_creator/bom_creator_list.js:13
 msgid "Failed"
 msgstr "ناموفق"
@@ -28008,7 +28008,7 @@ msgid "Failed"
 msgstr "ناموفق"
 
 #. Option for the 'Status' (Select) field in DocType 'QuickBooks Migrator'
-#: erpnext_integrations/doctype/quickbooks_migrator/quickbooks_migrator.json
+#: cpmerp_integrations/doctype/quickbooks_migrator/quickbooks_migrator.json
 msgctxt "QuickBooks Migrator"
 msgid "Failed"
 msgstr "ناموفق"
@@ -28038,7 +28038,7 @@ msgid "Failed Entries"
 msgstr "ورودی های ناموفق"
 
 #. Label of a HTML field in DocType 'Tally Migration'
-#: erpnext_integrations/doctype/tally_migration/tally_migration.json
+#: cpmerp_integrations/doctype/tally_migration/tally_migration.json
 msgctxt "Tally Migration"
 msgid "Failed Import Log"
 msgstr "ثبت ورود ناموفق"
@@ -28173,7 +28173,7 @@ msgctxt "Process Statement Of Accounts"
 msgid "Fetch Customers"
 msgstr "واکشی مشتریان"
 
-#: erpnext_integrations/doctype/quickbooks_migrator/quickbooks_migrator.js:56
+#: cpmerp_integrations/doctype/quickbooks_migrator/quickbooks_migrator.js:56
 msgid "Fetch Data"
 msgstr "واکشی داده ها"
 
@@ -28899,7 +28899,7 @@ msgid "Fixed Deposit Number"
 msgstr "شماره سپرده ثابت"
 
 #. Label of a HTML field in DocType 'Tally Migration'
-#: erpnext_integrations/doctype/tally_migration/tally_migration.json
+#: cpmerp_integrations/doctype/tally_migration/tally_migration.json
 msgctxt "Tally Migration"
 msgid "Fixed Error Log"
 msgstr "ثبت خطا ثابت شد"
@@ -31879,7 +31879,7 @@ msgstr "هر چند وقت یکبار پروژه باید از هزینه کل �
 
 #. Title of an Onboarding Step
 #: setup/onboarding_step/navigation_help/navigation_help.json
-msgid "How to Navigate in ERPNext"
+msgid "How to Navigate in CMPERP"
 msgstr ""
 
 #. Label of a Float field in DocType 'Timesheet Detail'
@@ -32281,12 +32281,12 @@ msgid "If this item has variants, then it cannot be selected in sales orders etc
 msgstr "اگر این کالا دارای انواع باشد، نمی توان آن را در سفارشات فروش و غیره انتخاب کرد."
 
 #: buying/doctype/buying_settings/buying_settings.js:27
-msgid "If this option is configured 'Yes', ERPNext will prevent you from creating a Purchase Invoice or Receipt without creating a Purchase Order first. This configuration can be overridden for a particular supplier by enabling the 'Allow Purchase Invoice Creation Without Purchase Order' checkbox in the Supplier master."
-msgstr "اگر این گزینه 'بله' پیکربندی شده باشد، ERPNext شما را از ایجاد فاکتور خرید یا رسید بدون ایجاد یک سفارش خرید جلوگیری می کند. این پیکربندی را می‌توان با فعال کردن کادر انتخاب «اجازه ایجاد فاکتور خرید بدون سفارش خرید» در بخش اصلی تأمین‌کننده، برای یک تأمین‌کننده خاص لغو کرد."
+msgid "If this option is configured 'Yes', CMPERP will prevent you from creating a Purchase Invoice or Receipt without creating a Purchase Order first. This configuration can be overridden for a particular supplier by enabling the 'Allow Purchase Invoice Creation Without Purchase Order' checkbox in the Supplier master."
+msgstr "اگر این گزینه 'بله' پیکربندی شده باشد، CMPERP شما را از ایجاد فاکتور خرید یا رسید بدون ایجاد یک سفارش خرید جلوگیری می کند. این پیکربندی را می‌توان با فعال کردن کادر انتخاب «اجازه ایجاد فاکتور خرید بدون سفارش خرید» در بخش اصلی تأمین‌کننده، برای یک تأمین‌کننده خاص لغو کرد."
 
 #: buying/doctype/buying_settings/buying_settings.js:34
-msgid "If this option is configured 'Yes', ERPNext will prevent you from creating a Purchase Invoice without creating a Purchase Receipt first. This configuration can be overridden for a particular supplier by enabling the 'Allow Purchase Invoice Creation Without Purchase Receipt' checkbox in the Supplier master."
-msgstr "اگر این گزینه 'بله' پیکربندی شده باشد، ERPNext از ایجاد فاکتور خرید بدون ایجاد یک رسید خرید جلوگیری می کند. این پیکربندی را می‌توان برای یک تامین‌کننده خاص با فعال کردن کادر انتخاب «اجازه ایجاد فاکتور خرید بدون رسید خرید» در قسمت اصلی تأمین‌کننده لغو کرد."
+msgid "If this option is configured 'Yes', CMPERP will prevent you from creating a Purchase Invoice without creating a Purchase Receipt first. This configuration can be overridden for a particular supplier by enabling the 'Allow Purchase Invoice Creation Without Purchase Receipt' checkbox in the Supplier master."
+msgstr "اگر این گزینه 'بله' پیکربندی شده باشد، CMPERP از ایجاد فاکتور خرید بدون ایجاد یک رسید خرید جلوگیری می کند. این پیکربندی را می‌توان برای یک تامین‌کننده خاص با فعال کردن کادر انتخاب «اجازه ایجاد فاکتور خرید بدون رسید خرید» در قسمت اصلی تأمین‌کننده لغو کرد."
 
 #: manufacturing/doctype/manufacturing_settings/manufacturing_settings.js:10
 msgid "If ticked, multiple materials can be used for a single Work Order. This is useful if one or more time consuming products are being manufactured."
@@ -32308,8 +32308,8 @@ msgid "If yes, then this warehouse will be used to store rejected materials"
 msgstr ""
 
 #: stock/doctype/item/item.js:894
-msgid "If you are maintaining stock of this Item in your Inventory, ERPNext will make a stock ledger entry for each transaction of this item."
-msgstr "اگر موجودی این کالا را در موجودی خود نگهداری می کنید، ERPNext برای هر تراکنش این کالا یک ثبت در دفتر کل موجودی ایجاد می کند."
+msgid "If you are maintaining stock of this Item in your Inventory, CMPERP will make a stock ledger entry for each transaction of this item."
+msgstr "اگر موجودی این کالا را در موجودی خود نگهداری می کنید، CMPERP برای هر تراکنش این کالا یک ثبت در دفتر کل موجودی ایجاد می کند."
 
 #. Description of the 'Unreconciled Entries' (Section Break) field in DocType
 #. 'Payment Reconciliation'
@@ -32811,7 +32811,7 @@ msgstr "وارد کردن داده‌ها"
 msgid "Import Data from Spreadsheet"
 msgstr ""
 
-#: erpnext_integrations/doctype/tally_migration/tally_migration.js:71
+#: cpmerp_integrations/doctype/tally_migration/tally_migration.js:71
 msgid "Import Day Book Data"
 msgstr "داده های کتاب روز واردات"
 
@@ -32840,7 +32840,7 @@ msgid "Import Log"
 msgstr "ورود به سیستم"
 
 #. Label of a Section Break field in DocType 'Tally Migration'
-#: erpnext_integrations/doctype/tally_migration/tally_migration.json
+#: cpmerp_integrations/doctype/tally_migration/tally_migration.json
 msgctxt "Tally Migration"
 msgid "Import Log"
 msgstr "ورود به سیستم"
@@ -32851,7 +32851,7 @@ msgctxt "Bank Statement Import"
 msgid "Import Log Preview"
 msgstr "پیش نمایش ورود به سیستم"
 
-#: erpnext_integrations/doctype/tally_migration/tally_migration.js:59
+#: cpmerp_integrations/doctype/tally_migration/tally_migration.js:59
 msgid "Import Master Data"
 msgstr "وارد کردن داده های اصلی"
 
@@ -32907,11 +32907,11 @@ msgstr "وارد کردن از Google Sheets"
 msgid "Import in Bulk"
 msgstr "واردات به صورت عمده"
 
-#: erpnext_integrations/doctype/tally_migration/tally_migration.py:410
+#: cpmerp_integrations/doctype/tally_migration/tally_migration.py:410
 msgid "Importing Items and UOMs"
 msgstr "واردات اقلام و UOM"
 
-#: erpnext_integrations/doctype/tally_migration/tally_migration.py:407
+#: cpmerp_integrations/doctype/tally_migration/tally_migration.py:407
 msgid "Importing Parties and Addresses"
 msgstr "وارد کننده طرف‌ها و آدرس"
 
@@ -33005,7 +33005,7 @@ msgstr "در تولید"
 #: accounts/doctype/bank_statement_import/bank_statement_import.js:52
 #: accounts/doctype/ledger_merge/ledger_merge.js:19
 #: accounts/doctype/opening_invoice_creation_tool/opening_invoice_creation_tool.js:40
-#: erpnext_integrations/doctype/quickbooks_migrator/quickbooks_migrator.js:66
+#: cpmerp_integrations/doctype/quickbooks_migrator/quickbooks_migrator.js:66
 #: manufacturing/doctype/bom_creator/bom_creator_list.js:7
 msgid "In Progress"
 msgstr "در حال پیش رفت"
@@ -33048,7 +33048,7 @@ msgid "In Progress"
 msgstr "در حال پیش رفت"
 
 #. Option for the 'Status' (Select) field in DocType 'QuickBooks Migrator'
-#: erpnext_integrations/doctype/quickbooks_migrator/quickbooks_migrator.json
+#: cpmerp_integrations/doctype/quickbooks_migrator/quickbooks_migrator.json
 msgctxt "QuickBooks Migrator"
 msgid "In Progress"
 msgstr "در حال پیش رفت"
@@ -35072,13 +35072,13 @@ msgid "Is Customer Provided Item"
 msgstr "آیا مورد ارائه شده توسط مشتری"
 
 #. Label of a Check field in DocType 'Tally Migration'
-#: erpnext_integrations/doctype/tally_migration/tally_migration.json
+#: cpmerp_integrations/doctype/tally_migration/tally_migration.json
 msgctxt "Tally Migration"
 msgid "Is Day Book Data Imported"
 msgstr "آیا داده های کتاب روز وارد شده است"
 
 #. Label of a Check field in DocType 'Tally Migration'
-#: erpnext_integrations/doctype/tally_migration/tally_migration.json
+#: cpmerp_integrations/doctype/tally_migration/tally_migration.json
 msgctxt "Tally Migration"
 msgid "Is Day Book Data Processed"
 msgstr "آیا داده های کتاب روز پردازش شده است"
@@ -35418,13 +35418,13 @@ msgid "Is Mandatory"
 msgstr "اجباری است"
 
 #. Label of a Check field in DocType 'Tally Migration'
-#: erpnext_integrations/doctype/tally_migration/tally_migration.json
+#: cpmerp_integrations/doctype/tally_migration/tally_migration.json
 msgctxt "Tally Migration"
 msgid "Is Master Data Imported"
 msgstr "آیا داده اصلی وارد شده است"
 
 #. Label of a Check field in DocType 'Tally Migration'
-#: erpnext_integrations/doctype/tally_migration/tally_migration.json
+#: cpmerp_integrations/doctype/tally_migration/tally_migration.json
 msgctxt "Tally Migration"
 msgid "Is Master Data Processed"
 msgstr "داده های اصلی پردازش شده است"
@@ -38135,7 +38135,7 @@ msgid "Items"
 msgstr "آیتم‌ها"
 
 #. Label of a Attach field in DocType 'Tally Migration'
-#: erpnext_integrations/doctype/tally_migration/tally_migration.json
+#: cpmerp_integrations/doctype/tally_migration/tally_migration.json
 msgctxt "Tally Migration"
 msgid "Items"
 msgstr "آیتم‌ها"
@@ -39082,7 +39082,7 @@ msgstr ""
 msgid "Learn Sales Management"
 msgstr ""
 
-#. Label of an action in the Onboarding Step 'How to Navigate in ERPNext'
+#. Label of an action in the Onboarding Step 'How to Navigate in CMPERP'
 #: setup/onboarding_step/navigation_help/navigation_help.json
 msgid "Learn about  Navigation options"
 msgstr ""
@@ -39092,7 +39092,7 @@ msgstr ""
 #: accounts/doctype/accounts_settings/accounts_settings.json
 #, python-format
 msgctxt "Accounts Settings"
-msgid "Learn about <a href=\"https://docs.erpnext.com/docs/v13/user/manual/en/accounts/articles/common_party_accounting#:~:text=Common%20Party%20Accounting%20in%20ERPNext,Invoice%20against%20a%20primary%20Supplier.\">Common Party</a>"
+msgid "Learn about <a href=\"https://docs.cpmerp.com/docs/v13/user/manual/en/accounts/articles/common_party_accounting#:~:text=Common%20Party%20Accounting%20in%20CMPERP,Invoice%20against%20a%20primary%20Supplier.\">Common Party</a>"
 msgstr ""
 
 #. Label of an action in the Onboarding Step 'Updating Opening Balances'
@@ -39268,7 +39268,7 @@ msgstr ""
 
 #. Title of the Module Onboarding 'Home'
 #: setup/module_onboarding/home/home.json
-msgid "Let's begin your journey with ERPNext"
+msgid "Let's begin your journey with CMPERP"
 msgstr ""
 
 #. Label of an action in the Onboarding Step 'Purchase an Asset'
@@ -39633,7 +39633,7 @@ msgctxt "Support Search Source"
 msgid "Link Options"
 msgstr "گزینه های پیوند"
 
-#: erpnext_integrations/doctype/plaid_settings/plaid_settings.js:15
+#: cpmerp_integrations/doctype/plaid_settings/plaid_settings.js:15
 msgid "Link a new bank account"
 msgstr "پیوند یک حساب بانکی جدید"
 
@@ -41216,7 +41216,7 @@ msgstr "وضعیت تأهل"
 msgid "Mark As Closed"
 msgstr ""
 
-#: erpnext_integrations/doctype/tally_migration/tally_migration.js:323
+#: cpmerp_integrations/doctype/tally_migration/tally_migration.js:323
 msgid "Mark as unresolved"
 msgstr ""
 
@@ -41281,7 +41281,7 @@ msgid "Master"
 msgstr "استاد"
 
 #. Label of a Attach field in DocType 'Tally Migration'
-#: erpnext_integrations/doctype/tally_migration/tally_migration.json
+#: cpmerp_integrations/doctype/tally_migration/tally_migration.json
 msgctxt "Tally Migration"
 msgid "Master Data"
 msgstr "داده های اصلی"
@@ -42110,7 +42110,7 @@ msgctxt "SMS Center"
 msgid "Messages greater than 160 characters will be split into multiple messages"
 msgstr "پیام های بیشتر از 160 کاراکتر به چند پیام تقسیم می شوند"
 
-#: erpnext_integrations/doctype/tally_migration/tally_migration.js:123
+#: cpmerp_integrations/doctype/tally_migration/tally_migration.js:123
 msgid "Meta Data"
 msgstr ""
 
@@ -48288,7 +48288,7 @@ msgid "Partially ordered"
 msgstr "تا حدی سفارش داده شده"
 
 #. Label of a Attach field in DocType 'Tally Migration'
-#: erpnext_integrations/doctype/tally_migration/tally_migration.json
+#: cpmerp_integrations/doctype/tally_migration/tally_migration.json
 msgctxt "Tally Migration"
 msgid "Parties"
 msgstr "طرف‌ها"
@@ -50487,23 +50487,23 @@ msgid "Plaid Access Token"
 msgstr "نشانه دسترسی شطرنجی"
 
 #. Label of a Data field in DocType 'Plaid Settings'
-#: erpnext_integrations/doctype/plaid_settings/plaid_settings.json
+#: cpmerp_integrations/doctype/plaid_settings/plaid_settings.json
 msgctxt "Plaid Settings"
 msgid "Plaid Client ID"
 msgstr "شناسه مشتری Plaid"
 
 #. Label of a Select field in DocType 'Plaid Settings'
-#: erpnext_integrations/doctype/plaid_settings/plaid_settings.json
+#: cpmerp_integrations/doctype/plaid_settings/plaid_settings.json
 msgctxt "Plaid Settings"
 msgid "Plaid Environment"
 msgstr "محیط شطرنجی"
 
-#: erpnext_integrations/doctype/plaid_settings/plaid_settings.py:154
-#: erpnext_integrations/doctype/plaid_settings/plaid_settings.py:178
+#: cpmerp_integrations/doctype/plaid_settings/plaid_settings.py:154
+#: cpmerp_integrations/doctype/plaid_settings/plaid_settings.py:178
 msgid "Plaid Link Failed"
 msgstr "پیوند Plaid ناموفق بود"
 
-#: erpnext_integrations/doctype/plaid_settings/plaid_settings.py:252
+#: cpmerp_integrations/doctype/plaid_settings/plaid_settings.py:252
 msgid "Plaid Link Refresh Required"
 msgstr "بازخوانی پیوند شطرنجی مورد نیاز است"
 
@@ -50512,13 +50512,13 @@ msgid "Plaid Link Updated"
 msgstr "پیوند شطرنجی به روز شد"
 
 #. Label of a Password field in DocType 'Plaid Settings'
-#: erpnext_integrations/doctype/plaid_settings/plaid_settings.json
+#: cpmerp_integrations/doctype/plaid_settings/plaid_settings.json
 msgctxt "Plaid Settings"
 msgid "Plaid Secret"
 msgstr "راز شطرنجی"
 
 #. Name of a DocType
-#: erpnext_integrations/doctype/plaid_settings/plaid_settings.json
+#: cpmerp_integrations/doctype/plaid_settings/plaid_settings.json
 msgid "Plaid Settings"
 msgstr "تنظیمات شطرنجی"
 
@@ -50528,7 +50528,7 @@ msgctxt "Plaid Settings"
 msgid "Plaid Settings"
 msgstr "تنظیمات شطرنجی"
 
-#: erpnext_integrations/doctype/plaid_settings/plaid_settings.py:227
+#: cpmerp_integrations/doctype/plaid_settings/plaid_settings.py:227
 msgid "Plaid transactions sync error"
 msgstr "خطای همگام سازی تراکنش های پرداخت شده"
 
@@ -50824,7 +50824,7 @@ msgstr "لطفاً با عملیات یا هزینه عملیاتی مبتنی �
 msgid "Please check the error message and take necessary actions to fix the error and then restart the reposting again."
 msgstr "لطفاً پیام خطا را بررسی کنید و اقدامات لازم را برای رفع خطا انجام دهید و سپس ارسال مجدد را مجدداً راه اندازی کنید."
 
-#: erpnext_integrations/doctype/plaid_settings/plaid_connector.py:65
+#: cpmerp_integrations/doctype/plaid_settings/plaid_connector.py:65
 msgid "Please check your Plaid client ID and secret values"
 msgstr "لطفاً شناسه مشتری Plaid و مقادیر مخفی خود را بررسی کنید"
 
@@ -51165,7 +51165,7 @@ msgstr "لطفا آیتم‌ها را از یادداشت تحویل بردار�
 msgid "Please rectify and try again."
 msgstr "لطفاً اصلاح کنید و دوباره امتحان کنید."
 
-#: erpnext_integrations/doctype/plaid_settings/plaid_settings.py:251
+#: cpmerp_integrations/doctype/plaid_settings/plaid_settings.py:251
 msgid "Please refresh or reset the Plaid linking of the Bank {}."
 msgstr "لطفاً پیوند Plaid بانک {} را بازخوانی یا بازنشانی کنید."
 
@@ -51674,7 +51674,7 @@ msgstr "لطفاً {0} را برای آدرس {1} تنظیم کنید"
 msgid "Please set {0} in BOM Creator {1}"
 msgstr "لطفاً {0} را در BOM Creator {1} تنظیم کنید"
 
-#: erpnext_integrations/doctype/plaid_settings/plaid_settings.py:97
+#: cpmerp_integrations/doctype/plaid_settings/plaid_settings.py:97
 msgid "Please setup and enable a group account with the Account Type - {0} for the company {1}"
 msgstr ""
 
@@ -53655,7 +53655,7 @@ msgctxt "Quality Review"
 msgid "Procedure"
 msgstr "روش"
 
-#: erpnext_integrations/doctype/tally_migration/tally_migration.js:75
+#: cpmerp_integrations/doctype/tally_migration/tally_migration.js:75
 msgid "Process Day Book Data"
 msgstr "پردازش داده های کتاب روز"
 
@@ -53676,9 +53676,9 @@ msgctxt "Quality Procedure Process"
 msgid "Process Description"
 msgstr "شرح فرایند"
 
-#: erpnext_integrations/doctype/tally_migration/tally_migration.py:334
-#: erpnext_integrations/doctype/tally_migration/tally_migration.py:420
-#: erpnext_integrations/doctype/tally_migration/tally_migration.py:595
+#: cpmerp_integrations/doctype/tally_migration/tally_migration.py:334
+#: cpmerp_integrations/doctype/tally_migration/tally_migration.py:420
+#: cpmerp_integrations/doctype/tally_migration/tally_migration.py:595
 msgid "Process Failed"
 msgstr "فرآیند ناموفق بود"
 
@@ -53741,7 +53741,7 @@ msgstr "گزارش از دست دادن فرآیند"
 msgid "Process Loss Value"
 msgstr "ارزش از دست دادن فرآیند"
 
-#: erpnext_integrations/doctype/tally_migration/tally_migration.js:63
+#: cpmerp_integrations/doctype/tally_migration/tally_migration.js:63
 msgid "Process Master Data"
 msgstr "پردازش داده های اصلی"
 
@@ -53806,7 +53806,7 @@ msgid "Processed BOMs"
 msgstr "BOM های پردازش شده"
 
 #. Label of a Section Break field in DocType 'Tally Migration'
-#: erpnext_integrations/doctype/tally_migration/tally_migration.json
+#: cpmerp_integrations/doctype/tally_migration/tally_migration.json
 msgctxt "Tally Migration"
 msgid "Processed Files"
 msgstr "فایل های پردازش شده"
@@ -53817,15 +53817,15 @@ msgctxt "Quality Procedure"
 msgid "Processes"
 msgstr "فرآیندها"
 
-#: erpnext_integrations/doctype/tally_migration/tally_migration.py:312
+#: cpmerp_integrations/doctype/tally_migration/tally_migration.py:312
 msgid "Processing Chart of Accounts and Parties"
 msgstr "پردازش نمودار حساب ها و طرف‌ها"
 
-#: erpnext_integrations/doctype/tally_migration/tally_migration.py:318
+#: cpmerp_integrations/doctype/tally_migration/tally_migration.py:318
 msgid "Processing Items and UOMs"
 msgstr "پردازش اقلام و UOM"
 
-#: erpnext_integrations/doctype/tally_migration/tally_migration.py:315
+#: cpmerp_integrations/doctype/tally_migration/tally_migration.py:315
 msgid "Processing Party Addresses"
 msgstr "پردازش آدرس های طرف"
 
@@ -53833,7 +53833,7 @@ msgstr "پردازش آدرس های طرف"
 msgid "Processing Sales! Please Wait..."
 msgstr "در حال پردازش فروش! لطفا صبر کنید..."
 
-#: erpnext_integrations/doctype/tally_migration/tally_migration.py:586
+#: cpmerp_integrations/doctype/tally_migration/tally_migration.py:586
 msgid "Processing Vouchers"
 msgstr "پردازش کوپن ها"
 
@@ -57311,12 +57311,12 @@ msgid "Quick Stock Balance"
 msgstr "موجودی سریع موجودی"
 
 #. Name of a DocType
-#: erpnext_integrations/doctype/quickbooks_migrator/quickbooks_migrator.json
+#: cpmerp_integrations/doctype/quickbooks_migrator/quickbooks_migrator.json
 msgid "QuickBooks Migrator"
 msgstr ""
 
 #. Label of a Data field in DocType 'QuickBooks Migrator'
-#: erpnext_integrations/doctype/quickbooks_migrator/quickbooks_migrator.json
+#: cpmerp_integrations/doctype/quickbooks_migrator/quickbooks_migrator.json
 msgctxt "QuickBooks Migrator"
 msgid "Quickbooks Company ID"
 msgstr "شناسه شرکت Quickbooks"
@@ -58408,8 +58408,8 @@ msgctxt "Quality Inspection Reading"
 msgid "Reading 9"
 msgstr "خواندن 9"
 
-#: erpnext_integrations/doctype/tally_migration/tally_migration.py:306
-#: erpnext_integrations/doctype/tally_migration/tally_migration.py:583
+#: cpmerp_integrations/doctype/tally_migration/tally_migration.py:306
+#: cpmerp_integrations/doctype/tally_migration/tally_migration.py:583
 msgid "Reading Uploaded File"
 msgstr "خواندن فایل آپلود شده"
 
@@ -58973,7 +58973,7 @@ msgid "Redemption Date"
 msgstr "تاریخ بازخرید"
 
 #. Label of a Data field in DocType 'QuickBooks Migrator'
-#: erpnext_integrations/doctype/quickbooks_migrator/quickbooks_migrator.json
+#: cpmerp_integrations/doctype/quickbooks_migrator/quickbooks_migrator.json
 msgctxt "QuickBooks Migrator"
 msgid "Redirect URL"
 msgstr "تغییر مسیر URL"
@@ -59599,7 +59599,7 @@ msgid "Refresh Plaid Link"
 msgstr "پیوند شطرنجی را تازه کنید"
 
 #. Label of a Small Text field in DocType 'QuickBooks Migrator'
-#: erpnext_integrations/doctype/quickbooks_migrator/quickbooks_migrator.json
+#: cpmerp_integrations/doctype/quickbooks_migrator/quickbooks_migrator.json
 msgctxt "QuickBooks Migrator"
 msgid "Refresh Token"
 msgstr ""
@@ -60916,7 +60916,7 @@ msgctxt "Transaction Deletion Record"
 msgid "Reset Company Default Values"
 msgstr ""
 
-#: erpnext_integrations/doctype/plaid_settings/plaid_settings.js:19
+#: cpmerp_integrations/doctype/plaid_settings/plaid_settings.js:19
 msgid "Reset Plaid Link"
 msgstr "بازنشانی پیوند Plaid"
 
@@ -64322,7 +64322,7 @@ msgstr "ذخیره"
 msgid "Save as Draft"
 msgstr "ذخیره به عنوان پیش نویس"
 
-#: erpnext_integrations/doctype/quickbooks_migrator/quickbooks_migrator.py:364
+#: cpmerp_integrations/doctype/quickbooks_migrator/quickbooks_migrator.py:364
 msgid "Saving {0}"
 msgstr "در حال ذخیره {0}"
 
@@ -64566,7 +64566,7 @@ msgid "School/University"
 msgstr "مدرسه/دانشگاه"
 
 #. Label of a Data field in DocType 'QuickBooks Migrator'
-#: erpnext_integrations/doctype/quickbooks_migrator/quickbooks_migrator.json
+#: cpmerp_integrations/doctype/quickbooks_migrator/quickbooks_migrator.json
 msgctxt "QuickBooks Migrator"
 msgid "Scope"
 msgstr "محدوده"
@@ -64997,7 +64997,7 @@ msgstr "یک تامین کننده انتخاب کنید"
 msgid "Select a Supplier from the Default Suppliers of the items below. On selection, a Purchase Order will be made against items belonging to the selected Supplier only."
 msgstr "یک تامین کننده از تامین کنندگان پیش فرض موارد زیر انتخاب کنید. در صورت انتخاب، یک سفارش خرید فقط در برابر اقلام متعلق به تامین کننده منتخب انجام می شود."
 
-#: erpnext_integrations/doctype/plaid_settings/plaid_settings.js:156
+#: cpmerp_integrations/doctype/plaid_settings/plaid_settings.js:156
 msgid "Select a company"
 msgstr "یک شرکت را انتخاب کنید"
 
@@ -67406,7 +67406,7 @@ msgstr "نمایش مقدار تجمعی"
 msgid "Show Disabled Warehouses"
 msgstr "نمایش انبارهای غیرفعال"
 
-#: erpnext_integrations/doctype/tally_migration/tally_migration.js:306
+#: cpmerp_integrations/doctype/tally_migration/tally_migration.js:306
 msgid "Show Document"
 msgstr "نمایش سند"
 
@@ -67529,7 +67529,7 @@ msgid "Show Taxes as Table in Print"
 msgstr "نمایش مالیات به عنوان جدول در چاپ"
 
 #: accounts/doctype/bank_statement_import/bank_statement_import.js:456
-#: erpnext_integrations/doctype/tally_migration/tally_migration.js:296
+#: cpmerp_integrations/doctype/tally_migration/tally_migration.js:296
 msgid "Show Traceback"
 msgstr "نمایش ردیابی"
 
@@ -68836,7 +68836,7 @@ msgid "Status"
 msgstr "وضعیت"
 
 #. Label of a Select field in DocType 'QuickBooks Migrator'
-#: erpnext_integrations/doctype/quickbooks_migrator/quickbooks_migrator.json
+#: cpmerp_integrations/doctype/quickbooks_migrator/quickbooks_migrator.json
 msgctxt "QuickBooks Migrator"
 msgid "Status"
 msgstr "وضعیت"
@@ -68933,7 +68933,7 @@ msgid "Status"
 msgstr "وضعیت"
 
 #. Label of a Data field in DocType 'Tally Migration'
-#: erpnext_integrations/doctype/tally_migration/tally_migration.json
+#: cpmerp_integrations/doctype/tally_migration/tally_migration.json
 msgctxt "Tally Migration"
 msgid "Status"
 msgstr "وضعیت"
@@ -71762,16 +71762,16 @@ msgctxt "UOM"
 msgid "Symbol"
 msgstr "سمبل"
 
-#: erpnext_integrations/doctype/plaid_settings/plaid_settings.js:23
+#: cpmerp_integrations/doctype/plaid_settings/plaid_settings.js:23
 msgid "Sync Now"
 msgstr "اکنون همگام سازی کنید"
 
-#: erpnext_integrations/doctype/plaid_settings/plaid_settings.js:31
+#: cpmerp_integrations/doctype/plaid_settings/plaid_settings.js:31
 msgid "Sync Started"
 msgstr "همگام سازی شروع شد"
 
 #. Label of a Check field in DocType 'Plaid Settings'
-#: erpnext_integrations/doctype/plaid_settings/plaid_settings.json
+#: cpmerp_integrations/doctype/plaid_settings/plaid_settings.json
 msgctxt "Plaid Settings"
 msgid "Synchronize all accounts every hour"
 msgstr "هر ساعت همه حساب ها را همگام سازی کنید"
@@ -71847,9 +71847,9 @@ msgstr "هر ساعت همه حساب ها را همگام سازی کنید"
 #: crm/doctype/opportunity_lost_reason/opportunity_lost_reason.json
 #: crm/doctype/opportunity_type/opportunity_type.json
 #: crm/doctype/prospect/prospect.json
-#: erpnext_integrations/doctype/plaid_settings/plaid_settings.json
-#: erpnext_integrations/doctype/quickbooks_migrator/quickbooks_migrator.json
-#: erpnext_integrations/doctype/tally_migration/tally_migration.json
+#: cpmerp_integrations/doctype/plaid_settings/plaid_settings.json
+#: cpmerp_integrations/doctype/quickbooks_migrator/quickbooks_migrator.json
+#: cpmerp_integrations/doctype/tally_migration/tally_migration.json
 #: manufacturing/doctype/blanket_order/blanket_order.json
 #: manufacturing/doctype/bom_update_log/bom_update_log.json
 #: manufacturing/doctype/downtime_entry/downtime_entry.json
@@ -72010,29 +72010,29 @@ msgid "Take a walk-through of Manufacturing Settings"
 msgstr ""
 
 #. Label of a Data field in DocType 'Tally Migration'
-#: erpnext_integrations/doctype/tally_migration/tally_migration.json
+#: cpmerp_integrations/doctype/tally_migration/tally_migration.json
 msgctxt "Tally Migration"
 msgid "Tally Company"
 msgstr "شرکت تالی"
 
 #. Label of a Data field in DocType 'Tally Migration'
-#: erpnext_integrations/doctype/tally_migration/tally_migration.json
+#: cpmerp_integrations/doctype/tally_migration/tally_migration.json
 msgctxt "Tally Migration"
 msgid "Tally Creditors Account"
 msgstr "حساب اعتباردهندگان"
 
 #. Label of a Data field in DocType 'Tally Migration'
-#: erpnext_integrations/doctype/tally_migration/tally_migration.json
+#: cpmerp_integrations/doctype/tally_migration/tally_migration.json
 msgctxt "Tally Migration"
 msgid "Tally Debtors Account"
 msgstr "حساب بدهکاران"
 
 #. Name of a DocType
-#: erpnext_integrations/doctype/tally_migration/tally_migration.json
+#: cpmerp_integrations/doctype/tally_migration/tally_migration.json
 msgid "Tally Migration"
 msgstr "تالی مهاجرت"
 
-#: erpnext_integrations/doctype/tally_migration/tally_migration.js:34
+#: cpmerp_integrations/doctype/tally_migration/tally_migration.js:34
 msgid "Tally Migration Error"
 msgstr "خطای مهاجرت Tally"
 
@@ -73901,7 +73901,7 @@ msgstr "سر حساب تحت بدهی یا حقوق صاحبان موجودی، 
 
 #. Description of the 'Accounts' (Section Break) field in DocType 'Tally
 #. Migration'
-#: erpnext_integrations/doctype/tally_migration/tally_migration.json
+#: cpmerp_integrations/doctype/tally_migration/tally_migration.json
 msgctxt "Tally Migration"
 msgid "The accounts are set by the system automatically but do confirm these defaults"
 msgstr "حساب ها توسط سیستم به طور خودکار تنظیم می شوند اما این پیش فرض ها را تأیید کنید"
@@ -74086,7 +74086,7 @@ msgstr "اشتراک‌گذاری‌ها با {0} وجود ندارند"
 msgid "The stock has been reserved for the following Items and Warehouses, un-reserve the same to {0} the Stock Reconciliation: <br /><br /> {1}"
 msgstr "موجودی برای اقلام و انبارهای زیر رزرو شده است، همان را در {0} تطبیق موجودی لغو کنید: <br /><br /> {1}"
 
-#: erpnext_integrations/doctype/plaid_settings/plaid_settings.js:32
+#: cpmerp_integrations/doctype/plaid_settings/plaid_settings.js:32
 msgid "The sync has started in the background, please check the {0} list for new records."
 msgstr "همگام سازی در پس زمینه شروع شده است، لطفاً لیست {0} را برای رکوردهای جدید بررسی کنید."
 
@@ -74179,8 +74179,8 @@ msgid "There are only {0} asset created or linked to {1}. Please create or link 
 msgstr "فقط {0} دارایی ایجاد شده یا به {1} پیوند داده شده است. لطفاً {2} دارایی ها را با سند مربوطه ایجاد یا پیوند دهید."
 
 #: stock/doctype/item/item.js:913
-msgid "There are two options to maintain valuation of stock. FIFO (first in - first out) and Moving Average. To understand this topic in detail please visit <a href='https://docs.erpnext.com/docs/v13/user/manual/en/stock/articles/item-valuation-fifo-and-moving-average' target='_blank'>Item Valuation, FIFO and Moving Average.</a>"
-msgstr "دو گزینه برای حفظ ارزش موجودی وجود دارد. FIFO (اولین ورود - اولین خروج) و میانگین متحرک. برای درک جزئیات این موضوع، لطفاً از هدف <a href='https://docs.erpnext.com/docs/v13/user/manual/en/stock/articles/item-valuation-fifo-and-moving-average دیدن کنید. ='_blank'>ارزش اقلام، FIFO و میانگین متحرک.</a>"
+msgid "There are two options to maintain valuation of stock. FIFO (first in - first out) and Moving Average. To understand this topic in detail please visit <a href='https://docs.cpmerp.com/docs/v13/user/manual/en/stock/articles/item-valuation-fifo-and-moving-average' target='_blank'>Item Valuation, FIFO and Moving Average.</a>"
+msgstr "دو گزینه برای حفظ ارزش موجودی وجود دارد. FIFO (اولین ورود - اولین خروج) و میانگین متحرک. برای درک جزئیات این موضوع، لطفاً از هدف <a href='https://docs.cpmerp.com/docs/v13/user/manual/en/stock/articles/item-valuation-fifo-and-moving-average دیدن کنید. ='_blank'>ارزش اقلام، FIFO و میانگین متحرک.</a>"
 
 #: stock/report/item_variant_details/item_variant_details.py:25
 msgid "There aren't any item variants for the selected item"
@@ -74218,7 +74218,7 @@ msgstr "چیزی برای ویرایش وجود ندارد."
 msgid "There must be atleast 1 Finished Good in this Stock Entry"
 msgstr "باید حداقل 1 کالای تمام شده در این ورودی موجودی وجود داشته باشد"
 
-#: erpnext_integrations/doctype/plaid_settings/plaid_settings.py:153
+#: cpmerp_integrations/doctype/plaid_settings/plaid_settings.py:153
 msgid "There was an error creating Bank Account while linking with Plaid."
 msgstr "هنگام پیوند با Plaid خطایی در ایجاد حساب بانکی روی داد."
 
@@ -74226,16 +74226,16 @@ msgstr "هنگام پیوند با Plaid خطایی در ایجاد حساب ب�
 msgid "There was an error saving the document."
 msgstr "هنگام ذخیره سند خطایی روی داد."
 
-#: erpnext_integrations/doctype/plaid_settings/plaid_settings.py:250
+#: cpmerp_integrations/doctype/plaid_settings/plaid_settings.py:250
 msgid "There was an error syncing transactions."
 msgstr "هنگام همگام‌سازی تراکنش‌ها خطایی روی داد."
 
-#: erpnext_integrations/doctype/plaid_settings/plaid_settings.py:175
+#: cpmerp_integrations/doctype/plaid_settings/plaid_settings.py:175
 msgid "There was an error updating Bank Account {} while linking with Plaid."
 msgstr "هنگام به‌روزرسانی حساب بانکی {} هنگام پیوند با Plaid خطایی روی داد."
 
 #: accounts/doctype/bank/bank.js:115
-#: erpnext_integrations/doctype/plaid_settings/plaid_settings.js:114
+#: cpmerp_integrations/doctype/plaid_settings/plaid_settings.js:114
 msgid "There was an issue connecting to Plaid's authentication server. Check browser console for more information"
 msgstr "مشکلی در اتصال به سرور تأیید اعتبار Plaid وجود داشت. برای اطلاعات بیشتر کنسول مرورگر را بررسی کنید"
 
@@ -74283,8 +74283,8 @@ msgid "This action will stop future billing. Are you sure you want to cancel thi
 msgstr "این اقدام صورت‌حساب آینده را متوقف می‌کند. آیا مطمئن هستید که می خواهید این اشتراک را لغو کنید؟"
 
 #: accounts/doctype/bank_account/bank_account.js:35
-msgid "This action will unlink this account from any external service integrating ERPNext with your bank accounts. It cannot be undone. Are you certain ?"
-msgstr "این عمل پیوند این حساب را با هر سرویس خارجی که ERPNext را با حساب های بانکی شما یکپارچه می کند، لغو می کند. نمی توان آن را واگرد کرد. مطمئنی؟"
+msgid "This action will unlink this account from any external service integrating CMPERP with your bank accounts. It cannot be undone. Are you certain ?"
+msgstr "این عمل پیوند این حساب را با هر سرویس خارجی که CMPERP را با حساب های بانکی شما یکپارچه می کند، لغو می کند. نمی توان آن را واگرد کرد. مطمئنی؟"
 
 #: buying/doctype/supplier_scorecard/supplier_scorecard_dashboard.py:7
 msgid "This covers all scorecards tied to this Setup"
@@ -75638,7 +75638,7 @@ msgid "Toggle Recent Orders"
 msgstr "تغییر سفارشات اخیر"
 
 #. Label of a Data field in DocType 'QuickBooks Migrator'
-#: erpnext_integrations/doctype/quickbooks_migrator/quickbooks_migrator.json
+#: cpmerp_integrations/doctype/quickbooks_migrator/quickbooks_migrator.json
 msgctxt "QuickBooks Migrator"
 msgid "Token Endpoint"
 msgstr "نقطه پایان نشانه"
@@ -78073,7 +78073,7 @@ msgid "UOM conversion factor required for UOM: {0} in Item: {1}"
 msgstr "ضریب تبدیل UOM مورد نیاز برای UOM: {0} در مورد: {1}"
 
 #. Description of the 'Default UOM' (Link) field in DocType 'Tally Migration'
-#: erpnext_integrations/doctype/tally_migration/tally_migration.json
+#: cpmerp_integrations/doctype/tally_migration/tally_migration.json
 msgctxt "Tally Migration"
 msgid "UOM in case unspecified in imported data"
 msgstr "UOM در صورت نامشخص در داده های وارد شده"
@@ -78089,7 +78089,7 @@ msgid "UOMs"
 msgstr "UOM ها"
 
 #. Label of a Attach field in DocType 'Tally Migration'
-#: erpnext_integrations/doctype/tally_migration/tally_migration.json
+#: cpmerp_integrations/doctype/tally_migration/tally_migration.json
 msgctxt "Tally Migration"
 msgid "UOMs"
 msgstr "UOM ها"
@@ -78168,7 +78168,7 @@ msgid "Unclosed Fiscal Years Profit / Loss (Credit)"
 msgstr "سود / زیان سالهای مالی بسته نشده (اعتبار)"
 
 #. Label of a Link field in DocType 'QuickBooks Migrator'
-#: erpnext_integrations/doctype/quickbooks_migrator/quickbooks_migrator.json
+#: cpmerp_integrations/doctype/quickbooks_migrator/quickbooks_migrator.json
 msgctxt "QuickBooks Migrator"
 msgid "Undeposited Funds Account"
 msgstr "حساب وجوه سپرده نشده"
@@ -78420,7 +78420,7 @@ msgstr "ذخیره موجودی"
 msgid "Unreserving Stock..."
 msgstr "عدم رزرو موجودی..."
 
-#: erpnext_integrations/doctype/tally_migration/tally_migration.js:123
+#: cpmerp_integrations/doctype/tally_migration/tally_migration.js:123
 msgid "Unresolve"
 msgstr ""
 
@@ -78485,7 +78485,7 @@ msgctxt "Appointment"
 msgid "Unverified"
 msgstr "تایید نشده"
 
-#: erpnext_integrations/utils.py:22
+#: cpmerp_integrations/utils.py:22
 msgid "Unverified Webhook Data"
 msgstr "داده های وب هوک تایید نشده"
 
@@ -80239,14 +80239,14 @@ msgid "Vouchers"
 msgstr "کوپن"
 
 #. Label of a Attach field in DocType 'Tally Migration'
-#: erpnext_integrations/doctype/tally_migration/tally_migration.json
+#: cpmerp_integrations/doctype/tally_migration/tally_migration.json
 msgctxt "Tally Migration"
 msgid "Vouchers"
 msgstr "کوپن"
 
 #: patches/v15_0/remove_exotel_integration.py:32
-msgid "WARNING: Exotel app has been separated from ERPNext, please install the app to continue using Exotel integration."
-msgstr "هشدار: برنامه Exotel از ERPNext جدا شده است، لطفاً برای ادامه استفاده از Exotel یکپارچه سازی، برنامه را نصب کنید."
+msgid "WARNING: Exotel app has been separated from CMPERP, please install the app to continue using Exotel integration."
+msgstr "هشدار: برنامه Exotel از CMPERP جدا شده است، لطفاً برای ادامه استفاده از Exotel یکپارچه سازی، برنامه را نصب کنید."
 
 #. Label of a Link field in DocType 'Material Request Item'
 #: stock/doctype/material_request_item/material_request_item.json
@@ -82519,7 +82519,7 @@ msgstr "برای اینکه بتوانید این سند را لغو کنید، 
 
 #. Success message of the Module Onboarding 'Home'
 #: setup/module_onboarding/home/home.json
-msgid "You're ready to start your journey with ERPNext"
+msgid "You're ready to start your journey with CMPERP"
 msgstr ""
 
 #. Option for the 'Provider' (Select) field in DocType 'Video'
@@ -82533,12 +82533,12 @@ msgstr "یوتیوب"
 msgid "YouTube Interactions"
 msgstr "تعاملات یوتیوب"
 
-#. Description of the 'ERPNext Company' (Data) field in DocType 'Tally
+#. Description of the 'CMPERP Company' (Data) field in DocType 'Tally
 #. Migration'
-#: erpnext_integrations/doctype/tally_migration/tally_migration.json
+#: cpmerp_integrations/doctype/tally_migration/tally_migration.json
 msgctxt "Tally Migration"
-msgid "Your Company set in ERPNext"
-msgstr "شرکت شما در ERPNext تنظیم شده است"
+msgid "Your Company set in CMPERP"
+msgstr "شرکت شما در CMPERP تنظیم شده است"
 
 #: www/book_appointment/index.html:49
 msgid "Your Name (required)"
@@ -82599,8 +82599,8 @@ msgid "Zip File"
 msgstr "فایل فشرده"
 
 #: stock/reorder_item.py:367
-msgid "[Important] [ERPNext] Auto Reorder Errors"
-msgstr "[مهم] [ERPNext] خطاهای سفارش مجدد خودکار"
+msgid "[Important] [CMPERP] Auto Reorder Errors"
+msgstr "[مهم] [CMPERP] خطاهای سفارش مجدد خودکار"
 
 #: controllers/status_updater.py:247
 msgid "`Allow Negative rates for Items`"
@@ -82644,7 +82644,7 @@ msgstr "شرح"
 
 #. Option for the 'Plaid Environment' (Select) field in DocType 'Plaid
 #. Settings'
-#: erpnext_integrations/doctype/plaid_settings/plaid_settings.json
+#: cpmerp_integrations/doctype/plaid_settings/plaid_settings.json
 msgctxt "Plaid Settings"
 msgid "development"
 msgstr "توسعه"
@@ -82900,7 +82900,7 @@ msgstr "نام ردیف اقلام بسته محصول در سفارش فروش.
 
 #. Option for the 'Plaid Environment' (Select) field in DocType 'Plaid
 #. Settings'
-#: erpnext_integrations/doctype/plaid_settings/plaid_settings.json
+#: cpmerp_integrations/doctype/plaid_settings/plaid_settings.json
 msgctxt "Plaid Settings"
 msgid "production"
 msgstr "تولید"
@@ -82987,7 +82987,7 @@ msgstr ""
 
 #. Option for the 'Plaid Environment' (Select) field in DocType 'Plaid
 #. Settings'
-#: erpnext_integrations/doctype/plaid_settings/plaid_settings.json
+#: cpmerp_integrations/doctype/plaid_settings/plaid_settings.json
 msgctxt "Plaid Settings"
 msgid "sandbox"
 msgstr "جعبه شنی"
@@ -83603,7 +83603,7 @@ msgstr "{} دارایی های مرتبط با آن را ارسال کرده ا�
 msgid "{} is a child company."
 msgstr "{} یک شرکت فرزند است."
 
-#: erpnext_integrations/doctype/tally_migration/tally_migration.py:710
+#: cpmerp_integrations/doctype/tally_migration/tally_migration.py:710
 msgid "{} of {}"
 msgstr "{} از {}"
 

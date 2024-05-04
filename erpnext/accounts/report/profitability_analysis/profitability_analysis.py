@@ -6,12 +6,12 @@ import frappe
 from frappe import _
 from frappe.utils import cstr, flt
 
-from erpnext.accounts.doctype.accounting_dimension.accounting_dimension import get_dimensions
-from erpnext.accounts.report.financial_statements import (
+from cpmerp.accounts.doctype.accounting_dimension.accounting_dimension import get_dimensions
+from cpmerp.accounts.report.financial_statements import (
 	filter_accounts,
 	filter_out_zero_value_rows,
 )
-from erpnext.accounts.report.trial_balance.trial_balance import validate_filters
+from cpmerp.accounts.report.trial_balance.trial_balance import validate_filters
 
 value_fields = ("income", "expense", "gross_profit_loss")
 

@@ -5,13 +5,13 @@ cur_frm.add_fetch("customer", "tax_id", "tax_id");
 
 cur_frm.cscript.tax_table = "Sales Taxes and Charges";
 
-frappe.provide("erpnext.stock");
-frappe.provide("erpnext.stock.delivery_note");
-frappe.provide("erpnext.accounts.dimensions");
+frappe.provide("cpmerp.stock");
+frappe.provide("cpmerp.stock.delivery_note");
+frappe.provide("cpmerp.accounts.dimensions");
 
-erpnext.accounts.taxes.setup_tax_filters("Sales Taxes and Charges");
-erpnext.accounts.taxes.setup_tax_validations("Delivery Note");
-erpnext.sales_common.setup_selling_controller();
+cpmerp.accounts.taxes.setup_tax_filters("Sales Taxes and Charges");
+cpmerp.accounts.taxes.setup_tax_validations("Delivery Note");
+cpmerp.sales_common.setup_selling_controller();
 
 frappe.ui.form.on("Delivery Note", {
 	setup: function (frm) {
@@ -26,10 +26,10 @@ frappe.ui.form.on("Delivery Note", {
 				return doc.docstatus == 1 || doc.qty <= doc.actual_qty ? "green" : "orange";
 			});
 
-		erpnext.queries.setup_queries(frm, "Warehouse", function () {
-			return erpnext.queries.warehouse(frm.doc);
+		cpmerp.queries.setup_queries(frm, "Warehouse", function () {
+			return cpmerp.queries.warehouse(frm.doc);
 		});
-		erpnext.queries.setup_warehouse_query(frm);
+		cpmerp.queries.setup_warehouse_query(frm);
 
 		frm.set_query("transporter", function () {
 			return {
@@ -48,7 +48,7 @@ frappe.ui.form.on("Delivery Note", {
 		});
 
 		frm.set_query("expense_account", "items", function (doc, cdt, cdn) {
-			if (erpnext.is_perpetual_inventory_enabled(doc.company)) {
+			if (cpmerp.is_perpetual_inventory_enabled(doc.company)) {
 				return {
 					filters: {
 						report_type: "Profit and Loss",
@@ -60,7 +60,7 @@ frappe.ui.form.on("Delivery Note", {
 		});
 
 		frm.set_query("cost_center", "items", function (doc, cdt, cdn) {
-			if (erpnext.is_perpetual_inventory_enabled(doc.company)) {
+			if (cpmerp.is_perpetual_inventory_enabled(doc.company)) {
 				return {
 					filters: {
 						company: doc.company,
@@ -75,7 +75,7 @@ frappe.ui.form.on("Delivery Note", {
 	},
 
 	print_without_amount: function (frm) {
-		erpnext.stock.delivery_note.set_print_hide(frm.doc);
+		cpmerp.stock.delivery_note.set_print_hide(frm.doc);
 	},
 
 	refresh: function (frm) {
@@ -84,7 +84,7 @@ frappe.ui.form.on("Delivery Note", {
 				__("Credit Note"),
 				function () {
 					frappe.model.open_mapped_doc({
-						method: "erpnext.stock.doctype.delivery_note.delivery_note.make_sales_invoice",
+						method: "cpmerp.stock.doctype.delivery_note.delivery_note.make_sales_invoice",
 						frm: cur_frm,
 					});
 				},
@@ -105,7 +105,7 @@ frappe.ui.form.on("Delivery Note", {
 					__(button_label),
 					function () {
 						frappe.model.open_mapped_doc({
-							method: "erpnext.stock.doctype.delivery_note.delivery_note.make_inter_company_purchase_receipt",
+							method: "cpmerp.stock.doctype.delivery_note.delivery_note.make_inter_company_purchase_receipt",
 							frm: frm,
 						});
 					},
@@ -127,8 +127,8 @@ frappe.ui.form.on("Delivery Note Item", {
 	},
 });
 
-erpnext.stock.DeliveryNoteController = class DeliveryNoteController extends (
-	erpnext.selling.SellingController
+cpmerp.stock.DeliveryNoteController = class DeliveryNoteController extends (
+	cpmerp.selling.SellingController
 ) {
 	setup(doc) {
 		this.setup_posting_date_time_check();
@@ -151,8 +151,8 @@ erpnext.stock.DeliveryNoteController = class DeliveryNoteController extends (
 								message: __("Please Select a Customer"),
 							});
 						}
-						erpnext.utils.map_current_doc({
-							method: "erpnext.selling.doctype.sales_order.sales_order.make_delivery_note",
+						cpmerp.utils.map_current_doc({
+							method: "cpmerp.selling.doctype.sales_order.sales_order.make_delivery_note",
 							args: {
 								for_reserved_stock: 1,
 							},
@@ -221,7 +221,7 @@ erpnext.stock.DeliveryNoteController = class DeliveryNoteController extends (
 						__("Packing Slip"),
 						function () {
 							frappe.model.open_mapped_doc({
-								method: "erpnext.stock.doctype.delivery_note.delivery_note.make_packing_slip",
+								method: "cpmerp.stock.doctype.delivery_note.delivery_note.make_packing_slip",
 								frm: me.frm,
 							});
 						},
@@ -235,12 +235,12 @@ erpnext.stock.DeliveryNoteController = class DeliveryNoteController extends (
 			}
 		}
 
-		erpnext.accounts.ledger_preview.show_accounting_ledger_preview(this.frm);
-		erpnext.accounts.ledger_preview.show_stock_ledger_preview(this.frm);
+		cpmerp.accounts.ledger_preview.show_accounting_ledger_preview(this.frm);
+		cpmerp.accounts.ledger_preview.show_stock_ledger_preview(this.frm);
 
 		if (doc.docstatus > 0) {
 			this.show_stock_ledger();
-			if (erpnext.is_perpetual_inventory_enabled(doc.company)) {
+			if (cpmerp.is_perpetual_inventory_enabled(doc.company)) {
 				this.show_general_ledger();
 			}
 			if (this.frm.has_perm("submit") && doc.status !== "Closed") {
@@ -281,40 +281,40 @@ erpnext.stock.DeliveryNoteController = class DeliveryNoteController extends (
 				__("Status")
 			);
 		}
-		erpnext.stock.delivery_note.set_print_hide(doc, dt, dn);
+		cpmerp.stock.delivery_note.set_print_hide(doc, dt, dn);
 	}
 
 	make_shipment() {
 		frappe.model.open_mapped_doc({
-			method: "erpnext.stock.doctype.delivery_note.delivery_note.make_shipment",
+			method: "cpmerp.stock.doctype.delivery_note.delivery_note.make_shipment",
 			frm: this.frm,
 		});
 	}
 
 	make_sales_invoice() {
 		frappe.model.open_mapped_doc({
-			method: "erpnext.stock.doctype.delivery_note.delivery_note.make_sales_invoice",
+			method: "cpmerp.stock.doctype.delivery_note.delivery_note.make_sales_invoice",
 			frm: this.frm,
 		});
 	}
 
 	make_installation_note() {
 		frappe.model.open_mapped_doc({
-			method: "erpnext.stock.doctype.delivery_note.delivery_note.make_installation_note",
+			method: "cpmerp.stock.doctype.delivery_note.delivery_note.make_installation_note",
 			frm: this.frm,
 		});
 	}
 
 	make_sales_return() {
 		frappe.model.open_mapped_doc({
-			method: "erpnext.stock.doctype.delivery_note.delivery_note.make_sales_return",
+			method: "cpmerp.stock.doctype.delivery_note.delivery_note.make_sales_return",
 			frm: this.frm,
 		});
 	}
 
 	make_delivery_trip() {
 		frappe.model.open_mapped_doc({
-			method: "erpnext.stock.doctype.delivery_note.delivery_note.make_delivery_trip",
+			method: "cpmerp.stock.doctype.delivery_note.delivery_note.make_delivery_trip",
 			frm: cur_frm,
 		});
 	}
@@ -324,11 +324,11 @@ erpnext.stock.DeliveryNoteController = class DeliveryNoteController extends (
 	}
 
 	items_on_form_rendered(doc, grid_row) {
-		erpnext.setup_serial_or_batch_no();
+		cpmerp.setup_serial_or_batch_no();
 	}
 
 	packed_items_on_form_rendered(doc, grid_row) {
-		erpnext.setup_serial_or_batch_no();
+		cpmerp.setup_serial_or_batch_no();
 	}
 
 	close_delivery_note(doc) {
@@ -343,7 +343,7 @@ erpnext.stock.DeliveryNoteController = class DeliveryNoteController extends (
 		var me = this;
 		frappe.ui.form.is_saving = true;
 		frappe.call({
-			method: "erpnext.stock.doctype.delivery_note.delivery_note.update_delivery_note_status",
+			method: "cpmerp.stock.doctype.delivery_note.delivery_note.update_delivery_note_status",
 			args: { docname: me.frm.doc.name, status: status },
 			callback: function (r) {
 				if (!r.exc) me.frm.reload_doc();
@@ -355,7 +355,7 @@ erpnext.stock.DeliveryNoteController = class DeliveryNoteController extends (
 	}
 };
 
-extend_cscript(cur_frm.cscript, new erpnext.stock.DeliveryNoteController({ frm: cur_frm }));
+extend_cscript(cur_frm.cscript, new cpmerp.stock.DeliveryNoteController({ frm: cur_frm }));
 
 frappe.ui.form.on("Delivery Note", {
 	setup: function (frm) {
@@ -366,17 +366,17 @@ frappe.ui.form.on("Delivery Note", {
 
 	company: function (frm) {
 		frm.trigger("unhide_account_head");
-		erpnext.accounts.dimensions.update_dimension(frm, frm.doctype);
+		cpmerp.accounts.dimensions.update_dimension(frm, frm.doctype);
 	},
 
 	unhide_account_head: function (frm) {
 		// unhide expense_account and cost_center if perpetual inventory is enabled in the company
-		var aii_enabled = erpnext.is_perpetual_inventory_enabled(frm.doc.company);
+		var aii_enabled = cpmerp.is_perpetual_inventory_enabled(frm.doc.company);
 		frm.fields_dict["items"].grid.set_column_disp(["expense_account", "cost_center"], aii_enabled);
 	},
 });
 
-erpnext.stock.delivery_note.set_print_hide = function (doc, cdt, cdn) {
+cpmerp.stock.delivery_note.set_print_hide = function (doc, cdt, cdn) {
 	var dn_fields = frappe.meta.docfield_map["Delivery Note"];
 	var dn_item_fields = frappe.meta.docfield_map["Delivery Note Item"];
 	var dn_fields_copy = dn_fields;

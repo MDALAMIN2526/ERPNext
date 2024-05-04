@@ -5,7 +5,7 @@
 import frappe
 from frappe import _
 
-from erpnext.accounts.report.sales_register.sales_register import get_mode_of_payments
+from cpmerp.accounts.report.sales_register.sales_register import get_mode_of_payments
 
 
 def execute(filters=None):

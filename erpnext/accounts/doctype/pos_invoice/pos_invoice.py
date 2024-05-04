@@ -7,15 +7,15 @@ from frappe import _, bold
 from frappe.query_builder.functions import IfNull, Sum
 from frappe.utils import cint, flt, get_link_to_form, getdate, nowdate
 
-from erpnext.accounts.doctype.loyalty_program.loyalty_program import validate_loyalty_points
-from erpnext.accounts.doctype.payment_request.payment_request import make_payment_request
-from erpnext.accounts.doctype.sales_invoice.sales_invoice import (
+from cpmerp.accounts.doctype.loyalty_program.loyalty_program import validate_loyalty_points
+from cpmerp.accounts.doctype.payment_request.payment_request import make_payment_request
+from cpmerp.accounts.doctype.sales_invoice.sales_invoice import (
 	SalesInvoice,
 	get_mode_of_payment_info,
 	update_multi_mode_option,
 )
-from erpnext.accounts.party import get_due_date, get_party_account
-from erpnext.stock.doctype.serial_no.serial_no import get_serial_nos
+from cpmerp.accounts.party import get_due_date, get_party_account
+from cpmerp.stock.doctype.serial_no.serial_no import get_serial_nos
 
 
 class POSInvoice(SalesInvoice):
@@ -27,23 +27,23 @@ class POSInvoice(SalesInvoice):
 	if TYPE_CHECKING:
 		from frappe.types import DF
 
-		from erpnext.accounts.doctype.payment_schedule.payment_schedule import PaymentSchedule
-		from erpnext.accounts.doctype.pos_invoice_item.pos_invoice_item import POSInvoiceItem
-		from erpnext.accounts.doctype.pricing_rule_detail.pricing_rule_detail import PricingRuleDetail
-		from erpnext.accounts.doctype.sales_invoice_advance.sales_invoice_advance import (
+		from cpmerp.accounts.doctype.payment_schedule.payment_schedule import PaymentSchedule
+		from cpmerp.accounts.doctype.pos_invoice_item.pos_invoice_item import POSInvoiceItem
+		from cpmerp.accounts.doctype.pricing_rule_detail.pricing_rule_detail import PricingRuleDetail
+		from cpmerp.accounts.doctype.sales_invoice_advance.sales_invoice_advance import (
 			SalesInvoiceAdvance,
 		)
-		from erpnext.accounts.doctype.sales_invoice_payment.sales_invoice_payment import (
+		from cpmerp.accounts.doctype.sales_invoice_payment.sales_invoice_payment import (
 			SalesInvoicePayment,
 		)
-		from erpnext.accounts.doctype.sales_invoice_timesheet.sales_invoice_timesheet import (
+		from cpmerp.accounts.doctype.sales_invoice_timesheet.sales_invoice_timesheet import (
 			SalesInvoiceTimesheet,
 		)
-		from erpnext.accounts.doctype.sales_taxes_and_charges.sales_taxes_and_charges import (
+		from cpmerp.accounts.doctype.sales_taxes_and_charges.sales_taxes_and_charges import (
 			SalesTaxesandCharges,
 		)
-		from erpnext.selling.doctype.sales_team.sales_team import SalesTeam
-		from erpnext.stock.doctype.packed_item.packed_item import PackedItem
+		from cpmerp.selling.doctype.sales_team.sales_team import SalesTeam
+		from cpmerp.stock.doctype.packed_item.packed_item import PackedItem
 
 		account_for_change_amount: DF.Link | None
 		additional_discount_percentage: DF.Float
@@ -212,7 +212,7 @@ class POSInvoice(SalesInvoice):
 		self.validate_loyalty_transaction()
 		self.validate_company_with_pos_company()
 		if self.coupon_code:
-			from erpnext.accounts.doctype.pricing_rule.utils import validate_coupon_code
+			from cpmerp.accounts.doctype.pricing_rule.utils import validate_coupon_code
 
 			validate_coupon_code(self.coupon_code)
 
@@ -231,7 +231,7 @@ class POSInvoice(SalesInvoice):
 		self.submit_serial_batch_bundle()
 
 		if self.coupon_code:
-			from erpnext.accounts.doctype.pricing_rule.utils import update_coupon_code_count
+			from cpmerp.accounts.doctype.pricing_rule.utils import update_coupon_code_count
 
 			update_coupon_code_count(self.coupon_code, "used")
 
@@ -266,7 +266,7 @@ class POSInvoice(SalesInvoice):
 			against_psi_doc.make_loyalty_point_entry()
 
 		if self.coupon_code:
-			from erpnext.accounts.doctype.pricing_rule.utils import update_coupon_code_count
+			from cpmerp.accounts.doctype.pricing_rule.utils import update_coupon_code_count
 
 			update_coupon_code_count(self.coupon_code, "cancelled")
 
@@ -321,7 +321,7 @@ class POSInvoice(SalesInvoice):
 		):
 			return
 
-		from erpnext.stock.stock_ledger import is_negative_stock_allowed
+		from cpmerp.stock.stock_ledger import is_negative_stock_allowed
 
 		for d in self.get("items"):
 			if not d.serial_and_batch_bundle:
@@ -520,7 +520,7 @@ class POSInvoice(SalesInvoice):
 
 	def set_pos_fields(self, for_validate=False):
 		"""Set retail related fields from POS Profiles"""
-		from erpnext.stock.get_item_details import get_pos_profile, get_pos_profile_item_details
+		from cpmerp.stock.get_item_details import get_pos_profile, get_pos_profile_item_details
 
 		if not self.pos_profile:
 			pos_profile = get_pos_profile(self.company) or {}
@@ -775,7 +775,7 @@ def get_pos_reserved_qty(item_code, warehouse):
 
 @frappe.whitelist()
 def make_sales_return(source_name, target_doc=None):
-	from erpnext.controllers.sales_and_purchase_return import make_return_doc
+	from cpmerp.controllers.sales_and_purchase_return import make_return_doc
 
 	return make_return_doc("POS Invoice", source_name, target_doc)
 

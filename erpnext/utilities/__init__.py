@@ -6,7 +6,7 @@ import frappe
 from frappe import _
 from frappe.utils import cstr
 
-from erpnext.utilities.activation import get_level
+from cpmerp.utilities.activation import get_level
 
 
 def update_doctypes():

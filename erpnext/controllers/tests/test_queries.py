@@ -3,7 +3,7 @@ from functools import partial
 
 import frappe
 
-from erpnext.controllers import queries
+from cpmerp.controllers import queries
 
 
 def add_default_params(func, doctype):

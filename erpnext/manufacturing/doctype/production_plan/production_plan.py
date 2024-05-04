@@ -23,13 +23,13 @@ from frappe.utils import (
 from frappe.utils.csvutils import build_csv_response
 from pypika.terms import ExistsCriterion
 
-from erpnext.manufacturing.doctype.bom.bom import get_children as get_bom_children
-from erpnext.manufacturing.doctype.bom.bom import validate_bom_no
-from erpnext.manufacturing.doctype.work_order.work_order import get_item_details
-from erpnext.setup.doctype.item_group.item_group import get_item_group_defaults
-from erpnext.stock.get_item_details import get_conversion_factor
-from erpnext.stock.utils import get_or_make_bin
-from erpnext.utilities.transaction_base import validate_uom_is_integer
+from cpmerp.manufacturing.doctype.bom.bom import get_children as get_bom_children
+from cpmerp.manufacturing.doctype.bom.bom import validate_bom_no
+from cpmerp.manufacturing.doctype.work_order.work_order import get_item_details
+from cpmerp.setup.doctype.item_group.item_group import get_item_group_defaults
+from cpmerp.stock.get_item_details import get_conversion_factor
+from cpmerp.stock.utils import get_or_make_bin
+from cpmerp.utilities.transaction_base import validate_uom_is_integer
 
 
 class ProductionPlan(Document):
@@ -41,25 +41,25 @@ class ProductionPlan(Document):
 	if TYPE_CHECKING:
 		from frappe.types import DF
 
-		from erpnext.manufacturing.doctype.material_request_plan_item.material_request_plan_item import (
+		from cpmerp.manufacturing.doctype.material_request_plan_item.material_request_plan_item import (
 			MaterialRequestPlanItem,
 		)
-		from erpnext.manufacturing.doctype.production_plan_item.production_plan_item import (
+		from cpmerp.manufacturing.doctype.production_plan_item.production_plan_item import (
 			ProductionPlanItem,
 		)
-		from erpnext.manufacturing.doctype.production_plan_item_reference.production_plan_item_reference import (
+		from cpmerp.manufacturing.doctype.production_plan_item_reference.production_plan_item_reference import (
 			ProductionPlanItemReference,
 		)
-		from erpnext.manufacturing.doctype.production_plan_material_request.production_plan_material_request import (
+		from cpmerp.manufacturing.doctype.production_plan_material_request.production_plan_material_request import (
 			ProductionPlanMaterialRequest,
 		)
-		from erpnext.manufacturing.doctype.production_plan_material_request_warehouse.production_plan_material_request_warehouse import (
+		from cpmerp.manufacturing.doctype.production_plan_material_request_warehouse.production_plan_material_request_warehouse import (
 			ProductionPlanMaterialRequestWarehouse,
 		)
-		from erpnext.manufacturing.doctype.production_plan_sales_order.production_plan_sales_order import (
+		from cpmerp.manufacturing.doctype.production_plan_sales_order.production_plan_sales_order import (
 			ProductionPlanSalesOrder,
 		)
-		from erpnext.manufacturing.doctype.production_plan_sub_assembly_item.production_plan_sub_assembly_item import (
+		from cpmerp.manufacturing.doctype.production_plan_sub_assembly_item.production_plan_sub_assembly_item import (
 			ProductionPlanSubAssemblyItem,
 		)
 
@@ -676,7 +676,7 @@ class ProductionPlan(Document):
 
 	@frappe.whitelist()
 	def make_work_order(self):
-		from erpnext.manufacturing.doctype.work_order.work_order import get_default_warehouse
+		from cpmerp.manufacturing.doctype.work_order.work_order import get_default_warehouse
 
 		wo_list, po_list = [], []
 		subcontracted_po = {}
@@ -793,7 +793,7 @@ class ProductionPlan(Document):
 			msgprint(_("{0} created").format(comma_and(doc_list)))
 
 	def create_work_order(self, item):
-		from erpnext.manufacturing.doctype.work_order.work_order import OverProductionError
+		from cpmerp.manufacturing.doctype.work_order.work_order import OverProductionError
 
 		if flt(item.get("qty")) <= 0:
 			return
@@ -1624,7 +1624,7 @@ def get_items_for_material_requests(doc, warehouses=None, get_parent_warehouse_d
 
 
 def get_materials_from_other_locations(item, warehouses, new_mr_items, company):
-	from erpnext.stock.doctype.pick_list.pick_list import get_available_item_locations
+	from cpmerp.stock.doctype.pick_list.pick_list import get_available_item_locations
 
 	stock_uom, purchase_uom = frappe.db.get_value(
 		"Item", item.get("item_code"), ["stock_uom", "purchase_uom"]
@@ -1739,7 +1739,7 @@ def set_default_warehouses(row, default_warehouses):
 
 
 def get_reserved_qty_for_production_plan(item_code, warehouse):
-	from erpnext.manufacturing.doctype.work_order.work_order import get_reserved_qty_for_production
+	from cpmerp.manufacturing.doctype.work_order.work_order import get_reserved_qty_for_production
 
 	table = frappe.qb.DocType("Production Plan")
 	child = frappe.qb.DocType("Material Request Plan Item")

@@ -14,7 +14,7 @@ from frappe.utils import flt, get_datetime_str, today
 from frappe.utils.data import format_datetime
 from frappe.utils.file_manager import save_file
 
-import erpnext
+import cpmerp
 
 
 class ImportSupplierInvoice(Document):
@@ -360,7 +360,7 @@ def create_purchase_invoice(supplier_name, file_name, args, name):
 		{
 			"doctype": "Purchase Invoice",
 			"company": args.company,
-			"currency": erpnext.get_company_currency(args.company),
+			"currency": cpmerp.get_company_currency(args.company),
 			"naming_series": args.naming_series,
 			"supplier": supplier_name,
 			"is_return": args.is_return,

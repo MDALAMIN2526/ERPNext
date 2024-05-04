@@ -4,11 +4,11 @@ import frappe
 from frappe.desk.form.assign_to import add as add_assignment
 from frappe.utils import add_months, getdate
 
-from erpnext.support.doctype.issue.test_issue import create_customer, make_issue
-from erpnext.support.doctype.service_level_agreement.test_service_level_agreement import (
+from cpmerp.support.doctype.issue.test_issue import create_customer, make_issue
+from cpmerp.support.doctype.service_level_agreement.test_service_level_agreement import (
 	create_service_level_agreements_for_issues,
 )
-from erpnext.support.report.issue_analytics.issue_analytics import execute
+from cpmerp.support.report.issue_analytics.issue_analytics import execute
 
 months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
 

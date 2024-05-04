@@ -1,9 +1,9 @@
 // Copyright (c) 2015, Frappe Technologies Pvt. Ltd. and Contributors
 // License: GNU General Public License v3. See license.txt
 
-if (!window.erpnext) window.erpnext = {};
+if (!window.cpmerp) window.cpmerp = {};
 
-erpnext.subscribe_to_newsletter = function (opts, btn) {
+cpmerp.subscribe_to_newsletter = function (opts, btn) {
 	return frappe.call({
 		type: "POST",
 		method: "frappe.email.doctype.newsletter.newsletter.subscribe",

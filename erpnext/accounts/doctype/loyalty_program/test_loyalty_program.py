@@ -6,10 +6,10 @@ import unittest
 import frappe
 from frappe.utils import cint, flt, getdate, today
 
-from erpnext.accounts.doctype.loyalty_program.loyalty_program import (
+from cpmerp.accounts.doctype.loyalty_program.loyalty_program import (
 	get_loyalty_program_details_with_points,
 )
-from erpnext.accounts.party import get_dashboard_info
+from cpmerp.accounts.party import get_dashboard_info
 
 
 class TestLoyaltyProgram(unittest.TestCase):

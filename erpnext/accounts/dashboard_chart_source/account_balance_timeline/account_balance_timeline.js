@@ -1,7 +1,7 @@
 frappe.provide("frappe.dashboards.chart_sources");
 
 frappe.dashboards.chart_sources["Account Balance Timeline"] = {
-	method: "erpnext.accounts.dashboard_chart_source.account_balance_timeline.account_balance_timeline.get",
+	method: "cpmerp.accounts.dashboard_chart_source.account_balance_timeline.account_balance_timeline.get",
 	filters: [
 		{
 			fieldname: "company",

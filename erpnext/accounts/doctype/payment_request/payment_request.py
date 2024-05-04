@@ -7,17 +7,17 @@ from frappe.query_builder.functions import Sum
 from frappe.utils import flt, nowdate
 from frappe.utils.background_jobs import enqueue
 
-from erpnext.accounts.doctype.accounting_dimension.accounting_dimension import (
+from cpmerp.accounts.doctype.accounting_dimension.accounting_dimension import (
 	get_accounting_dimensions,
 )
-from erpnext.accounts.doctype.payment_entry.payment_entry import (
+from cpmerp.accounts.doctype.payment_entry.payment_entry import (
 	get_company_defaults,
 	get_payment_entry,
 )
-from erpnext.accounts.doctype.subscription_plan.subscription_plan import get_plan_rate
-from erpnext.accounts.party import get_party_account, get_party_bank_account
-from erpnext.accounts.utils import get_account_currency
-from erpnext.utilities import payment_app_import_guard
+from cpmerp.accounts.doctype.subscription_plan.subscription_plan import get_plan_rate
+from cpmerp.accounts.party import get_party_account, get_party_bank_account
+from cpmerp.accounts.utils import get_account_currency
+from cpmerp.utilities import payment_app_import_guard
 
 
 def _get_payment_gateway_controller(*args, **kwargs):
@@ -36,7 +36,7 @@ class PaymentRequest(Document):
 	if TYPE_CHECKING:
 		from frappe.types import DF
 
-		from erpnext.accounts.doctype.subscription_plan_detail.subscription_plan_detail import (
+		from cpmerp.accounts.doctype.subscription_plan_detail.subscription_plan_detail import (
 			SubscriptionPlanDetail,
 		)
 
@@ -222,7 +222,7 @@ class PaymentRequest(Document):
 	def make_invoice(self):
 		ref_doc = frappe.get_doc(self.reference_doctype, self.reference_name)
 		if hasattr(ref_doc, "order_type") and ref_doc.order_type == "Shopping Cart":
-			from erpnext.selling.doctype.sales_order.sales_order import make_sales_invoice
+			from cpmerp.selling.doctype.sales_order.sales_order import make_sales_invoice
 
 			si = make_sales_invoice(self.reference_name, ignore_permissions=True)
 			si.allocate_advances_automatically = True
@@ -445,7 +445,7 @@ def make_payment_request(**args):
 	if not grand_total:
 		frappe.throw(_("Payment Entry is already created"))
 	if args.loyalty_points and args.dt == "Sales Order":
-		from erpnext.accounts.doctype.loyalty_program.loyalty_program import validate_loyalty_points
+		from cpmerp.accounts.doctype.loyalty_program.loyalty_program import validate_loyalty_points
 
 		loyalty_amount = validate_loyalty_points(ref_doc, int(args.loyalty_points))
 		frappe.db.set_value(
@@ -626,7 +626,7 @@ def make_payment_entry(docname):
 
 
 def update_payment_req_status(doc, method):
-	from erpnext.accounts.doctype.payment_entry.payment_entry import get_reference_details
+	from cpmerp.accounts.doctype.payment_entry.payment_entry import get_reference_details
 
 	for ref in doc.references:
 		payment_request_name = frappe.db.get_value(

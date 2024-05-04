@@ -4,9 +4,9 @@ import frappe
 from frappe.test_runner import make_test_records
 from frappe.tests.utils import FrappeTestCase
 
-from erpnext.manufacturing.doctype.job_card.job_card import OperationSequenceError
-from erpnext.manufacturing.doctype.work_order.test_work_order import make_wo_order_test_record
-from erpnext.stock.doctype.item.test_item import make_item
+from cpmerp.manufacturing.doctype.job_card.job_card import OperationSequenceError
+from cpmerp.manufacturing.doctype.work_order.test_work_order import make_wo_order_test_record
+from cpmerp.stock.doctype.item.test_item import make_item
 
 
 class TestRouting(FrappeTestCase):
@@ -96,8 +96,8 @@ class TestRouting(FrappeTestCase):
 
 
 def setup_operations(rows):
-	from erpnext.manufacturing.doctype.operation.test_operation import make_operation
-	from erpnext.manufacturing.doctype.workstation.test_workstation import make_workstation
+	from cpmerp.manufacturing.doctype.operation.test_operation import make_operation
+	from cpmerp.manufacturing.doctype.workstation.test_workstation import make_workstation
 
 	for row in rows:
 		make_workstation(row)
@@ -125,7 +125,7 @@ def create_routing(**args):
 
 
 def setup_bom(**args):
-	from erpnext.manufacturing.doctype.production_plan.test_production_plan import make_bom
+	from cpmerp.manufacturing.doctype.production_plan.test_production_plan import make_bom
 
 	args = frappe._dict(args)
 

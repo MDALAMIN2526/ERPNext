@@ -4,7 +4,7 @@
 
 import frappe
 
-from erpnext.stock.stock_balance import get_reserved_qty, update_bin_qty
+from cpmerp.stock.stock_balance import get_reserved_qty, update_bin_qty
 
 
 def execute():

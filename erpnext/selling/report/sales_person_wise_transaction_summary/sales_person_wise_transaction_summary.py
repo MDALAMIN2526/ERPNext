@@ -6,7 +6,7 @@ import frappe
 from frappe import _, msgprint, qb
 from frappe.query_builder import Criterion
 
-from erpnext import get_company_currency
+from cpmerp import get_company_currency
 
 
 def execute(filters=None):

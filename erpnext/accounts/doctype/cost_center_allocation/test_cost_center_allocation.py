@@ -6,15 +6,15 @@ import unittest
 import frappe
 from frappe.utils import add_days, today
 
-from erpnext.accounts.doctype.cost_center.test_cost_center import create_cost_center
-from erpnext.accounts.doctype.cost_center_allocation.cost_center_allocation import (
+from cpmerp.accounts.doctype.cost_center.test_cost_center import create_cost_center
+from cpmerp.accounts.doctype.cost_center_allocation.cost_center_allocation import (
 	InvalidChildCostCenter,
 	InvalidDateError,
 	InvalidMainCostCenter,
 	MainCostCenterCantBeChild,
 	WrongPercentageAllocation,
 )
-from erpnext.accounts.doctype.journal_entry.test_journal_entry import make_journal_entry
+from cpmerp.accounts.doctype.journal_entry.test_journal_entry import make_journal_entry
 
 
 class TestCostCenterAllocation(unittest.TestCase):

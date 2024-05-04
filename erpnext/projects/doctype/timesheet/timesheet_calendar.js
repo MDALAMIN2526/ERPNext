@@ -28,5 +28,5 @@ frappe.views.calendar["Timesheet"] = {
 			label: __("Employee"),
 		},
 	],
-	get_events_method: "erpnext.projects.doctype.timesheet.timesheet.get_events",
+	get_events_method: "cpmerp.projects.doctype.timesheet.timesheet.get_events",
 };

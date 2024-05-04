@@ -8,11 +8,11 @@ from frappe.query_builder.functions import Sum
 from frappe.tests.utils import FrappeTestCase
 from frappe.utils import add_days, getdate, nowdate
 
-from erpnext.accounts.doctype.payment_entry.payment_entry import get_payment_entry
-from erpnext.accounts.doctype.payment_entry.test_payment_entry import create_payment_entry
-from erpnext.accounts.doctype.sales_invoice.test_sales_invoice import create_sales_invoice
-from erpnext.accounts.party import get_party_account
-from erpnext.stock.doctype.item.test_item import create_item
+from cpmerp.accounts.doctype.payment_entry.payment_entry import get_payment_entry
+from cpmerp.accounts.doctype.payment_entry.test_payment_entry import create_payment_entry
+from cpmerp.accounts.doctype.sales_invoice.test_sales_invoice import create_sales_invoice
+from cpmerp.accounts.party import get_party_account
+from cpmerp.stock.doctype.item.test_item import create_item
 
 
 def make_customer(customer_name, currency=None):
@@ -1286,7 +1286,7 @@ class TestAccountsController(FrappeTestCase):
 
 	def setup_dimensions(self):
 		# create dimension
-		from erpnext.accounts.doctype.accounting_dimension.test_accounting_dimension import (
+		from cpmerp.accounts.doctype.accounting_dimension.test_accounting_dimension import (
 			create_dimension,
 		)
 

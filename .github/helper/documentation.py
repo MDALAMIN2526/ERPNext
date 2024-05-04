@@ -4,12 +4,12 @@ from urllib.parse import urlparse
 import requests
 
 WEBSITE_REPOS = [
-	"erpnext_com",
+	"cpmerp_com",
 	"frappe_io",
 ]
 
 DOCUMENTATION_DOMAINS = [
-	"docs.erpnext.com",
+	"docs.cpmerp.com",
 	"frappeframework.com",
 ]
 
@@ -40,7 +40,7 @@ def contains_documentation_link(body: str) -> bool:
 
 
 def check_pull_request(number: str) -> "tuple[int, str]":
-	response = requests.get(f"https://api.github.com/repos/frappe/erpnext/pulls/{number}")
+	response = requests.get(f"https://api.github.com/repos/frappe/cpmerp/pulls/{number}")
 	if not response.ok:
 		return 1, "Pull Request Not Found! ⚠️"
 

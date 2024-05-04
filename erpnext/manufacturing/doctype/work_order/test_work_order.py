@@ -6,9 +6,9 @@ import frappe
 from frappe.tests.utils import FrappeTestCase, change_settings, timeout
 from frappe.utils import add_days, add_months, add_to_date, cint, flt, now, today
 
-from erpnext.manufacturing.doctype.job_card.job_card import JobCardCancelError
-from erpnext.manufacturing.doctype.production_plan.test_production_plan import make_bom
-from erpnext.manufacturing.doctype.work_order.work_order import (
+from cpmerp.manufacturing.doctype.job_card.job_card import JobCardCancelError
+from cpmerp.manufacturing.doctype.production_plan.test_production_plan import make_bom
+from cpmerp.manufacturing.doctype.work_order.work_order import (
 	CapacityError,
 	ItemHasVariantError,
 	OverProductionError,
@@ -19,17 +19,17 @@ from erpnext.manufacturing.doctype.work_order.work_order import (
 	make_stock_return_entry,
 	stop_unstop,
 )
-from erpnext.selling.doctype.sales_order.test_sales_order import make_sales_order
-from erpnext.stock.doctype.item.test_item import create_item, make_item
-from erpnext.stock.doctype.serial_and_batch_bundle.test_serial_and_batch_bundle import (
+from cpmerp.selling.doctype.sales_order.test_sales_order import make_sales_order
+from cpmerp.stock.doctype.item.test_item import create_item, make_item
+from cpmerp.stock.doctype.serial_and_batch_bundle.test_serial_and_batch_bundle import (
 	get_batch_from_bundle,
 	get_serial_nos_from_bundle,
 	make_serial_batch_bundle,
 )
-from erpnext.stock.doctype.serial_no.serial_no import get_serial_nos
-from erpnext.stock.doctype.stock_entry import test_stock_entry
-from erpnext.stock.doctype.warehouse.test_warehouse import create_warehouse
-from erpnext.stock.utils import get_bin
+from cpmerp.stock.doctype.serial_no.serial_no import get_serial_nos
+from cpmerp.stock.doctype.stock_entry import test_stock_entry
+from cpmerp.stock.doctype.warehouse.test_warehouse import create_warehouse
+from cpmerp.stock.utils import get_bin
 
 test_dependencies = ["BOM"]
 
@@ -850,7 +850,7 @@ class TestWorkOrder(FrappeTestCase):
 		self.assertRaises(frappe.ValidationError, stock_entry.save)
 
 	def test_wo_completion_with_pl_bom(self):
-		from erpnext.manufacturing.doctype.bom.test_bom import (
+		from cpmerp.manufacturing.doctype.bom.test_bom import (
 			create_bom_with_process_loss_item,
 			create_process_loss_bom_items,
 		)
@@ -1144,7 +1144,7 @@ class TestWorkOrder(FrappeTestCase):
 
 	@change_settings("Manufacturing Settings", {"make_serial_no_batch_from_work_order": 1})
 	def test_auto_batch_creation(self):
-		from erpnext.manufacturing.doctype.bom.test_bom import create_nested_bom
+		from cpmerp.manufacturing.doctype.bom.test_bom import create_nested_bom
 
 		fg_item = frappe.generate_hash(length=20)
 		child_item = frappe.generate_hash(length=20)
@@ -1165,7 +1165,7 @@ class TestWorkOrder(FrappeTestCase):
 
 	@change_settings("Manufacturing Settings", {"make_serial_no_batch_from_work_order": 1})
 	def test_auto_serial_no_creation(self):
-		from erpnext.manufacturing.doctype.bom.test_bom import create_nested_bom
+		from cpmerp.manufacturing.doctype.bom.test_bom import create_nested_bom
 
 		fg_item = frappe.generate_hash(length=20)
 		child_item = frappe.generate_hash(length=20)
@@ -1198,7 +1198,7 @@ class TestWorkOrder(FrappeTestCase):
 
 	@change_settings("Manufacturing Settings", {"make_serial_no_batch_from_work_order": 1})
 	def test_auto_serial_no_batch_creation(self):
-		from erpnext.manufacturing.doctype.bom.test_bom import create_nested_bom
+		from cpmerp.manufacturing.doctype.bom.test_bom import create_nested_bom
 
 		fg_item = frappe.generate_hash(length=20)
 		child_item = frappe.generate_hash(length=20)
@@ -1799,7 +1799,7 @@ class TestWorkOrder(FrappeTestCase):
 		"Manufacturing Settings", {"material_consumption": 1, "get_rm_cost_from_consumption_entry": 1}
 	)
 	def test_get_rm_cost_from_consumption_entry(self):
-		from erpnext.stock.doctype.stock_entry.test_stock_entry import (
+		from cpmerp.stock.doctype.stock_entry.test_stock_entry import (
 			make_stock_entry as make_stock_entry_test_record,
 		)
 
@@ -1917,7 +1917,7 @@ class TestWorkOrder(FrappeTestCase):
 		)
 
 	def test_partial_material_consumption_with_batch(self):
-		from erpnext.stock.doctype.stock_entry.test_stock_entry import (
+		from cpmerp.stock.doctype.stock_entry.test_stock_entry import (
 			make_stock_entry as make_stock_entry_test_record,
 		)
 
@@ -2048,9 +2048,9 @@ def prepare_boms_for_sub_assembly_test():
 
 
 def prepare_data_for_workstation_type_check():
-	from erpnext.manufacturing.doctype.operation.test_operation import make_operation
-	from erpnext.manufacturing.doctype.workstation.test_workstation import make_workstation
-	from erpnext.manufacturing.doctype.workstation_type.test_workstation_type import (
+	from cpmerp.manufacturing.doctype.operation.test_operation import make_operation
+	from cpmerp.manufacturing.doctype.workstation.test_workstation import make_workstation
+	from cpmerp.manufacturing.doctype.workstation_type.test_workstation_type import (
 		create_workstation_type,
 	)
 

@@ -5,10 +5,10 @@ import frappe
 from frappe.tests.utils import FrappeTestCase
 from frappe.utils import getdate, today
 
-from erpnext.accounts.doctype.sales_invoice.test_sales_invoice import create_sales_invoice
-from erpnext.accounts.report.financial_statements import get_period_list
-from erpnext.accounts.report.profit_and_loss_statement.profit_and_loss_statement import execute
-from erpnext.accounts.test.accounts_mixin import AccountsTestMixin
+from cpmerp.accounts.doctype.sales_invoice.test_sales_invoice import create_sales_invoice
+from cpmerp.accounts.report.financial_statements import get_period_list
+from cpmerp.accounts.report.profit_and_loss_statement.profit_and_loss_statement import execute
+from cpmerp.accounts.test.accounts_mixin import AccountsTestMixin
 
 
 class TestProfitAndLossStatement(AccountsTestMixin, FrappeTestCase):

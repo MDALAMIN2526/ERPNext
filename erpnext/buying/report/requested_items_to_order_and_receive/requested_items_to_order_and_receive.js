@@ -52,7 +52,7 @@ frappe.query_reports["Requested Items to Order and Receive"] = {
 			options: "Item",
 			get_query: () => {
 				return {
-					query: "erpnext.controllers.queries.item_query",
+					query: "cpmerp.controllers.queries.item_query",
 				};
 			},
 		},

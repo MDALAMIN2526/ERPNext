@@ -1,11 +1,11 @@
 // Copyright (c) 2015, Frappe Technologies Pvt. Ltd. and Contributors
 // License: GNU General Public License v3. See license.txt
 
-frappe.provide("erpnext.selling");
+frappe.provide("cpmerp.selling");
 
-erpnext.sales_common = {
+cpmerp.sales_common = {
 	setup_selling_controller: function () {
-		erpnext.selling.SellingController = class SellingController extends erpnext.TransactionController {
+		cpmerp.selling.SellingController = class SellingController extends cpmerp.TransactionController {
 			setup() {
 				super.setup();
 				this.toggle_enable_for_stock_uom("allow_to_edit_stock_uom_qty_for_sales");
@@ -25,7 +25,7 @@ erpnext.sales_common = {
 
 				this.frm.set_query("project", function (doc) {
 					return {
-						query: "erpnext.controllers.queries.get_project_name",
+						query: "cpmerp.controllers.queries.get_project_name",
 						filters: {
 							customer: doc.customer,
 						},
@@ -42,16 +42,16 @@ erpnext.sales_common = {
 						["lead", "lead"],
 					],
 					function (i, opts) {
-						if (me.frm.fields_dict[opts[0]]) me.frm.set_query(opts[0], erpnext.queries[opts[1]]);
+						if (me.frm.fields_dict[opts[0]]) me.frm.set_query(opts[0], cpmerp.queries[opts[1]]);
 					}
 				);
 
-				me.frm.set_query("contact_person", erpnext.queries.contact_query);
-				me.frm.set_query("customer_address", erpnext.queries.address_query);
-				me.frm.set_query("shipping_address_name", erpnext.queries.address_query);
-				me.frm.set_query("dispatch_address_name", erpnext.queries.dispatch_address_query);
+				me.frm.set_query("contact_person", cpmerp.queries.contact_query);
+				me.frm.set_query("customer_address", cpmerp.queries.address_query);
+				me.frm.set_query("shipping_address_name", cpmerp.queries.address_query);
+				me.frm.set_query("dispatch_address_name", cpmerp.queries.dispatch_address_query);
 
-				erpnext.accounts.dimensions.setup_dimension_filters(me.frm, me.frm.doctype);
+				cpmerp.accounts.dimensions.setup_dimension_filters(me.frm, me.frm.doctype);
 
 				if (this.frm.fields_dict.selling_price_list) {
 					this.frm.set_query("selling_price_list", function () {
@@ -72,7 +72,7 @@ erpnext.sales_common = {
 				if (this.frm.fields_dict["items"].grid.get_field("item_code")) {
 					this.frm.set_query("item_code", "items", function () {
 						return {
-							query: "erpnext.controllers.queries.item_query",
+							query: "cpmerp.controllers.queries.item_query",
 							filters: { is_sales_item: 1, customer: me.frm.doc.customer, has_variants: 0 },
 						};
 					});
@@ -109,14 +109,14 @@ erpnext.sales_common = {
 
 			customer() {
 				var me = this;
-				erpnext.utils.get_party_details(this.frm, null, null, function () {
+				cpmerp.utils.get_party_details(this.frm, null, null, function () {
 					me.apply_price_list();
 				});
 			}
 
 			customer_address() {
-				erpnext.utils.get_address_display(this.frm, "customer_address");
-				erpnext.utils.set_taxes_from_address(
+				cpmerp.utils.get_address_display(this.frm, "customer_address");
+				cpmerp.utils.set_taxes_from_address(
 					this.frm,
 					"customer_address",
 					"customer_address",
@@ -125,8 +125,8 @@ erpnext.sales_common = {
 			}
 
 			shipping_address_name() {
-				erpnext.utils.get_address_display(this.frm, "shipping_address_name", "shipping_address");
-				erpnext.utils.set_taxes_from_address(
+				cpmerp.utils.get_address_display(this.frm, "shipping_address_name", "shipping_address");
+				cpmerp.utils.set_taxes_from_address(
 					this.frm,
 					"shipping_address_name",
 					"customer_address",
@@ -135,7 +135,7 @@ erpnext.sales_common = {
 			}
 
 			dispatch_address_name() {
-				erpnext.utils.get_address_display(this.frm, "dispatch_address_name", "dispatch_address");
+				cpmerp.utils.get_address_display(this.frm, "dispatch_address_name", "dispatch_address");
 			}
 
 			sales_partner() {
@@ -363,7 +363,7 @@ erpnext.sales_common = {
 							item.title = __("Select Serial and Batch");
 						}
 
-						new erpnext.SerialBatchPackageSelector(me.frm, item, (r) => {
+						new cpmerp.SerialBatchPackageSelector(me.frm, item, (r) => {
 							if (r) {
 								let qty = Math.abs(r.total_qty);
 								if (doc.is_return) {
@@ -417,7 +417,7 @@ erpnext.sales_common = {
 				if (["Delivery Note", "Sales Invoice", "Sales Order"].includes(this.frm.doc.doctype)) {
 					if (this.frm.doc.project) {
 						frappe.call({
-							method: "erpnext.projects.doctype.project.project.get_cost_center_name",
+							method: "cpmerp.projects.doctype.project.project.get_cost_center_name",
 							args: { project: this.frm.doc.project },
 							callback: function (r, rt) {
 								if (!r.exc) {
@@ -452,7 +452,7 @@ erpnext.sales_common = {
 	},
 };
 
-erpnext.pre_sales = {
+cpmerp.pre_sales = {
 	set_as_lost: function (doctype) {
 		frappe.ui.form.on(doctype, {
 			set_as_lost_dialog: function (frm) {

@@ -1,9 +1,9 @@
 // Copyright (c) 2015, Frappe Technologies Pvt. Ltd. and Contributors
 // License: GNU General Public License v3. See license.txt
 
-frappe.provide("erpnext.stock");
+frappe.provide("cpmerp.stock");
 
-erpnext.stock.StockController = class StockController extends frappe.ui.form.Controller {
+cpmerp.stock.StockController = class StockController extends frappe.ui.form.Controller {
 	onload() {
 		// warehouse query if company
 		if (this.frm.fields_dict.company) {
@@ -14,7 +14,7 @@ erpnext.stock.StockController = class StockController extends frappe.ui.form.Con
 	barcode(doc, cdt, cdn)  {
 		let row = locals[cdt][cdn];
 		if (row.barcode) {
-			erpnext.stock.utils.set_item_details_using_barcode(this.frm, row, (r) => {
+			cpmerp.stock.utils.set_item_details_using_barcode(this.frm, row, (r) => {
 				frappe.model.set_value(cdt, cdn, {
 					"item_code": r.message.item_code,
 					"qty": 1,
@@ -25,8 +25,8 @@ erpnext.stock.StockController = class StockController extends frappe.ui.form.Con
 
 	setup_warehouse_query() {
 		var me = this;
-		erpnext.queries.setup_queries(this.frm, "Warehouse", function() {
-			return erpnext.queries.warehouse(me.frm.doc);
+		cpmerp.queries.setup_queries(this.frm, "Warehouse", function() {
+			return cpmerp.queries.warehouse(me.frm.doc);
 		});
 	}
 

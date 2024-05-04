@@ -11,12 +11,12 @@ from frappe.contacts.address_and_contact import (
 )
 from frappe.model.naming import set_name_by_naming_series, set_name_from_naming_options
 
-from erpnext.accounts.party import (
+from cpmerp.accounts.party import (
 	get_dashboard_info,
 	validate_party_accounts,
 )
-from erpnext.controllers.website_list_for_contact import add_role_for_portal_user
-from erpnext.utilities.transaction_base import TransactionBase
+from cpmerp.controllers.website_list_for_contact import add_role_for_portal_user
+from cpmerp.utilities.transaction_base import TransactionBase
 
 
 class Supplier(TransactionBase):
@@ -28,11 +28,11 @@ class Supplier(TransactionBase):
 	if TYPE_CHECKING:
 		from frappe.types import DF
 
-		from erpnext.accounts.doctype.allowed_to_transact_with.allowed_to_transact_with import (
+		from cpmerp.accounts.doctype.allowed_to_transact_with.allowed_to_transact_with import (
 			AllowedToTransactWith,
 		)
-		from erpnext.accounts.doctype.party_account.party_account import PartyAccount
-		from erpnext.utilities.doctype.portal_user.portal_user import PortalUser
+		from cpmerp.accounts.doctype.party_account.party_account import PartyAccount
+		from cpmerp.utilities.doctype.portal_user.portal_user import PortalUser
 
 		accounts: DF.Table[PartyAccount]
 		allow_purchase_invoice_creation_without_purchase_order: DF.Check
@@ -178,7 +178,7 @@ class Supplier(TransactionBase):
 			)
 
 	def create_primary_contact(self):
-		from erpnext.selling.doctype.customer.customer import make_contact
+		from cpmerp.selling.doctype.customer.customer import make_contact
 
 		if not self.supplier_primary_contact:
 			if self.mobile_no or self.email_id:
@@ -190,7 +190,7 @@ class Supplier(TransactionBase):
 	def create_primary_address(self):
 		from frappe.contacts.doctype.address.address import get_address_display
 
-		from erpnext.selling.doctype.customer.customer import make_address
+		from cpmerp.selling.doctype.customer.customer import make_address
 
 		if self.flags.is_new_doc and self.get("address_line1"):
 			address = make_address(self)

@@ -12,17 +12,17 @@ from frappe.model.utils import get_fetch_values
 from frappe.query_builder.functions import IfNull, Sum
 from frappe.utils import add_days, add_months, cint, cstr, flt, getdate
 
-from erpnext import get_company_currency
-from erpnext.accounts.doctype.pricing_rule.pricing_rule import (
+from cpmerp import get_company_currency
+from cpmerp.accounts.doctype.pricing_rule.pricing_rule import (
 	get_pricing_rule_for_item,
 	set_transaction_type,
 )
-from erpnext.setup.doctype.brand.brand import get_brand_defaults
-from erpnext.setup.doctype.item_group.item_group import get_item_group_defaults
-from erpnext.setup.utils import get_exchange_rate
-from erpnext.stock.doctype.item.item import get_item_defaults, get_uom_conv_factor
-from erpnext.stock.doctype.item_manufacturer.item_manufacturer import get_item_manufacturer_part_no
-from erpnext.stock.doctype.price_list.price_list import get_price_list_details
+from cpmerp.setup.doctype.brand.brand import get_brand_defaults
+from cpmerp.setup.doctype.item_group.item_group import get_item_group_defaults
+from cpmerp.setup.utils import get_exchange_rate
+from cpmerp.stock.doctype.item.item import get_item_defaults, get_uom_conv_factor
+from cpmerp.stock.doctype.item_manufacturer.item_manufacturer import get_item_manufacturer_part_no
+from cpmerp.stock.doctype.price_list.price_list import get_price_list_details
 
 sales_doctypes = ["Quotation", "Sales Order", "Delivery Note", "Sales Invoice", "POS Invoice"]
 purchase_doctypes = [
@@ -209,7 +209,7 @@ def validate_item_details(args, item):
 	if not args.company:
 		throw(_("Please specify Company"))
 
-	from erpnext.stock.doctype.item.item import validate_end_of_life
+	from cpmerp.stock.doctype.item.item import validate_end_of_life
 
 	validate_end_of_life(item.name, item.end_of_life, item.disabled)
 
@@ -294,7 +294,7 @@ def get_basic_details(args, item, overwrite_warehouse=True):
 	expense_account = None
 
 	if args.get("doctype") == "Purchase Invoice" and item.is_fixed_asset:
-		from erpnext.assets.doctype.asset_category.asset_category import get_asset_category_account
+		from cpmerp.assets.doctype.asset_category.asset_category import get_asset_category_account
 
 		expense_account = get_asset_category_account(
 			fieldname="fixed_asset_account", item=args.item_code, company=args.company
@@ -394,7 +394,7 @@ def get_basic_details(args, item, overwrite_warehouse=True):
 	if args.get("doctype") in purchase_doctypes and not frappe.db.get_single_value(
 		"Buying Settings", "disable_last_purchase_rate"
 	):
-		from erpnext.buying.doctype.purchase_order.purchase_order import item_last_purchase_rate
+		from cpmerp.buying.doctype.purchase_order.purchase_order import item_last_purchase_rate
 
 		out.last_purchase_rate = item_last_purchase_rate(
 			args.name, args.conversion_rate, item.name, out.conversion_factor
@@ -753,7 +753,7 @@ def get_default_cost_center(args, item=None, item_group=None, brand=None, compan
 
 	elif not cost_center and args.get("item_code") and company:
 		for method in ["get_item_defaults", "get_item_group_defaults", "get_brand_defaults"]:
-			path = f"erpnext.stock.get_item_details.{method}"
+			path = f"cpmerp.stock.get_item_details.{method}"
 			data = frappe.get_attr(path)(args.get("item_code"), company)
 
 			if data and (data.selling_cost_center or data.buying_cost_center):
@@ -819,7 +819,7 @@ def get_price_list_rate(args, item_doc, out=None):
 			return out
 
 		if not out.price_list_rate and args.transaction_type == "buying":
-			from erpnext.stock.doctype.item.item import get_last_purchase_details
+			from cpmerp.stock.doctype.item.item import get_last_purchase_details
 
 			out.update(get_last_purchase_details(item_doc.name, args.name, args.conversion_rate))
 
@@ -987,7 +987,7 @@ def check_packing_list(price_list_rate_name, desired_qty, item_code):
 
 
 def validate_conversion_rate(args, meta):
-	from erpnext.controllers.accounts_controller import validate_conversion_rate
+	from cpmerp.controllers.accounts_controller import validate_conversion_rate
 
 	company_currency = frappe.get_cached_value("Company", args.company, "default_currency")
 	if not args.conversion_rate and args.currency == company_currency:
@@ -1142,7 +1142,7 @@ def get_bin_details(item_code, warehouse, company=None, include_child_warehouses
 	if warehouse:
 		from frappe.query_builder.functions import Coalesce, Sum
 
-		from erpnext.stock.doctype.warehouse.warehouse import get_child_warehouses
+		from cpmerp.stock.doctype.warehouse.warehouse import get_child_warehouses
 
 		warehouses = get_child_warehouses(warehouse) if include_child_warehouses else [warehouse]
 
@@ -1178,7 +1178,7 @@ def get_company_total_stock(item_code, company):
 
 @frappe.whitelist()
 def get_batch_qty(batch_no, warehouse, item_code):
-	from erpnext.stock.doctype.batch import batch
+	from cpmerp.stock.doctype.batch import batch
 
 	if batch_no:
 		return {"actual_batch_qty": batch.get_batch_qty(batch_no, warehouse)}

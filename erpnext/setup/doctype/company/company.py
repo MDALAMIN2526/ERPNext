@@ -14,8 +14,8 @@ from frappe.desk.page.setup_wizard.setup_wizard import make_records
 from frappe.utils import cint, formatdate, get_link_to_form, get_timestamp, today
 from frappe.utils.nestedset import NestedSet, rebuild_tree
 
-from erpnext.accounts.doctype.account.account import get_account_currency
-from erpnext.setup.setup_wizard.operations.taxes_setup import setup_taxes_and_charges
+from cpmerp.accounts.doctype.account.account import get_account_currency
+from cpmerp.setup.setup_wizard.operations.taxes_setup import setup_taxes_and_charges
 
 
 class Company(NestedSet):
@@ -300,7 +300,7 @@ class Company(NestedSet):
 				warehouse.insert()
 
 	def create_default_accounts(self):
-		from erpnext.accounts.doctype.account.chart_of_accounts.chart_of_accounts import create_charts
+		from cpmerp.accounts.doctype.account.chart_of_accounts.chart_of_accounts import create_charts
 
 		frappe.local.flags.ignore_root_company_validation = True
 		create_charts(self.name, self.chart_of_accounts, self.existing_company)
@@ -704,7 +704,7 @@ def get_name_with_abbr(name, company):
 
 def install_country_fixtures(company, country):
 	try:
-		module_name = f"erpnext.regional.{frappe.scrub(country)}.setup.setup"
+		module_name = f"cpmerp.regional.{frappe.scrub(country)}.setup.setup"
 		frappe.get_attr(module_name)(company, False)
 	except ImportError:
 		pass
@@ -908,7 +908,7 @@ def get_default_company_address(name, sort_key="is_primary_address", existing_ad
 
 @frappe.whitelist()
 def create_transaction_deletion_request(company):
-	from erpnext.setup.doctype.transaction_deletion_record.transaction_deletion_record import (
+	from cpmerp.setup.doctype.transaction_deletion_record.transaction_deletion_record import (
 		is_deletion_doc_running,
 	)
 

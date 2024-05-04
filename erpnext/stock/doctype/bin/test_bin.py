@@ -4,8 +4,8 @@
 import frappe
 from frappe.tests.utils import FrappeTestCase
 
-from erpnext.stock.doctype.item.test_item import make_item
-from erpnext.stock.utils import _create_bin
+from cpmerp.stock.doctype.item.test_item import make_item
+from cpmerp.stock.utils import _create_bin
 
 
 class TestBin(FrappeTestCase):

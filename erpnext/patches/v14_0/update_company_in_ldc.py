@@ -4,7 +4,7 @@
 
 import frappe
 
-from erpnext import get_default_company
+from cpmerp import get_default_company
 
 
 def execute():

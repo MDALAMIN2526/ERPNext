@@ -40,7 +40,7 @@ class DeprecatedSerialNoValuation:
 
 	@deprecated
 	def get_incoming_value_for_serial_nos(self, serial_nos):
-		from erpnext.stock.utils import get_combine_datetime
+		from cpmerp.stock.utils import get_combine_datetime
 
 		# get rate from serial nos within same company
 		incoming_values = 0.0

@@ -29,7 +29,7 @@ frappe.ui.form.on("Workstation", {
 		if (frm.is_new()) {
 			frappe.call({
 				type: "GET",
-				method: "erpnext.manufacturing.doctype.workstation.workstation.get_default_holiday_list",
+				method: "cpmerp.manufacturing.doctype.workstation.workstation.get_default_holiday_list",
 				callback: function (r) {
 					if (!r.exe && r.message) {
 						cur_frm.set_value("holiday_list", r.message);
@@ -91,7 +91,7 @@ class WorkstationDashboard {
 
 	prepapre_dashboard() {
 		frappe.call({
-			method: "erpnext.manufacturing.doctype.workstation.workstation.get_job_cards",
+			method: "cpmerp.manufacturing.doctype.workstation.workstation.get_job_cards",
 			args: {
 				workstation: this.frm.doc.name,
 			},
@@ -242,7 +242,7 @@ class WorkstationDashboard {
 
 	make_material_request(job_card) {
 		frappe.call({
-			method: "erpnext.manufacturing.doctype.job_card.job_card.make_material_request",
+			method: "cpmerp.manufacturing.doctype.job_card.job_card.make_material_request",
 			args: {
 				source_name: job_card,
 			},

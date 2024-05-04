@@ -33,11 +33,11 @@ frappe.listview_settings["Sales Invoice"] = {
 
 	onload: function (listview) {
 		listview.page.add_action_item(__("Delivery Note"), () => {
-			erpnext.bulk_transaction_processing.create(listview, "Sales Invoice", "Delivery Note");
+			cpmerp.bulk_transaction_processing.create(listview, "Sales Invoice", "Delivery Note");
 		});
 
 		listview.page.add_action_item(__("Payment"), () => {
-			erpnext.bulk_transaction_processing.create(listview, "Sales Invoice", "Payment Entry");
+			cpmerp.bulk_transaction_processing.create(listview, "Sales Invoice", "Payment Entry");
 		});
 	},
 };

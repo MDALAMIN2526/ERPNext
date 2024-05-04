@@ -1,6 +1,6 @@
-frappe.provide("erpnext.financial_statements");
+frappe.provide("cpmerp.financial_statements");
 
-erpnext.financial_statements = {
+cpmerp.financial_statements = {
 	filters: get_filters(),
 	baseData: null,
 	formatter: function (value, row, column, data, default_formatter, filter) {
@@ -63,7 +63,7 @@ erpnext.financial_statements = {
 
 			if (data.account) {
 				column.link_onclick =
-					"erpnext.financial_statements.open_general_ledger(" + JSON.stringify(data) + ")";
+					"cpmerp.financial_statements.open_general_ledger(" + JSON.stringify(data) + ")";
 			}
 			column.is_tree = true;
 		}
@@ -113,9 +113,9 @@ erpnext.financial_statements = {
 	initial_depth: 3,
 	onload: function (report) {
 		// dropdown for links to other financial statements
-		erpnext.financial_statements.filters = get_filters();
+		cpmerp.financial_statements.filters = get_filters();
 
-		let fiscal_year = erpnext.utils.get_fiscal_year(frappe.datetime.get_today());
+		let fiscal_year = cpmerp.utils.get_fiscal_year(frappe.datetime.get_today());
 
 		frappe.model.with_doc("Fiscal Year", fiscal_year, function (r) {
 			var fy = frappe.model.get_doc("Fiscal Year", fiscal_year);
@@ -239,7 +239,7 @@ function get_filters() {
 			fieldname: "presentation_currency",
 			label: __("Currency"),
 			fieldtype: "Select",
-			options: erpnext.get_presentation_currency_list(),
+			options: cpmerp.get_presentation_currency_list(),
 		},
 		{
 			fieldname: "cost_center",
@@ -267,9 +267,9 @@ function get_filters() {
 	let fy_filters = filters.filter((x) => {
 		return ["from_fiscal_year", "to_fiscal_year"].includes(x.fieldname);
 	});
-	let fiscal_year = erpnext.utils.get_fiscal_year(frappe.datetime.get_today(), false, true);
+	let fiscal_year = cpmerp.utils.get_fiscal_year(frappe.datetime.get_today(), false, true);
 	if (fiscal_year) {
-		let fy = erpnext.utils.get_fiscal_year(frappe.datetime.get_today(), false, false);
+		let fy = cpmerp.utils.get_fiscal_year(frappe.datetime.get_today(), false, false);
 		fy_filters.forEach((x) => {
 			x.default = fy;
 		});

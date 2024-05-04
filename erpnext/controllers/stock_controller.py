@@ -8,22 +8,22 @@ import frappe
 from frappe import _, bold
 from frappe.utils import cint, cstr, flt, get_link_to_form, getdate
 
-import erpnext
-from erpnext.accounts.general_ledger import (
+import cpmerp
+from cpmerp.accounts.general_ledger import (
 	make_gl_entries,
 	make_reverse_gl_entries,
 	process_gl_map,
 )
-from erpnext.accounts.utils import cancel_exchange_gain_loss_journal, get_fiscal_year
-from erpnext.controllers.accounts_controller import AccountsController
-from erpnext.stock import get_warehouse_account_map
-from erpnext.stock.doctype.inventory_dimension.inventory_dimension import (
+from cpmerp.accounts.utils import cancel_exchange_gain_loss_journal, get_fiscal_year
+from cpmerp.controllers.accounts_controller import AccountsController
+from cpmerp.stock import get_warehouse_account_map
+from cpmerp.stock.doctype.inventory_dimension.inventory_dimension import (
 	get_evaluated_inventory_dimension,
 )
-from erpnext.stock.doctype.serial_and_batch_bundle.serial_and_batch_bundle import (
+from cpmerp.stock.doctype.serial_and_batch_bundle.serial_and_batch_bundle import (
 	get_type_of_transaction,
 )
-from erpnext.stock.stock_ledger import get_items_to_be_repost
+from cpmerp.stock.stock_ledger import get_items_to_be_repost
 
 
 class QualityInspectionRequiredError(frappe.ValidationError):
@@ -105,7 +105,7 @@ class StockController(AccountsController):
 		is_asset_pr = any(d.get("is_fixed_asset") for d in self.get("items"))
 
 		if (
-			cint(erpnext.is_perpetual_inventory_enabled(self.company))
+			cint(cpmerp.is_perpetual_inventory_enabled(self.company))
 			or provisional_accounting_for_non_stock_items
 			or is_asset_pr
 		):
@@ -117,7 +117,7 @@ class StockController(AccountsController):
 				make_gl_entries(gl_entries, from_repost=from_repost)
 
 	def validate_serialized_batch(self):
-		from erpnext.stock.doctype.serial_no.serial_no import get_serial_nos
+		from cpmerp.stock.doctype.serial_no.serial_no import get_serial_nos
 
 		is_material_issue = False
 		if self.doctype == "Stock Entry" and self.purpose == "Material Issue":
@@ -154,7 +154,7 @@ class StockController(AccountsController):
 					)
 
 	def clean_serial_nos(self):
-		from erpnext.stock.doctype.serial_no.serial_no import clean_serial_no_string
+		from cpmerp.stock.doctype.serial_no.serial_no import clean_serial_no_string
 
 		for row in self.get("items"):
 			if hasattr(row, "serial_no") and row.serial_no:
@@ -217,7 +217,7 @@ class StockController(AccountsController):
 					self.create_serial_batch_bundle(bundle_details, row)
 
 	def update_bundle_details(self, bundle_details, table_name, row, is_rejected=False):
-		from erpnext.stock.doctype.serial_no.serial_no import get_serial_nos
+		from cpmerp.stock.doctype.serial_no.serial_no import get_serial_nos
 
 		# Since qty field is different for different doctypes
 		qty = row.get("qty")
@@ -271,7 +271,7 @@ class StockController(AccountsController):
 		)
 
 	def create_serial_batch_bundle(self, bundle_details, row):
-		from erpnext.stock.serial_batch_bundle import SerialBatchCreation
+		from cpmerp.stock.serial_batch_bundle import SerialBatchCreation
 
 		sn_doc = SerialBatchCreation(bundle_details).make_serial_and_batch_bundle()
 
@@ -283,7 +283,7 @@ class StockController(AccountsController):
 		row.db_set({field: sn_doc.name})
 
 	def validate_serial_nos_and_batches_with_bundle(self, row):
-		from erpnext.stock.doctype.serial_no.serial_no import get_serial_nos
+		from cpmerp.stock.doctype.serial_no.serial_no import get_serial_nos
 
 		throw_error = False
 		if row.serial_no:
@@ -744,7 +744,7 @@ class StockController(AccountsController):
 					row.db_set(dimension.source_fieldname, sl_dict[dimension.target_fieldname])
 
 	def make_sl_entries(self, sl_entries, allow_negative_stock=False, via_landed_cost_voucher=False):
-		from erpnext.stock.stock_ledger import make_sl_entries
+		from cpmerp.stock.stock_ledger import make_sl_entries
 
 		make_sl_entries(sl_entries, allow_negative_stock, via_landed_cost_voucher)
 
@@ -770,7 +770,7 @@ class StockController(AccountsController):
 		return serialized_items
 
 	def validate_warehouse(self):
-		from erpnext.stock.utils import validate_disabled_warehouse, validate_warehouse_company
+		from cpmerp.stock.utils import validate_disabled_warehouse, validate_warehouse_company
 
 		warehouses = list(set(d.warehouse for d in self.get("items") if getattr(d, "warehouse", None)))
 
@@ -1058,7 +1058,7 @@ class StockController(AccountsController):
 	def validate_putaway_capacity(self):
 		# if over receipt is attempted while 'apply putaway rule' is disabled
 		# and if rule was applied on the transaction, validate it.
-		from erpnext.stock.doctype.putaway_rule.putaway_rule import get_available_putaway_capacity
+		from cpmerp.stock.doctype.putaway_rule.putaway_rule import get_available_putaway_capacity
 
 		valid_doctype = self.doctype in (
 			"Purchase Receipt",
@@ -1218,7 +1218,7 @@ def show_stock_ledger_preview(company, doctype, docname):
 
 
 def get_accounting_ledger_preview(doc, filters):
-	from erpnext.accounts.report.general_ledger.general_ledger import get_columns as get_gl_columns
+	from cpmerp.accounts.report.general_ledger.general_ledger import get_columns as get_gl_columns
 
 	gl_columns, gl_data = [], []
 	fields = [
@@ -1250,7 +1250,7 @@ def get_accounting_ledger_preview(doc, filters):
 
 
 def get_stock_ledger_preview(doc, filters):
-	from erpnext.stock.report.stock_ledger.stock_ledger import get_columns as get_sl_columns
+	from cpmerp.stock.report.stock_ledger.stock_ledger import get_columns as get_sl_columns
 
 	sl_columns, sl_data = [], []
 	fields = [

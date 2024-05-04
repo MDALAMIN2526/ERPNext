@@ -14,7 +14,7 @@ class SupportSettings(Document):
 	if TYPE_CHECKING:
 		from frappe.types import DF
 
-		from erpnext.support.doctype.support_search_source.support_search_source import (
+		from cpmerp.support.doctype.support_search_source.support_search_source import (
 			SupportSearchSource,
 		)
 

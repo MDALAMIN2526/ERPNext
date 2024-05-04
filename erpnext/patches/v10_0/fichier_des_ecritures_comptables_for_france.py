@@ -4,7 +4,7 @@
 
 import frappe
 
-from erpnext.setup.doctype.company.company import install_country_fixtures
+from cpmerp.setup.doctype.company.company import install_country_fixtures
 
 
 def execute():

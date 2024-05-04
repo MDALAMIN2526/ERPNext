@@ -4,8 +4,8 @@
 
 import frappe
 
-from erpnext.regional.italy import state_codes
-from erpnext.regional.italy.setup import make_custom_fields, setup_report
+from cpmerp.regional.italy import state_codes
+from cpmerp.regional.italy.setup import make_custom_fields, setup_report
 
 
 def execute():

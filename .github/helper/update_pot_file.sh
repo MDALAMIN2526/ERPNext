@@ -8,21 +8,21 @@ pip install frappe-bench
 bench -v init frappe-bench --skip-assets --skip-redis-config-generation --python "$(which python)"
 cd ./frappe-bench || exit
 
-echo "Get ERPNext..."
-bench get-app --skip-assets erpnext "${GITHUB_WORKSPACE}"
+echo "Get CMPERP..."
+bench get-app --skip-assets cpmerp "${GITHUB_WORKSPACE}"
 
 echo "Generating POT file..."
-bench generate-pot-file --app erpnext
+bench generate-pot-file --app cpmerp
 
-cd ./apps/erpnext || exit
+cd ./apps/cpmerp || exit
 
 echo "Configuring git user..."
-git config user.email "developers@erpnext.com"
+git config user.email "developers@cpmerp.com"
 git config user.name "frappe-pr-bot"
 
 echo "Setting the correct git remote..."
 # Here, the git remote is a local file path by default. Let's change it to the upstream repo.
-git remote set-url upstream https://github.com/frappe/erpnext.git
+git remote set-url upstream https://github.com/frappe/cpmerp.git
 
 echo "Creating a new branch..."
 isodate=$(date -u +"%Y-%m-%d")
@@ -37,4 +37,4 @@ gh auth setup-git
 git push -u upstream "${branch_name}"
 
 echo "Creating a PR..."
-gh pr create --fill --base "${BASE_BRANCH}" --head "${branch_name}" -R frappe/erpnext
+gh pr create --fill --base "${BASE_BRANCH}" --head "${branch_name}" -R frappe/cpmerp

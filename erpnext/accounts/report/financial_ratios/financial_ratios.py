@@ -5,8 +5,8 @@ import frappe
 from frappe import _
 from frappe.utils import add_days, flt
 
-from erpnext.accounts.report.financial_statements import get_data, get_period_list
-from erpnext.accounts.utils import get_balance_on, get_fiscal_year
+from cpmerp.accounts.report.financial_statements import get_data, get_period_list
+from cpmerp.accounts.utils import get_balance_on, get_fiscal_year
 
 
 def execute(filters=None):

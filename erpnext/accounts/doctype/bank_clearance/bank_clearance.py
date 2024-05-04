@@ -9,7 +9,7 @@ from frappe.query_builder.custom import ConstantColumn
 from frappe.utils import flt, fmt_money, getdate
 from pypika import Order
 
-import erpnext
+import cpmerp
 
 form_grid_templates = {"journal_entries": "templates/form_grid/bank_reconciliation_grid.html"}
 
@@ -23,7 +23,7 @@ class BankClearance(Document):
 	if TYPE_CHECKING:
 		from frappe.types import DF
 
-		from erpnext.accounts.doctype.bank_clearance_detail.bank_clearance_detail import (
+		from cpmerp.accounts.doctype.bank_clearance_detail.bank_clearance_detail import (
 			BankClearanceDetail,
 		)
 
@@ -67,7 +67,7 @@ class BankClearance(Document):
 		)
 
 		self.set("payment_entries", [])
-		default_currency = erpnext.get_default_currency()
+		default_currency = cpmerp.get_default_currency()
 
 		for d in entries:
 			row = self.append("payment_entries", {})

@@ -19,10 +19,10 @@ class TaxWithholdingCategory(Document):
 	if TYPE_CHECKING:
 		from frappe.types import DF
 
-		from erpnext.accounts.doctype.tax_withholding_account.tax_withholding_account import (
+		from cpmerp.accounts.doctype.tax_withholding_account.tax_withholding_account import (
 			TaxWithholdingAccount,
 		)
-		from erpnext.accounts.doctype.tax_withholding_rate.tax_withholding_rate import TaxWithholdingRate
+		from cpmerp.accounts.doctype.tax_withholding_rate.tax_withholding_rate import TaxWithholdingRate
 
 		accounts: DF.Table[TaxWithholdingAccount]
 		category_name: DF.Data | None

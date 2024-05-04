@@ -6,8 +6,8 @@ import unittest
 import frappe
 from frappe.utils import random_string
 
-from erpnext.crm.doctype.lead.lead import add_lead_to_prospect
-from erpnext.crm.doctype.lead.test_lead import make_lead
+from cpmerp.crm.doctype.lead.lead import add_lead_to_prospect
+from cpmerp.crm.doctype.lead.test_lead import make_lead
 
 
 class TestProspect(unittest.TestCase):

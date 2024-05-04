@@ -6,12 +6,12 @@ import frappe
 from frappe.tests.utils import FrappeTestCase
 from frappe.utils import add_days, getdate, today
 
-from erpnext.accounts.doctype.process_statement_of_accounts.process_statement_of_accounts import (
+from cpmerp.accounts.doctype.process_statement_of_accounts.process_statement_of_accounts import (
 	get_statement_dict,
 	send_emails,
 )
-from erpnext.accounts.doctype.sales_invoice.test_sales_invoice import create_sales_invoice
-from erpnext.accounts.test.accounts_mixin import AccountsTestMixin
+from cpmerp.accounts.doctype.sales_invoice.test_sales_invoice import create_sales_invoice
+from cpmerp.accounts.test.accounts_mixin import AccountsTestMixin
 
 
 class TestProcessStatementOfAccounts(AccountsTestMixin, FrappeTestCase):

@@ -14,8 +14,8 @@ from frappe.desk.doctype.global_search_settings.global_search_settings import (
 from frappe.desk.page.setup_wizard.setup_wizard import make_records
 from frappe.utils import cstr, getdate
 
-from erpnext.accounts.doctype.account.account import RootNotEditable
-from erpnext.regional.address_template.setup import set_up_address_templates
+from cpmerp.accounts.doctype.account.account import RootNotEditable
+from cpmerp.regional.address_template.setup import set_up_address_templates
 
 
 def read_lines(filename: str) -> list[str]:
@@ -275,7 +275,7 @@ def install(country=None):
 	):
 		records += [{"doctype": doctype, title_field: title} for title in read_lines(filename)]
 
-	base_path = frappe.get_app_path("erpnext", "stock", "doctype")
+	base_path = frappe.get_app_path("cpmerp", "stock", "doctype")
 	response = frappe.read_file(os.path.join(base_path, "delivery_trip/dispatch_notification_template.html"))
 
 	records += [
@@ -289,7 +289,7 @@ def install(country=None):
 	]
 
 	# Records for the Supplier Scorecard
-	from erpnext.buying.doctype.supplier_scorecard.supplier_scorecard import make_default_records
+	from cpmerp.buying.doctype.supplier_scorecard.supplier_scorecard import make_default_records
 
 	make_default_records()
 	make_records(records)
@@ -331,7 +331,7 @@ def update_item_variant_settings():
 def add_uom_data():
 	# add UOMs
 	uoms = json.loads(
-		open(frappe.get_app_path("erpnext", "setup", "setup_wizard", "data", "uom_data.json")).read()
+		open(frappe.get_app_path("cpmerp", "setup", "setup_wizard", "data", "uom_data.json")).read()
 	)
 	for d in uoms:
 		if not frappe.db.exists("UOM", d.get("uom_name")):
@@ -342,7 +342,7 @@ def add_uom_data():
 	# bootstrap uom conversion factors
 	uom_conversions = json.loads(
 		open(
-			frappe.get_app_path("erpnext", "setup", "setup_wizard", "data", "uom_conversion_data.json")
+			frappe.get_app_path("cpmerp", "setup", "setup_wizard", "data", "uom_conversion_data.json")
 		).read()
 	)
 	for d in uom_conversions:

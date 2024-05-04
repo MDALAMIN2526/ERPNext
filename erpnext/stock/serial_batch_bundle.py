@@ -7,11 +7,11 @@ from frappe.query_builder.functions import CombineDatetime, Sum, Timestamp
 from frappe.utils import cint, cstr, flt, get_link_to_form, now, nowtime, today
 from pypika import Order
 
-from erpnext.stock.deprecated_serial_batch import (
+from cpmerp.stock.deprecated_serial_batch import (
 	DeprecatedBatchNoValuation,
 	DeprecatedSerialNoValuation,
 )
-from erpnext.stock.valuation import round_off_if_near_zero
+from cpmerp.stock.valuation import round_off_if_near_zero
 
 
 class SerialBatchBundle:
@@ -265,7 +265,7 @@ class SerialBatchBundle:
 		doc.submit()
 
 	def set_warehouse_and_status_in_serial_nos(self):
-		from erpnext.stock.doctype.serial_no.serial_no import get_serial_nos as get_parsed_serial_nos
+		from cpmerp.stock.doctype.serial_no.serial_no import get_serial_nos as get_parsed_serial_nos
 
 		serial_nos = get_serial_nos(self.sle.serial_and_batch_bundle)
 		if not self.sle.serial_and_batch_bundle and self.sle.serial_no:
@@ -316,7 +316,7 @@ class SerialBatchBundle:
 			).run()
 
 	def update_batch_qty(self):
-		from erpnext.stock.doctype.batch.batch import get_available_batches
+		from cpmerp.stock.doctype.batch.batch import get_available_batches
 
 		batches = get_batch_nos(self.sle.serial_and_batch_bundle)
 		if not self.sle.serial_and_batch_bundle and self.sle.batch_no:
@@ -890,8 +890,8 @@ class SerialBatchCreation:
 				frappe.throw(msg, title=_("Insufficient Stock"))
 
 	def set_auto_serial_batch_entries_for_outward(self):
-		from erpnext.stock.doctype.batch.batch import get_available_batches
-		from erpnext.stock.doctype.serial_no.serial_no import get_serial_nos_for_outward
+		from cpmerp.stock.doctype.batch.batch import get_available_batches
+		from cpmerp.stock.doctype.serial_no.serial_no import get_serial_nos_for_outward
 
 		kwargs = frappe._dict(
 			{
@@ -1009,7 +1009,7 @@ class SerialBatchCreation:
 				)
 
 	def create_batch(self):
-		from erpnext.stock.doctype.batch.batch import make_batch
+		from cpmerp.stock.doctype.batch.batch import make_batch
 
 		return make_batch(
 			frappe._dict(

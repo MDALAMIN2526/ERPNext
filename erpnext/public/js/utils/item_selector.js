@@ -1,4 +1,4 @@
-erpnext.ItemSelector = class ItemSelector {
+cpmerp.ItemSelector = class ItemSelector {
 	constructor(opts) {
 		$.extend(this, opts);
 
@@ -7,7 +7,7 @@ erpnext.ItemSelector = class ItemSelector {
 		}
 
 		if (!this.item_query) {
-			this.item_query = erpnext.queries.item().query;
+			this.item_query = cpmerp.queries.item().query;
 		}
 
 		this.grid = this.frm.get_field("items").grid;

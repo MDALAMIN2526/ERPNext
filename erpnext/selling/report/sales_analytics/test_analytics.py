@@ -5,8 +5,8 @@
 import frappe
 from frappe.tests.utils import FrappeTestCase
 
-from erpnext.selling.doctype.sales_order.test_sales_order import make_sales_order
-from erpnext.selling.report.sales_analytics.sales_analytics import execute
+from cpmerp.selling.doctype.sales_order.test_sales_order import make_sales_order
+from cpmerp.selling.report.sales_analytics.sales_analytics import execute
 
 
 class TestAnalytics(FrappeTestCase):

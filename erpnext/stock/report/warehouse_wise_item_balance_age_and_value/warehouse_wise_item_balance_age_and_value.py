@@ -10,14 +10,14 @@ from frappe import _
 from frappe.query_builder.functions import Count
 from frappe.utils import cint, flt, getdate
 
-from erpnext.stock.report.stock_ageing.stock_ageing import FIFOSlots, get_average_age
-from erpnext.stock.report.stock_analytics.stock_analytics import (
+from cpmerp.stock.report.stock_ageing.stock_ageing import FIFOSlots, get_average_age
+from cpmerp.stock.report.stock_analytics.stock_analytics import (
 	get_item_details,
 	get_items,
 	get_stock_ledger_entries,
 )
-from erpnext.stock.report.stock_balance.stock_balance import filter_items_with_no_transactions
-from erpnext.stock.utils import is_reposting_item_valuation_in_progress
+from cpmerp.stock.report.stock_balance.stock_balance import filter_items_with_no_transactions
+from cpmerp.stock.utils import is_reposting_item_valuation_in_progress
 
 
 def execute(filters=None):

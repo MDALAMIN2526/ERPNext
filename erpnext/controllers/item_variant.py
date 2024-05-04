@@ -9,7 +9,7 @@ import frappe
 from frappe import _
 from frappe.utils import cstr, flt
 
-from erpnext.utilities.product import get_item_codes_by_attributes
+from cpmerp.utilities.product import get_item_codes_by_attributes
 
 
 class ItemVariantExistsError(frappe.ValidationError):
@@ -231,7 +231,7 @@ def enqueue_multiple_variant_creation(item, args):
 		return create_multiple_variants(item, args)
 	else:
 		frappe.enqueue(
-			"erpnext.controllers.item_variant.create_multiple_variants",
+			"cpmerp.controllers.item_variant.create_multiple_variants",
 			item=item,
 			args=args,
 			now=frappe.flags.in_test,

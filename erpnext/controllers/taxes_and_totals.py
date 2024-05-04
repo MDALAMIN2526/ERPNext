@@ -10,16 +10,16 @@ from frappe.model.document import Document
 from frappe.utils import cint, flt, round_based_on_smallest_currency_fraction
 from frappe.utils.deprecations import deprecated
 
-import erpnext
-from erpnext.accounts.doctype.journal_entry.journal_entry import get_exchange_rate
-from erpnext.accounts.doctype.pricing_rule.utils import get_applied_pricing_rules
-from erpnext.controllers.accounts_controller import (
+import cpmerp
+from cpmerp.accounts.doctype.journal_entry.journal_entry import get_exchange_rate
+from cpmerp.accounts.doctype.pricing_rule.utils import get_applied_pricing_rules
+from cpmerp.controllers.accounts_controller import (
 	validate_conversion_rate,
 	validate_inclusive_tax,
 	validate_taxes_and_charges,
 )
-from erpnext.stock.get_item_details import _get_item_tax_template
-from erpnext.utilities.regional import temporary_flag
+from cpmerp.stock.get_item_details import _get_item_tax_template
+from cpmerp.utilities.regional import temporary_flag
 
 
 class calculate_taxes_and_totals:
@@ -133,7 +133,7 @@ class calculate_taxes_and_totals:
 
 	def validate_conversion_rate(self):
 		# validate conversion rate
-		company_currency = erpnext.get_company_currency(self.doc.company)
+		company_currency = cpmerp.get_company_currency(self.doc.company)
 		if not self.doc.currency or self.doc.currency == company_currency:
 			self.doc.currency = company_currency
 			self.doc.conversion_rate = 1.0
@@ -1019,23 +1019,23 @@ def get_round_off_applicable_accounts(company, account_list):
 		return get_regional_round_off_accounts(company, account_list)
 
 
-@erpnext.allow_regional
+@cpmerp.allow_regional
 def get_regional_round_off_accounts(company, account_list):
 	pass
 
 
-@erpnext.allow_regional
+@cpmerp.allow_regional
 def update_itemised_tax_data(doc):
 	# Don't delete this method, used for localization
 	pass
 
 
-@erpnext.allow_regional
+@cpmerp.allow_regional
 def get_itemised_tax_breakup_header(item_doctype, tax_accounts):
 	return [_("Item"), _("Taxable Amount"), *tax_accounts]
 
 
-@erpnext.allow_regional
+@cpmerp.allow_regional
 def get_itemised_tax_breakup_data(doc):
 	itemised_tax = get_itemised_tax(doc.taxes)
 
@@ -1114,14 +1114,14 @@ class init_landed_taxes_and_totals:
 		self.set_amounts_in_company_currency()
 
 	def set_account_currency(self):
-		company_currency = erpnext.get_company_currency(self.doc.company)
+		company_currency = cpmerp.get_company_currency(self.doc.company)
 		for d in self.doc.get(self.tax_field):
 			if not d.account_currency:
 				account_currency = frappe.get_cached_value("Account", d.expense_account, "account_currency")
 				d.account_currency = account_currency or company_currency
 
 	def set_exchange_rate(self):
-		company_currency = erpnext.get_company_currency(self.doc.company)
+		company_currency = cpmerp.get_company_currency(self.doc.company)
 		for d in self.doc.get(self.tax_field):
 			if d.account_currency == company_currency:
 				d.exchange_rate = 1

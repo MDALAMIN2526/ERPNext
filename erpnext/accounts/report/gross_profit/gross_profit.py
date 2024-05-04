@@ -8,9 +8,9 @@ from frappe import _, qb, scrub
 from frappe.query_builder import Order
 from frappe.utils import cint, flt, formatdate
 
-from erpnext.controllers.queries import get_match_cond
-from erpnext.stock.report.stock_ledger.stock_ledger import get_item_group_condition
-from erpnext.stock.utils import get_incoming_rate
+from cpmerp.controllers.queries import get_match_cond
+from cpmerp.stock.report.stock_ledger.stock_ledger import get_item_group_condition
+from cpmerp.stock.utils import get_incoming_rate
 
 
 def execute(filters=None):

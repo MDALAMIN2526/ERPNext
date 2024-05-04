@@ -2,7 +2,7 @@ import unittest
 
 import frappe
 
-from erpnext import encode_company_abbr
+from cpmerp import encode_company_abbr
 
 test_records = frappe.get_test_records("Company")
 
@@ -13,22 +13,22 @@ class TestInit(unittest.TestCase):
 
 		names = [
 			"Warehouse Name",
-			"ERPNext Foundation India",
+			"CMPERP Foundation India",
 			f"Gold - Member - {abbr}",
 			f" - {abbr}",
-			"ERPNext - Foundation - India",
-			f"ERPNext Foundation India - {abbr}",
+			"CMPERP - Foundation - India",
+			f"CMPERP Foundation India - {abbr}",
 			f"No-Space-{abbr}",
 			"- Warehouse",
 		]
 
 		expected_names = [
 			f"Warehouse Name - {abbr}",
-			f"ERPNext Foundation India - {abbr}",
+			f"CMPERP Foundation India - {abbr}",
 			f"Gold - Member - {abbr}",
 			f" - {abbr}",
-			f"ERPNext - Foundation - India - {abbr}",
-			f"ERPNext Foundation India - {abbr}",
+			f"CMPERP - Foundation - India - {abbr}",
+			f"CMPERP Foundation India - {abbr}",
 			f"No-Space-{abbr} - {abbr}",
 			f"- Warehouse - {abbr}",
 		]
@@ -43,9 +43,9 @@ class TestInit(unittest.TestCase):
 	def test_translation_files(self):
 		from frappe.tests.test_translate import verify_translation_files
 
-		verify_translation_files("erpnext")
+		verify_translation_files("cpmerp")
 
 	def test_patches(self):
 		from frappe.tests.test_patches import check_patch_files
 
-		check_patch_files("erpnext")
+		check_patch_files("cpmerp")

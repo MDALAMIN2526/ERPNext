@@ -42,7 +42,7 @@ frappe.query_reports["Stock Balance"] = {
 			options: "Item",
 			get_query: function () {
 				return {
-					query: "erpnext.controllers.queries.item_query",
+					query: "cpmerp.controllers.queries.item_query",
 				};
 			},
 		},
@@ -116,4 +116,4 @@ frappe.query_reports["Stock Balance"] = {
 	},
 };
 
-erpnext.utils.add_inventory_dimensions("Stock Balance", 8);
+cpmerp.utils.add_inventory_dimensions("Stock Balance", 8);

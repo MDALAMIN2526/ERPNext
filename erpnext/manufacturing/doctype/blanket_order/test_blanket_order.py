@@ -4,8 +4,8 @@ import frappe
 from frappe.tests.utils import FrappeTestCase
 from frappe.utils import add_months, today
 
-from erpnext import get_company_currency
-from erpnext.stock.doctype.item.test_item import make_item
+from cpmerp import get_company_currency
+from cpmerp.stock.doctype.item.test_item import make_item
 
 from .blanket_order import make_order
 

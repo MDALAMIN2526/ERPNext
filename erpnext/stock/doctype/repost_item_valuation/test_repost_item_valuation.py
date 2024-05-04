@@ -8,17 +8,17 @@ import frappe
 from frappe.tests.utils import FrappeTestCase, change_settings
 from frappe.utils import add_days, add_to_date, now, nowdate, today
 
-from erpnext.accounts.doctype.sales_invoice.test_sales_invoice import create_sales_invoice
-from erpnext.accounts.utils import repost_gle_for_stock_vouchers
-from erpnext.controllers.stock_controller import create_item_wise_repost_entries
-from erpnext.stock.doctype.item.test_item import make_item
-from erpnext.stock.doctype.purchase_receipt.test_purchase_receipt import make_purchase_receipt
-from erpnext.stock.doctype.repost_item_valuation.repost_item_valuation import (
+from cpmerp.accounts.doctype.sales_invoice.test_sales_invoice import create_sales_invoice
+from cpmerp.accounts.utils import repost_gle_for_stock_vouchers
+from cpmerp.controllers.stock_controller import create_item_wise_repost_entries
+from cpmerp.stock.doctype.item.test_item import make_item
+from cpmerp.stock.doctype.purchase_receipt.test_purchase_receipt import make_purchase_receipt
+from cpmerp.stock.doctype.repost_item_valuation.repost_item_valuation import (
 	in_configured_timeslot,
 )
-from erpnext.stock.doctype.stock_entry.stock_entry_utils import make_stock_entry
-from erpnext.stock.tests.test_utils import StockTestMixin
-from erpnext.stock.utils import PendingRepostingError
+from cpmerp.stock.doctype.stock_entry.stock_entry_utils import make_stock_entry
+from cpmerp.stock.tests.test_utils import StockTestMixin
+from cpmerp.stock.utils import PendingRepostingError
 
 
 class TestRepostItemValuation(FrappeTestCase, StockTestMixin):
@@ -105,7 +105,7 @@ class TestRepostItemValuation(FrappeTestCase, StockTestMixin):
 		logs = frappe.get_all("Repost Item Valuation", filters={"status": "Skipped"})
 		self.assertTrue(len(logs) > 10)
 
-		from erpnext.stock.doctype.repost_item_valuation.repost_item_valuation import RepostItemValuation
+		from cpmerp.stock.doctype.repost_item_valuation.repost_item_valuation import RepostItemValuation
 
 		RepostItemValuation.clear_old_logs(days=1)
 
@@ -223,7 +223,7 @@ class TestRepostItemValuation(FrappeTestCase, StockTestMixin):
 		)
 
 	def test_gl_repost_progress(self):
-		from erpnext.accounts import utils
+		from cpmerp.accounts import utils
 
 		# lower numbers to simplify test
 		orig_chunk_size = utils.GL_REPOSTING_CHUNK
@@ -251,7 +251,7 @@ class TestRepostItemValuation(FrappeTestCase, StockTestMixin):
 		self.assertNotIn(call("gl_reposting_index", 1), doc.db_set.mock_calls)
 
 	def test_gl_complete_gl_reposting(self):
-		from erpnext.accounts import utils
+		from cpmerp.accounts import utils
 
 		# lower numbers to simplify test
 		orig_chunk_size = utils.GL_REPOSTING_CHUNK
@@ -297,7 +297,7 @@ class TestRepostItemValuation(FrappeTestCase, StockTestMixin):
 		)
 
 	def test_duplicate_ple_on_repost(self):
-		from erpnext.accounts import utils
+		from cpmerp.accounts import utils
 
 		# lower numbers to simplify test
 		orig_chunk_size = utils.GL_REPOSTING_CHUNK
@@ -391,7 +391,7 @@ class TestRepostItemValuation(FrappeTestCase, StockTestMixin):
 		self.assertTrue(frappe.db.exists("Repost Item Valuation", {"voucher_no": pr.name}))
 
 	def test_repost_item_valuation_for_closing_stock_balance(self):
-		from erpnext.stock.doctype.closing_stock_balance.closing_stock_balance import (
+		from cpmerp.stock.doctype.closing_stock_balance.closing_stock_balance import (
 			prepare_closing_stock_balance,
 		)
 

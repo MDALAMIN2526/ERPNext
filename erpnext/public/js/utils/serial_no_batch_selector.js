@@ -1,4 +1,4 @@
-erpnext.SerialBatchPackageSelector = class SerialNoBatchBundleUpdate {
+cpmerp.SerialBatchPackageSelector = class SerialNoBatchBundleUpdate {
 	constructor(frm, item, callback) {
 		this.frm = frm;
 		this.item = item;
@@ -263,7 +263,7 @@ erpnext.SerialBatchPackageSelector = class SerialNoBatchBundleUpdate {
 		}
 
 		frappe.call({
-			method: "erpnext.stock.doctype.serial_and_batch_bundle.serial_and_batch_bundle.create_serial_nos",
+			method: "cpmerp.stock.doctype.serial_and_batch_bundle.serial_and_batch_bundle.create_serial_nos",
 			args: {
 				item_code: this.item.item_code,
 				serial_nos: upload_serial_nos,
@@ -287,7 +287,7 @@ erpnext.SerialBatchPackageSelector = class SerialNoBatchBundleUpdate {
 			csvFileData = ["Batch No", "Quantity"];
 		}
 
-		const method = `/api/method/erpnext.stock.doctype.serial_and_batch_bundle.serial_and_batch_bundle.download_blank_csv_template?content=${encodeURIComponent(
+		const method = `/api/method/cpmerp.stock.doctype.serial_and_batch_bundle.serial_and_batch_bundle.download_blank_csv_template?content=${encodeURIComponent(
 			JSON.stringify(csvFileData)
 		)}`;
 		const w = window.open(frappe.urllib.get_full_url(method));
@@ -300,7 +300,7 @@ erpnext.SerialBatchPackageSelector = class SerialNoBatchBundleUpdate {
 		const file_path = this.dialog.get_value("attach_serial_batch_csv");
 
 		frappe.call({
-			method: "erpnext.stock.doctype.serial_and_batch_bundle.serial_and_batch_bundle.upload_csv_file",
+			method: "cpmerp.stock.doctype.serial_and_batch_bundle.serial_and_batch_bundle.upload_csv_file",
 			args: {
 				item_code: this.item.item_code,
 				file_path: file_path,
@@ -383,7 +383,7 @@ erpnext.SerialBatchPackageSelector = class SerialNoBatchBundleUpdate {
 						}
 
 						return {
-							query: "erpnext.controllers.queries.get_batch_no",
+							query: "cpmerp.controllers.queries.get_batch_no",
 							filters: {
 								item_code: this.item.item_code,
 								warehouse:
@@ -436,7 +436,7 @@ erpnext.SerialBatchPackageSelector = class SerialNoBatchBundleUpdate {
 
 		if (qty) {
 			frappe.call({
-				method: "erpnext.stock.doctype.serial_and_batch_bundle.serial_and_batch_bundle.get_auto_data",
+				method: "cpmerp.stock.doctype.serial_and_batch_bundle.serial_and_batch_bundle.get_auto_data",
 				args: {
 					item_code: this.item.item_code,
 					warehouse: this.item.warehouse || this.item.s_warehouse,
@@ -460,7 +460,7 @@ erpnext.SerialBatchPackageSelector = class SerialNoBatchBundleUpdate {
 
 		if (scan_serial_no || scan_batch_no) {
 			frappe.call({
-				method: "erpnext.stock.doctype.serial_and_batch_bundle.serial_and_batch_bundle.is_serial_batch_no_exists",
+				method: "cpmerp.stock.doctype.serial_and_batch_bundle.serial_and_batch_bundle.is_serial_batch_no_exists",
 				args: {
 					item_code: this.item.item_code,
 					type_of_transaction: this.item.type_of_transaction,
@@ -496,7 +496,7 @@ erpnext.SerialBatchPackageSelector = class SerialNoBatchBundleUpdate {
 				this.dialog.fields_dict.scan_serial_no.set_value("");
 			} else {
 				frappe.call({
-					method: "erpnext.stock.doctype.serial_and_batch_bundle.serial_and_batch_bundle.get_batch_no_from_serial_no",
+					method: "cpmerp.stock.doctype.serial_and_batch_bundle.serial_and_batch_bundle.get_batch_no_from_serial_no",
 					args: {
 						serial_no: scan_serial_no,
 					},
@@ -548,7 +548,7 @@ erpnext.SerialBatchPackageSelector = class SerialNoBatchBundleUpdate {
 
 		frappe
 			.call({
-				method: "erpnext.stock.doctype.serial_and_batch_bundle.serial_and_batch_bundle.add_serial_batch_ledgers",
+				method: "cpmerp.stock.doctype.serial_and_batch_bundle.serial_and_batch_bundle.add_serial_batch_ledgers",
 				args: {
 					entries: entries,
 					child_row: this.item,
@@ -592,7 +592,7 @@ erpnext.SerialBatchPackageSelector = class SerialNoBatchBundleUpdate {
 		if (this.bundle) {
 			frappe
 				.call({
-					method: "erpnext.stock.doctype.serial_and_batch_bundle.serial_and_batch_bundle.get_serial_batch_ledgers",
+					method: "cpmerp.stock.doctype.serial_and_batch_bundle.serial_and_batch_bundle.get_serial_batch_ledgers",
 					args: {
 						item_code: this.item.item_code,
 						name: this.bundle,

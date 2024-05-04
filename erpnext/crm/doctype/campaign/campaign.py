@@ -15,7 +15,7 @@ class Campaign(Document):
 	if TYPE_CHECKING:
 		from frappe.types import DF
 
-		from erpnext.crm.doctype.campaign_email_schedule.campaign_email_schedule import (
+		from cpmerp.crm.doctype.campaign_email_schedule.campaign_email_schedule import (
 			CampaignEmailSchedule,
 		)
 

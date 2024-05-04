@@ -5,10 +5,10 @@ import frappe
 from frappe.tests.utils import FrappeTestCase
 from frappe.utils import today
 
-from erpnext.accounts.doctype.payment_entry.test_payment_entry import create_payment_entry
-from erpnext.accounts.doctype.sales_invoice.test_sales_invoice import create_sales_invoice
-from erpnext.accounts.test.accounts_mixin import AccountsTestMixin
-from erpnext.selling.doctype.sales_order.test_sales_order import make_sales_order
+from cpmerp.accounts.doctype.payment_entry.test_payment_entry import create_payment_entry
+from cpmerp.accounts.doctype.sales_invoice.test_sales_invoice import create_sales_invoice
+from cpmerp.accounts.test.accounts_mixin import AccountsTestMixin
+from cpmerp.selling.doctype.sales_order.test_sales_order import make_sales_order
 
 
 class TestUnreconcilePayment(AccountsTestMixin, FrappeTestCase):

@@ -9,8 +9,8 @@ from frappe import _
 from frappe.model.document import Document
 from frappe.utils import add_to_date, flt, get_datetime, getdate, time_diff_in_hours
 
-from erpnext.controllers.queries import get_match_cond
-from erpnext.setup.utils import get_exchange_rate
+from cpmerp.controllers.queries import get_match_cond
+from cpmerp.setup.utils import get_exchange_rate
 
 
 class OverlapError(frappe.ValidationError):

@@ -13,15 +13,15 @@ from frappe.query_builder import DocType, Interval
 from frappe.query_builder.functions import Now
 from frappe.utils import flt, get_fullname
 
-from erpnext.crm.utils import (
+from cpmerp.crm.utils import (
 	CRMNote,
 	copy_comments,
 	link_communications,
 	link_open_events,
 	link_open_tasks,
 )
-from erpnext.setup.utils import get_exchange_rate
-from erpnext.utilities.transaction_base import TransactionBase
+from cpmerp.setup.utils import get_exchange_rate
+from cpmerp.utilities.transaction_base import TransactionBase
 
 
 class Opportunity(TransactionBase, CRMNote):
@@ -33,10 +33,10 @@ class Opportunity(TransactionBase, CRMNote):
 	if TYPE_CHECKING:
 		from frappe.types import DF
 
-		from erpnext.crm.doctype.competitor_detail.competitor_detail import CompetitorDetail
-		from erpnext.crm.doctype.crm_note.crm_note import CRMNote
-		from erpnext.crm.doctype.opportunity_item.opportunity_item import OpportunityItem
-		from erpnext.crm.doctype.opportunity_lost_reason_detail.opportunity_lost_reason_detail import (
+		from cpmerp.crm.doctype.competitor_detail.competitor_detail import CompetitorDetail
+		from cpmerp.crm.doctype.crm_note.crm_note import CRMNote
+		from cpmerp.crm.doctype.opportunity_item.opportunity_item import OpportunityItem
+		from cpmerp.crm.doctype.opportunity_lost_reason_detail.opportunity_lost_reason_detail import (
 			OpportunityLostReasonDetail,
 		)
 
@@ -354,7 +354,7 @@ def get_item_details(item_code):
 @frappe.whitelist()
 def make_quotation(source_name, target_doc=None):
 	def set_missing_values(source, target):
-		from erpnext.controllers.accounts_controller import get_default_taxes_and_charges
+		from cpmerp.controllers.accounts_controller import get_default_taxes_and_charges
 
 		quotation = frappe.get_doc(target)
 
@@ -497,7 +497,7 @@ def auto_close_opportunity():
 
 @frappe.whitelist()
 def make_opportunity_from_communication(communication, company, ignore_communication_links=False):
-	from erpnext.crm.doctype.lead.lead import make_lead_from_communication
+	from cpmerp.crm.doctype.lead.lead import make_lead_from_communication
 
 	doc = frappe.get_doc("Communication", communication)
 
